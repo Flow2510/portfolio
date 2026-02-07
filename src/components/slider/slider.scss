@@ -1,0 +1,28 @@
+.slider{
+    height: 45vh;
+    background: white;
+    color: black;
+
+    &__image{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__link{
+        position: relative;
+        color: white;
+        text-decoration: none;
+        padding: 1rem;
+        display: block;
+        height: 100%;
+        width: 100%;
+    }
+
+    &__title{
+        position: relative;
+    }
+}

@@ -1,0 +1,14 @@
+.hero{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 55vh;
+    align-items: center;
+
+    &__footer{
+
+        &-link{
+            color: inherit;
+        }
+    }
+}

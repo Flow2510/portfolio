@@ -1,0 +1,10 @@
+.counter{
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 10;
+
+    span{
+        font-size: 3rem;
+    }
+}
