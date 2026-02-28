@@ -9,7 +9,9 @@ export default function ContactModal({ setOpenModal }) {
     
     const handleSubmitContact = (e) => {
         e.preventDefault();
-        setOpenModal(prev => !prev)
+        setOpenModal(prev => !prev);
+
+        
     }
 
     return(
@@ -34,7 +36,7 @@ export default function ContactModal({ setOpenModal }) {
                     </label>
                     <label className='contact-modal__label' htmlFor="">
                         <p className='contact-modal__label-title'>Message</p>
-                        <textarea className='contact-modal__label-textarea' name="" id="" onChange={(e) => setName(e.target.value)}></textarea>
+                        <textarea className='contact-modal__label-textarea' name="" id="" onChange={(e) => setMessage(e.target.value)}></textarea>
                     </label>
                     <button  className='contact-modal__button-send'>
                         Send Message
