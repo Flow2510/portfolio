@@ -2,6 +2,28 @@
     height: 45vh;
     background: white;
     color: black;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__background-wrapper{
+        position: relative;
+        height: 100%;
+        width: 100%;
+
+        &::after{
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            backdrop-filter: blur(5px);
+        }
+    }
 
     &__image{
         position: absolute;
@@ -10,6 +32,12 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+
+        &-front{
+            padding: 0.15rem;
+            background: #0000007e !important;
+            border-radius: 0.5rem;
+        }
     }
 
     &__link{
@@ -25,4 +53,48 @@
     &__title{
         position: relative;
     }
+
+    &__nav{
+        position: fixed;
+        bottom: 1rem;
+        z-index: 10;
+        padding: 0.8rem;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(30px);
+        display: flex;
+        gap: 4rem;
+        border-radius: 0.5rem;
+        overflow: hidden;
+
+        &-link{
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            display: inline-block;
+            text-align: center;
+            background: transparent;
+            line-height: 100%;            
+        }
+
+        &-icon{
+            color: white;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            top: 50%;
+        }
+    }
+}
+
+.swiper-pagination-progressbar {
+  background: rgba(255, 255, 255, 0.2);
+  height: 2px !important;
+  bottom: 10px;
+  top: 1rem !important;
+  width: 90% !important;
+  margin: 0 5%;
+}
+
+.swiper-pagination-progressbar-fill {
+  background: white !important;
 }

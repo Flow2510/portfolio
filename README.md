@@ -30,20 +30,6 @@ Projet, en cours de construction
 
 ---
 
-## 📂 Structure du projet
-
-src/
-├── assets/ # Images et styles
-├── components/ # Composants réutilisables
-├── pages/
-│ ├── Home.jsx
-│ ├── Projects.jsx
-│ └── Contact.jsx
-└── App.jsx
-
-
----
-
 ## 🚀 Installation
 
 git clone https://github.com/ton-username/ton-repo.git

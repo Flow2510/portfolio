@@ -1,0 +1,15 @@
+.cross{
+    position: relative;
+    
+    &__bar{
+        position: absolute;
+        width: 9px;
+        height: 1px;
+        background: white;
+        opacity: 0.5;
+
+        &-y{
+            transform: rotateZ(90deg);
+        }
+    }
+}

@@ -4,7 +4,11 @@
 }
 
 html{
-  font-family: sans-serif;
+  font-family: "antonio", sans-serif;
+
+  @media screen and (min-width: 768px) {
+    font-size: 22px;
+  }
 }
 
 body{
