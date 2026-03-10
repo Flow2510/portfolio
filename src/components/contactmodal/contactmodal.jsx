@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './contactmodal.scss';
+import ScrambleText from '../scrambletext/scrambletext';
 
 export default function ContactModal({ setOpenModal }) {
     const [name, setName] = useState("");
@@ -20,22 +21,25 @@ export default function ContactModal({ setOpenModal }) {
                 <button className='contact-modal__button-close' onClick={() => setOpenModal(prev => !prev)}>
                     X
                 </button>
-                <h2 className='contact-modal__title'>Contact</h2>
+                <ScrambleText 
+                    text={"Contact"}
+                    titleClass={"contact-modal__title"}
+                />
                 <form className='contact-modal__form' action="" onSubmit={handleSubmitContact}>
                     <label className='contact-modal__label' htmlFor="">
-                        <p className='contact-modal__label-title'>Name</p>
+                        <p className='contact-modal__label-title'>Name:</p>
                         <input className='contact-modal__label-input' type="text" onChange={(e) => setName(e.target.value)}/>
                     </label>
                     <label className='contact-modal__label' htmlFor="">
-                        <p className='contact-modal__label-title'>First Name</p>
+                        <p className='contact-modal__label-title'>First Name:</p>
                         <input className='contact-modal__label-input' type="text" onChange={(e) => setFirstName(e.target.value)}/>
                     </label>
                     <label className='contact-modal__label' htmlFor="">
-                        <p className='contact-modal__label-title'>Email</p>
+                        <p className='contact-modal__label-title'>Email:</p>
                         <input className='contact-modal__label-input' type="text" onChange={(e) => setEmail(e.target.value)}/>
                     </label>
                     <label className='contact-modal__label' htmlFor="">
-                        <p className='contact-modal__label-title'>Message</p>
+                        <p className='contact-modal__label-title'>Message:</p>
                         <textarea className='contact-modal__label-textarea' name="" id="" onChange={(e) => setMessage(e.target.value)}></textarea>
                     </label>
                     <button  className='contact-modal__button-send'>

@@ -16,7 +16,7 @@ export default function Slider({ works }) {
     return(
         <section className='slider'>
             <Swiper
-                style={{ height: '60%', width: '70%', position: "relative", zIndex: "5", border: "2px solid white", borderRadius: '0.5rem', maxWidth: "400px", transform: "translateY(-1.5rem)"}}
+                style={{ height: '60%', width: '70%', position: "relative", zIndex: "5", border: "2px solid white", borderRadius: '0.5rem', maxWidth: "500px", transform: "translateY(-1.5rem)"}}
                 autoplay={{
                     delay: 3000,
                     disableOnInteraction: false,
@@ -39,8 +39,7 @@ export default function Slider({ works }) {
 
             </Swiper>
             <Swiper
-                style={{ height: '100%', width: '100%', position: "absolute", top: "0", left: "0",}}
-                navigation
+                style={{ height: '100%', width: '100%', position: "absolute", top: "0", left: "0"}}
                 loop
                 modules={[Controller]}
                 onSwiper={setBgSwiper}
@@ -63,7 +62,9 @@ export default function Slider({ works }) {
                 transition={{ duration: 0.5 }}
             >
                 <NavLink className='slider__nav-link' to={'/work'}>Projets</NavLink>
-                <i className="fa-solid fa-bars slider__nav-icon"></i>
+                <button className='slider__nav-button'>
+                    <i className="fa-solid fa-bars slider__nav-icon"></i>
+                </button>
                 <NavLink className='slider__nav-link' to={'/about'} >à propos</NavLink>
             </motion.div>
         </section>

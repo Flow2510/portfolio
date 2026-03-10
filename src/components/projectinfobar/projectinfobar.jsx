@@ -3,7 +3,7 @@ import './projectinfobar.scss';
 import { motion } from 'motion/react';
 import { useState } from 'react';
 
-export default function ProjectInfoBar({ image, title, date, link, works }) {
+export default function ProjectInfoBar({ image, title, date, link, works, color}) {
     const [menuIsOpen, setMenuIsOpen] = useState(false)
 
     return(
@@ -22,7 +22,7 @@ export default function ProjectInfoBar({ image, title, date, link, works }) {
                     <p className='project-info-bar__content-subtitle'>{date}</p>
                     <h3 className='project-info-bar__content-title'>{title}</h3>
                 </div>
-                <a href={link} className='project-info-bar__content-link'>
+                <a href={link} style={{ color: color }} target='_blank' className='project-info-bar__content-link'>
                     <i className="fa-solid fa-square-arrow-up-right"></i>
                 </a>
             </div>
@@ -32,7 +32,17 @@ export default function ProjectInfoBar({ image, title, date, link, works }) {
             {menuIsOpen &&
                 <nav className='project-info-bar__menu'>
                     {works.map((work, index) => 
-                        <a href={`#${work.id}`} key={work.id + index} className='project-info-bar__menu-link'>{work.name}</a>
+                        <motion.a
+                            initial={{ x: 100 }}
+                            animate={{ x:0 }}
+                            transition={{ duration: 0.5 }}
+                            href={`#${work.id}`} 
+                            key={work.id + index} 
+                            className='project-info-bar__menu-link'
+                            onClick={() => setMenuIsOpen(prev => !prev)}
+                        >
+                            {work.name}
+                        </motion.a>
                     )}
                 </nav>
             }

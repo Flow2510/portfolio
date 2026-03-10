@@ -1,0 +1,15 @@
+.counter{
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 100;
+    font-size: 3.5rem;
+    line-height: 100%;
+    font-weight: 200;
+    font-family: "antonio", sans-serif;
+
+    @media screen and (min-width:768px) {
+        left: 2rem;
+        top: 2rem;
+    }
+}
