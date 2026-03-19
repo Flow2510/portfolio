@@ -3,8 +3,7 @@ import './project.scss'
 import { useMotionValueEvent, useScroll } from 'motion/react';
 import ScrambleText from '../scrambletext/scrambletext';
 
-export default function Project ({title, text, tags, image, id, date, setCurrentIndex, index }) {
-    const [opacity, setOpacity] = useState(0.4)
+export default function Project ({title, text, text2, tags, image, id, date, setCurrentIndex, index }) {
     const ref = useRef(null);
 
     const { scrollYProgress } = useScroll({
@@ -21,7 +20,6 @@ export default function Project ({title, text, tags, image, id, date, setCurrent
     return(
         <section id={id} className="project" ref={ref}>
             <div className='project__overlay'
-                style={{ opacity: opacity}}
             >
             </div>
             <img src={image} alt="" className='project__background'/>
@@ -38,6 +36,7 @@ export default function Project ({title, text, tags, image, id, date, setCurrent
                     ))}
                 </div>
                 <p className="project__content-text">{text}</p>
+                <p className="project__content-text">{text2}</p>
             </div>
         </section>
     )

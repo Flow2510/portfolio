@@ -1,0 +1,78 @@
+.about-nav{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 1rem;
+    z-index: 100;
+    margin: auto;
+
+    &__wrapper{
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        margin: auto;
+        width: 100%;
+        max-width: 700px;
+    }
+
+    &__title{
+        flex: 1;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(30px);
+        border-radius: 0.5rem;
+        padding: 0.8rem 1rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        position: relative;
+        z-index: 100;
+    }
+
+    &__button{
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(30px);
+        border-radius: 0.5rem;
+        padding: 0.8rem 1rem;
+        color: white;
+        font-size: 1rem;
+        border: none;
+        cursor: pointer;
+        position: relative;
+        z-index: 100;
+    }
+
+    &__link{
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(30px);
+        border-radius: 0.5rem;
+        padding: 0.8rem 1rem;
+        color: white;
+        font-size: 1rem;
+        border: none;
+    }
+
+    &__menu{
+        position: fixed;
+        bottom: 5rem;
+        right: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        z-index: 99;
+
+        a, button{
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(30px);
+            border-radius: 0.5rem;
+            padding: 0.8rem 1rem;
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+            font-weight: 300;
+            font-size: 1rem;
+            border: none;
+            font-family: 'montserrat', sans-serif;
+        }
+    }
+}

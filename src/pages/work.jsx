@@ -30,6 +30,7 @@ export default function Work({ works }) {
                     key={work.name + index}
                     title= {work.name}
                     text={work.text}
+                    text2={work.text2}
                     tags={work.tags}
                     image={work.image}
                     setCurrentIndex={setCurrentIndex}

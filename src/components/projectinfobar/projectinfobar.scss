@@ -5,7 +5,7 @@
     width: 100%;
     padding: 0 0.5rem;
     left: 50%;
-    z-index: 50;
+    z-index: 100;
     align-items: center;
     gap: 0.5rem;
     max-width: 600px;
@@ -21,7 +21,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 0.5rem;
+        padding: 0.8rem 1rem;
     }
 
     &__wrapper{
@@ -31,11 +31,13 @@
         width: 100%;
         align-items: center;
         border-radius: 0.5rem;
+        position: relative;
+        z-index: 100;
     }
 
     &__content{
         flex: 1;
-        padding: 0 1rem;
+        padding: 0 0.5rem;
         
         &-subtitle{
             font-size: 0.9rem;
@@ -64,35 +66,45 @@
         background: rgba(0, 0, 0, 0.5);
         backdrop-filter: blur(10px);
         border-radius: 0.5rem;
-        padding: 0.5rem;
+        padding: 0.8rem 1rem;
         color: inherit;
         border: none;
+        font-size: 1rem;
+        position: relative;
+        z-index: 100;
     }
 
     &__image{
-        width: 100px;
+        width: 80px;
         height: 65px;
         object-fit: cover;
         border-radius: 0.5rem;
         padding: 0.15rem;
+
+        @media screen and (min-width:768px) {
+            width: 120px;
+            height: 80px;
+        }
     }
 
     &__menu{
         display: flex;
         flex-direction: column;
-        position: absolute;
+        position: fixed;
         bottom: 5rem;
         right: 1rem;
         gap: 0.5rem;
+        z-index: 99;
 
         &-link{
             color: white;
             text-decoration: none;
             font-weight: 100;
-            padding: 0.5rem;
+            padding: 0.6rem 0.8rem;
             background: rgba(0, 0, 0, 0.5);
             backdrop-filter: blur(10px);
             border-radius: 0.5rem;
+            font-weight: 300;
         }
     }
 }

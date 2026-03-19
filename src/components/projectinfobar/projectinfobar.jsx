@@ -33,9 +33,9 @@ export default function ProjectInfoBar({ image, title, date, link, works, color}
                 <nav className='project-info-bar__menu'>
                     {works.map((work, index) => 
                         <motion.a
-                            initial={{ x: 100 }}
-                            animate={{ x:0 }}
-                            transition={{ duration: 0.5 }}
+                            initial={{ y: 200 }}
+                            animate={{ y:0 }}
+                            transition={{ duration: 0.6 }}
                             href={`#${work.id}`} 
                             key={work.id + index} 
                             className='project-info-bar__menu-link'

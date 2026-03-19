@@ -9,7 +9,7 @@ export default function ScrambleText({ text, titleClass }){
 
     useEffect(() => {
         gsap.to(el.current, {
-            duration: 1,
+            duration: 0.8,
             scrambleText: {
                 text: text,
                 chars: '0123456789!@#$%^&*()-_=+[]{};:\'",.<>/?\\|~`',

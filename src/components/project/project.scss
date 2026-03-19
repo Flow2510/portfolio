@@ -3,6 +3,7 @@
     width: 100%;
     padding: 1rem;
     position: relative;
+    top: 0;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -18,7 +19,7 @@
         top: 0;
         left: 0;
         z-index: 1;
-        background: black;
+        background: rgba(0, 0, 0, 0.2);
     }
 
     &__background{
@@ -55,6 +56,11 @@
         &-text{
             line-height: 150%;
             font-weight: 300;
+            padding-right: 2rem;
+
+            @media screen and (min-width:768px) {
+                padding: 0;
+            }
         }
     }
 }

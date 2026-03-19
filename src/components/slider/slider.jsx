@@ -16,7 +16,7 @@ export default function Slider({ works }) {
     return(
         <section className='slider'>
             <Swiper
-                style={{ height: '60%', width: '70%', position: "relative", zIndex: "5", border: "2px solid white", borderRadius: '0.5rem', maxWidth: "500px", transform: "translateY(-1.5rem)"}}
+                style={{ height: '60%', width: '70%', position: "relative", zIndex: "5", border: "1px solid white", borderRadius: '0.5rem', maxWidth: "500px", transform: "translateY(-1.5rem)"}}
                 autoplay={{
                     delay: 3000,
                     disableOnInteraction: false,
@@ -57,9 +57,9 @@ export default function Slider({ works }) {
             </Swiper>
             <motion.div 
                 className='slider__nav'
-                initial={{ y: 50 }}
-                whileInView={{ y:0 }}
-                transition={{ duration: 0.5 }}
+                initial={{ y: 300 }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.7 }}
             >
                 <NavLink className='slider__nav-link' to={'/work'}>Projets</NavLink>
                 <button className='slider__nav-button'>

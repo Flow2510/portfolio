@@ -1,5 +1,5 @@
 .slider{
-    height: 45vh;
+    height: 48vh;
     background: white;
     color: black;
     position: relative;
@@ -58,16 +58,15 @@
         position: fixed;
         bottom: 1rem;
         z-index: 10;
-        padding: 0.5rem;
+        padding: 0.95rem 1rem;
         background: rgba(0, 0, 0, 0.6);
         backdrop-filter: blur(30px);
         display: flex;
         border-radius: 0.5rem;
         overflow: hidden;
-        width: 90%;
+        width: 85%;
         justify-content: space-between;
         max-width: 400px;
-        
 
         @media screen and (min-width:768px) {
             padding: 0.8rem;
@@ -76,18 +75,19 @@
         &-link{
             color: white;
             text-decoration: none;
-            text-transform: capitalize;
+            text-transform: uppercase;
             text-align: center;
             background: transparent;
             line-height: 100%;       
             letter-spacing: 1px;  
             font-weight: 300;   
+            font-size: 1rem;
         }
 
         &-button{
             background: none;
             border: none;
-            font-size: 1.1rem;
+            font-size: 1rem;
             cursor: pointer;
             position: absolute;
             left: 50%;

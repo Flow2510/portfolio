@@ -1,15 +1,15 @@
 .contact-modal{
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
     background: rgba(255, 255, 255, 0.5);
-    z-index: 50;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 2rem;
+    z-index: 101;
 
     &__wrapper{
         padding: 1rem;
@@ -61,8 +61,6 @@
 
         &-send{
             background: white;
-            border: none;
-            padding: 0.5rem;
             margin-top: 1rem;
             font-size: 1rem;
             cursor: pointer;
