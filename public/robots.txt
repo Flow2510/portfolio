@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sendra-florian.vercel.app/sitemap.xml

@@ -1,0 +1,140 @@
+[
+  {
+    "name": "The Motion Library",
+    "id": "the-motion-library",
+    "year": "2026",
+    "color": "#bbf451",
+    "link": "https://the-motion-library.vercel.app/",
+    "type": "Playground",
+    "videos": [
+      "/videos/motion-library-body.mp4",
+      "/videos/motion-library-collection.mp4"
+    ],
+    "images": [
+      "/images/motion-library-computer-mockup.webp",
+      "/images/motion-library-phone-mockup.webp"
+    ],
+    "alts": [
+      "Mockup of The Motion Library website displayed on a laptop screen",
+      "Mockup of The Motion Library website displayed on a smartphone"
+    ],
+    "status": "Completed",
+    "intro": "Interactive web animation library, showcasing scroll effects and immersive transitions.",
+    "text": "A platform gathering a collection of modern web animations, built to explore and demonstrate scroll interactions, smooth transitions and advanced visual effects. Developed with GSAP and Motion for performant, precise animations, with a responsive layout and a polished user experience across all devices."
+  },
+  {
+    "name": "Porvenir",
+    "id": "porvenir",
+    "year": "2026",
+    "color": "#a7bb77",
+    "link": "https://porvenir-v2.vercel.app/",
+    "type": "Showcase Website",
+    "videos": [
+      "/videos/porvenir-hero.mp4",
+      "/videos/porvenir-body.mp4"
+    ],
+    "images": [
+      "/images/porvenir-mockup-tablet.webp",
+      "/images/porvenir-mockup-mobile.webp"
+    ],
+    "alts": [
+      "Mockup of the Porvenir website displayed on a tablet",
+      "Mockup of the Porvenir website displayed on a mobile phone"
+    ],
+    "status": "Completed",
+    "intro": "Responsive showcase website for a guesthouse, built for a client.",
+    "text": "Showcase website built with React for the Auberge del Porvenir. A clear, readable interface designed to turn visitors into customers. Strong focus on responsive design, accessibility and SEO optimization. My first client project, delivered and deployed to production."
+  },
+  {
+    "name": "Personal Portfolio",
+    "id": "portfolio",
+    "year": "2026",
+    "color": "#C0C0C0",
+    "link": "https://sendra-florian.vercel.app/",
+    "type": "Portfolio",
+    "videos": [
+      "/videos/portfolio-intro.mp4",
+      "/videos/portfolio-body.mp4"
+    ],
+    "images": [
+      "/images/portfolio-mobile-mockup.webp",
+      "/images/portfolio-laptop-mockup.webp"
+    ],
+    "alts": [
+      "Mockup of portfolio v2 displayed on a laptop",
+      "Mockup of portfolio v2 displayed on a smartphone"
+    ],
+    "status": "Completed",
+    "intro": "React portfolio with advanced animations, refined design and optimized performance.",
+    "text": "The second version of my portfolio, designed as a real end-to-end creative project. Animations built with Motion, a design inspired by the best web studios, smooth navigation and an immersive experience."
+  },
+  {
+    "name": "FX Checker",
+    "id": "fx-checker",
+    "year": "2026",
+    "color": "#84CC16",
+    "link": "https://fx-checker-five.vercel.app/",
+    "type": "Web Application",
+    "videos": [
+      "/videos/fx-checker-charts.mp4",
+      "/videos/fx-checker-interface.mp4"
+    ],
+    "images": [
+      "/images/fx-checker-mockup-desktop.webp",
+      "/images/fx-checker-mockup-mobile.webp"
+    ],
+    "alts": [
+      "FX Checker interface showing a real-time exchange rate chart on a computer screen",
+      "FX Checker mobile interface with currency selection and conversion history"
+    ],
+    "status": "Completed",
+    "intro": "Exchange rate tracking app, with clear and interactive visualization of currency fluctuations.",
+    "text": "FX Checker is a web application for tracking and comparing exchange rates in real time. The project emphasizes data clarity with interactive charts, a minimalist interface and a smooth user experience. Built with React and Recharts, it offers dynamic visualization of currency fluctuations, along with a comparison tool and a history feature. Fully responsive and optimized for quick reading of financial data."
+  },
+  {
+    "name": "Countries App",
+    "id": "countriesapp",
+    "year": "2026",
+    "color": "#FEBA68",
+    "link": "https://restapicountriesflow2510.netlify.app/",
+    "type": "Web Application",
+    "videos": [
+      "/videos/countries-body.mp4",
+      "/videos/countries-search.mp4"
+    ],
+    "images": [
+      "/images/countries-mockup.webp",
+      "/images/countries-mockup2.webp"
+    ],
+    "alts": [
+      "Mockup of the REST Countries application on a laptop",
+      "Mockup of the REST Countries application on a tablet"
+    ],
+    "status": "Completed",
+    "intro": "React application connected to a REST API to explore countries around the world.",
+    "text": "A complete application consuming the REST Countries API, with dynamic search, region filters and navigation between detail pages. State management with React Hooks, a responsive interface and a smooth user experience across all devices."
+  },
+  {
+    "name": "Weather App",
+    "id": "weather-app",
+    "year": "2026",
+    "color": "#96B1C3",
+    "link": "https://weathernowflow2510.netlify.app/",
+    "type": "Web Application",
+    "videos": [
+      "/videos/weather-search.mp4",
+      "/videos/weather-switch.mp4"
+    ],
+    "images": [
+      "/images/weather-mockup.webp",
+      "/images/weather-mockup2.webp"
+    ],
+    "alts": [
+      "Mockup of the weather application on a laptop",
+      "Mockup of the weather application on two smartphones"
+    ],
+    "status": "Completed",
+    "intro": "Real-time weather app connected to a geolocation API.",
+    "text": "An application to check the weather of any city through an API. Real-time data display, a responsive interface that stays readable on every screen. Includes state management, error handling and a polished user experience."
+  }
+]
