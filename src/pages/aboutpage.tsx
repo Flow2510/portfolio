@@ -28,7 +28,7 @@ export default function AboutPage() {
         },
         {
             "name": 'Linkedin',
-            "link": "www.linkedin.com/in/florian-sendra-3270961a1"
+            "link": "https://www.linkedin.com/in/florian-sendra-3270961a1"
         },
         {
             "name": 'Mail',
@@ -49,7 +49,7 @@ export default function AboutPage() {
             </section>
             <section className="w-full sticky top-[calc(50%-60px)] flex items-center justify-center">
                 <div className="h-30 w-30 rounded-full flex items-center justify-center overflow-hidden">
-                    <img src="/images/photo.png" className="h-full w-full object-cover" alt="" />
+                    <img src="/images/photo.png" className="h-full w-full object-cover" alt="Portrait de Florian Sendra, développeur front-end" />
                 </div>
             </section>
             <section className="grid grid-cols-2 overflow-hidden relative gap-y-25 pt-30">

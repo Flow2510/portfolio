@@ -107,7 +107,7 @@ export default function Loader({ isLoading, setIsLoading, isDesktop } : LoaderTy
             </div>
             {items.map((item, index) => (
                 <div className='absolute w-20 h-12 lg:w-34 lg:h-22 loader-card' key={item.id + `${index}`}>
-                <img src={item.images[0]} className='w-full h-full bg-amber-200' alt="" loading='lazy'/>
+                <img src={item.images[0]} className='w-full h-full' alt={item.alts[0]}/>
                 </div>
             ))}
             </div>

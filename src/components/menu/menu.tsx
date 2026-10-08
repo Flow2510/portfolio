@@ -54,9 +54,9 @@ export default function Menu({ menuIsOpen, setMenuIsOpen } : MenuProps) {
                 <div className="w-full h-px bg-neutral-500" 
                 />
                 <div className="b-0 flex justify-between font-light">
-                    <a href="/" target="_blank">Github</a>
-                    <a href="/" target="_blank">Linkedin</a>
-                    <a href="/" target="_blank">Mail</a>
+                    <a href="https://github.com/Flow2510" target="_blank">Github</a>
+                    <a href="https://www.linkedin.com/in/florian-sendra-3270961a1" target="_blank">Linkedin</a>
+                    <a href="mailto:sendra.florian@gmail.com" target="_blank">Mail</a>
                 </div>
             </div>
         </div>

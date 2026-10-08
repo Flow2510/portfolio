@@ -19,7 +19,7 @@ export default function ProjectGallery({ selectedProject } : ProjectGalleryProps
     return(
         <div className="flex flex-col gap-10 max-w-350 m-auto">
             <div className="w-full aspect-video overflow-hidden">
-                <img className="w-full h-full object-cover" src={selectedProject.images[0]} alt="" />
+                <img className="w-full h-full object-cover" src={selectedProject.images[0]} alt={selectedProject.alts[0]} />
             </div>
             <div className="flex flex-col gap-10 md:flex-row">
                 <div className="w-full aspect-video overflow-hidden">
@@ -30,7 +30,7 @@ export default function ProjectGallery({ selectedProject } : ProjectGalleryProps
                 </div>
             </div>
             <div className="w-full aspect-video overflow-hidden">
-                <img className="w-full h-full object-cover" src={selectedProject.images[1]} alt="" />
+                <img className="w-full h-full object-cover" src={selectedProject.images[1]} alt={selectedProject.alts[1]} loading="lazy"/>
             </div>
         </div>
     )

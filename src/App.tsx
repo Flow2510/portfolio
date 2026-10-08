@@ -51,7 +51,7 @@ function App() {
         isDesktop={isDesktop}
       />
       <Routes>
-        <Route path='/' element={<HomePage isDesktop={isDesktop}/>}/>
+        <Route path='/' element={<HomePage isDesktop={isDesktop} />}/>
         <Route path='/projects/:id' element={<ProjectPage />}/>
         <Route path='/projects' element={<ProjectsPage />}/>
         <Route path='/about' element={<AboutPage />}/>

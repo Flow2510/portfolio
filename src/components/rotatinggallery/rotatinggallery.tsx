@@ -137,7 +137,7 @@ export default function RotatingGallery({ isDesktop } : RotatingGalleryProps ){
                         className="absolute w-20 h-12 lg:w-34 lg:h-22 shadow-sm flex items-center justify-center overflow-hidden"
                     >
                         <NavLink to={`/projects/${item.id}`} className={'active:cursor-grabbing'}>
-                            <img src={item.images[0]} alt={item.alts[0]} loading="lazy" className="w-full h-full object-cover image-rotating" />
+                            <img src={item.images[0]} alt={item.alts[0]} className="w-full h-full object-cover image-rotating" />
                         </NavLink>
                     </div>
                 ))}

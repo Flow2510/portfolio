@@ -45,8 +45,8 @@ export default function Hero({ isDesktop } : HeroProps) {
     })
 
     return (
-        <section className="relative h-dvh w-full overflow-hidden pt-23 flex flex-col" id="home">
-            <div className="flex-1">     
+        <section className="relative h-dvh w-full overflow-hidden pt-23 flex flex-col justify-end" id="home">
+            <div className="absolute inset-0">     
                 <RotatingGallery isDesktop={isDesktop}/>
             </div>
             <div className="p-2.5 flex justify-between text-[13px] leading-[90%] md:text-[15px] md:p-5" ref={heroFooterRef}>

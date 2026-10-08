@@ -27,8 +27,8 @@ export default function Header({ setMenuIsOpen, menuIsOpen, isDesktop } : Header
     })
 
     return(
-        <header className="w-full flex justify-between fixed top-0 left-0 p-2.5 z-15 mix-blend-exclusion text-neutral-50 md:p-5" ref={headerRef} style={{ alignItems: isDesktop ? "start" : 'center' }}>
-            <NavLink to={'/'}>
+        <header className="w-full flex justify-between fixed top-0 pointer-events-none left-0 p-2.5 z-15 mix-blend-exclusion text-neutral-50 md:p-5" ref={headerRef} style={{ alignItems: isDesktop ? "start" : 'center' }}>
+            <NavLink to={'/'} className={'pointer-events-auto'}>
                 <h1  className="flex flex-col uppercase font-[antonio] text-3xl tracking-[-1px] font-semibold md:text-4xl">
                     <span>
                         Florian
@@ -38,7 +38,7 @@ export default function Header({ setMenuIsOpen, menuIsOpen, isDesktop } : Header
                     </span>
                 </h1>
             </NavLink>
-            <div className="hidden md:inline-block">
+            <div className="hidden md:inline-block pointer-events-auto">
                 <nav className="flex gap-5">
                     <NavLink to={'/'} className="flex gap-5 group">
                         <HoverTranslate 
@@ -62,7 +62,7 @@ export default function Header({ setMenuIsOpen, menuIsOpen, isDesktop } : Header
                     </NavLink>
                 </nav>
             </div>
-                <div className="md:hidden">
+                <div className="md:hidden pointer-events-auto">
                     <button type="button" onClick={() => setMenuIsOpen(!menuIsOpen)} className="cursor-pointer uppercase border px-4 py-1.5 flex flex-col relative font-light">
                         <span className="inline-block overflow-hidden md:text-xl">
                             <span className=" inline-block duration-300" style={{ transform: menuIsOpen? 'translateY(-100%)' : 'translateY(0%)'}}>
