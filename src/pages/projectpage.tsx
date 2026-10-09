@@ -17,7 +17,7 @@ export default function ProjectPage() {
             />
             <div className='h-80 w-full flex items-end justify-center'>
                 <a className='text-sm' href='mailto:sendra.florian@gmail.com'>
-                    Florian Sendra ©2026
+                    Florian Sendra © 2026
                 </a>
             </div>
         </main>

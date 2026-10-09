@@ -4,16 +4,15 @@ import AnimatedText from "../components/animatedtext/animatedtext";
 
 export default function AboutPage() {
     const servicesList = [
-        "Front-end Development",
+        "Front-end Engineering",
         "UI / UX Integration",
-        "Web Design",
-        "API & Back-end",
-        "Performance Optimization"
+        "Interactive Animations",
+        "Performance Optimization",
+        "Full-stack Integration"
     ]
 
     const stackList = [
         "React",
-        "Next.js",
         "TypeScript",
         "Tailwind CSS",
         "Node.js",
@@ -44,7 +43,7 @@ export default function AboutPage() {
         <main className="bg-neutral-50 relative p-2.5 md:p-5">
             <section className="w-full h-dvh flex items-center justify-center">
                 <p className="text-5xl text-center font-serif tracking-tight leading-[130%] md:text-6xl lg:text-7xl max-w-250">
-                    Hi, I'm Florian, a web developer crafting clean, expressive interfaces.
+                    Hi, I'm Florian, a web developer crafting modern user experiences.
                 </p>
             </section>
             <section className="w-full sticky top-[calc(50%-60px)] flex items-center justify-center">
@@ -57,13 +56,13 @@ export default function AboutPage() {
                     direction={'left'}
                     column={1}
                     row={1}
-                    text={'Front-end focused web developer, I build clean, fast and accessible interfaces. I care as much about visual detail as code quality, and I\'m currently open to new opportunities.'}
+                    text={'I turn designs into responsive, high-performance interfaces using React and TypeScript. I care deeply about code quality, accessibility, and smooth user interactions that elevate the overall experience'}
                 />
                 <AnimatedText 
                     direction={'right'}
                     column={2}
                     row={2}
-                    text={'I\'m currently learning back-end development, building APIs with Node.js and Express and exploring Supabase for databases and authentication. It helps me understand a project end to end and work more closely with the whole team, from design to production.'}
+                    text={"To become a more complete developer, I'm currently expanding into the back-end with Node.js, Express, and Supabase. Building personal projects helps me understand the full picture, from database design to the user interface."}
                 />
                 <AnimatedList 
                     direction={"left"}
@@ -88,12 +87,26 @@ export default function AboutPage() {
                 />
             </section>
             <div className="w-full h-dvh flex items-center justify-center relative text-neutral-50 mix-blend-difference">
-                <p className="text-5xl text-center font-serif tracking-tight leading-[130%] md:text-6xl lg:text-7xl max-w-250">
-                    Open to full-time, fixed-term or work-study roles. Freelance projects are welcome too.
-                </p>
+                <div>
+                    <p className="text-5xl text-center font-serif tracking-tight leading-[130%] md:text-6xl lg:text-7xl max-w-250">
+                        <span>
+                            Looking for my next challenge in a full-time, fixed-term, or work-study role. Got a project in mind? 
+                        </span>
+                        <span className="pl-2.5 inline-block">
+                            <a href="mailto:sendra.florian@gmail.com" className="relative inline-block">
+                                <span className="">
+                                    Let’s talk.
+                                </span>
+                                <span className="absolute bottom-2 md:bottom-3 left-0 w-full h-0.5 bg-white inline-block">
+            
+                                </span>
+                            </a>
+                        </span>
+                    </p>
+                </div>
                 <div className="absolute bottom-0 w-full left-0 flex items-center justify-center">
                     <a className='text-sm' href='mailto:sendra.florian@gmail.com'>
-                        Florian Sendra ©2026
+                        Florian Sendra © 2026
                     </a>
                 </div>
             </div>

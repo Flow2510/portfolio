@@ -62,11 +62,6 @@ function App() {
 
 export default App
 
-// faire un depot git
-// verifier css
-// choisirs polices, etc
-// finir d'animer plus verifications des animations
-// finir les textes/img/alts...
 // SEO
 // optimiser
-// mettre en ligne
+// mettre plusieurs sources d'images de tailles differentes

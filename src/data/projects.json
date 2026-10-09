@@ -41,7 +41,7 @@
       "Mockup of the Porvenir website displayed on a tablet",
       "Mockup of the Porvenir website displayed on a mobile phone"
     ],
-    "status": "Completed",
+    "status": "In Progress",
     "intro": "Responsive showcase website for a guesthouse, built for a client.",
     "text": "Showcase website built with React for the Auberge del Porvenir. A clear, readable interface designed to turn visitors into customers. Strong focus on responsive design, accessibility and SEO optimization. My first client project, delivered and deployed to production."
   },
