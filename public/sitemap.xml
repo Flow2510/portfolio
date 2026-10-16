@@ -1,50 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://sendra-florian.vercel.app/</loc>
+    <loc>https://www.florian-sendra.dev/</loc>
     <lastmod>2026-10-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://sendra-florian.vercel.app/about</loc>
+    <loc>https://www.florian-sendra.dev/about</loc>
     <lastmod>2026-10-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://sendra-florian.vercel.app/projects</loc>
+    <loc>https://www.florian-sendra.dev/projects</loc>
     <lastmod>2026-10-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://sendra-florian.vercel.app/projects/the-motion-library</loc>
+    <loc>https://www.florian-sendra.dev/projects/the-motion-library</loc>
     <lastmod>2026-10-07</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://sendra-florian.vercel.app/projects/porvenir</loc>
+    <loc>https://www.florian-sendra.dev/projects/porvenir</loc>
     <lastmod>2026-10-07</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://sendra-florian.vercel.app/projects/portfolio</loc>
+    <loc>https://www.florian-sendra.dev/projects/portfolio</loc>
     <lastmod>2026-10-07</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://sendra-florian.vercel.app/projects/fx-checker</loc>
+    <loc>https://www.florian-sendra.dev/projects/fx-checker</loc>
     <lastmod>2026-10-07</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://sendra-florian.vercel.app/projects/countriesapp</loc>
+    <loc>https://www.florian-sendra.dev/projects/countriesapp</loc>
     <lastmod>2026-10-07</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://sendra-florian.vercel.app/projects/weather-app</loc>
+    <loc>https://www.florian-sendra.dev/projects/weather-app</loc>
     <lastmod>2026-10-07</lastmod>
     <priority>0.6</priority>
   </url>
