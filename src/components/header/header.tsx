@@ -1,33 +1,50 @@
 import { NavLink } from "react-router-dom";
 import HoverTranslate from "../hovertranslate/hovertranslate";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
 type HeaderProps = {
     readonly setMenuIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
     readonly menuIsOpen: boolean;
-    readonly isDesktop: boolean
+    readonly isDesktop: boolean;
+    readonly contactModalIsOpen: boolean;
+    readonly setContactModalIsOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-export default function Header({ setMenuIsOpen, menuIsOpen, isDesktop } : HeaderProps ){
+export default function Header({ setMenuIsOpen, menuIsOpen, isDesktop, contactModalIsOpen, setContactModalIsOpen } : HeaderProps ){
     const headerRef = useRef<HTMLHeadElement>(null)
 
     useGSAP(() => {
         if(!headerRef.current) return
 
         gsap.fromTo(headerRef.current, {
-            yPercent: -100
-        },{
-            yPercent: 0,
-            duration: 0.3,
-            delay: 0.5
-        }
-    )
+                yPercent: -100
+            },{
+                yPercent: 0,
+                duration: 0.3,
+                delay: 0.5
+            }
+        )
     })
 
+    useEffect(() => {
+        gsap.to('.button-line-top',{
+            xPercent: menuIsOpen? -100 : 0,
+            delay: menuIsOpen? 0 : 0.5
+        })
+        gsap.to('.button-line-bottom',{
+            xPercent: menuIsOpen? 100 : 0,
+            delay: menuIsOpen? 0 : 0.5
+        })
+        gsap.to('.button-close',{
+            scale: menuIsOpen? 1 : 0,
+            delay: menuIsOpen? 0.5 : 0
+        })
+    }, [menuIsOpen])
+
     return(
-        <header className="w-full flex justify-between fixed top-0 pointer-events-none left-0 p-2.5 z-15 mix-blend-exclusion text-neutral-50 md:p-5" ref={headerRef} style={{ alignItems: isDesktop ? "start" : 'center' }}>
+        <header className="w-full flex justify-between fixed top-0 left-0 p-2.5 z-15 md:p-5 mix-blend-exclusion text-neutral-50" ref={headerRef} style={{ alignItems: isDesktop ? "start" : 'center' }}>
             <NavLink to={'/'} className={'pointer-events-auto'}>
                 <h1  className="flex flex-col uppercase font-[antonio] text-3xl tracking-[-1px] font-semibold md:text-4xl">
                     <span>
@@ -55,27 +72,35 @@ export default function Header({ setMenuIsOpen, menuIsOpen, isDesktop } : Header
                             text="About"
                         />
                     </NavLink>
-                    <NavLink to={'mailto:sendra.florian@gmail.com'} target="_blank" className="flex gap-5 group">
+                    <button type="button" onClick={() => setContactModalIsOpen(!contactModalIsOpen)} className="flex gap-5 group cursor-pointer">
                         <HoverTranslate 
                             text="Contact"
                         />
-                    </NavLink>
+                    </button>
                 </nav>
             </div>
-                <div className="md:hidden pointer-events-auto">
-                    <button type="button" onClick={() => setMenuIsOpen(!menuIsOpen)} className="cursor-pointer uppercase border px-4 py-1.5 flex flex-col relative font-light">
-                        <span className="inline-block overflow-hidden md:text-xl">
-                            <span className=" inline-block duration-300" style={{ transform: menuIsOpen? 'translateY(-100%)' : 'translateY(0%)'}}>
-                                Menu
-                            </span>
+            <div className="md:hidden">
+                <button
+                    onClick={() => setMenuIsOpen(!menuIsOpen)}
+                    className="flex flex-col gap-1.5 button-open cursor-pointer relative py-4"
+                >
+                    <div className="overflow-hidden">
+                        <div className="h-px w-12.5 bg-neutral-400 button-line-top">
+
+                        </div>
+                    </div>
+                    <div className="overflow-hidden">
+                        <div className="h-px w-12.5 bg-neutral-50 button-line-bottom">
+
+                        </div>
+                    </div>
+                    <div className="button-close uppercase absolute top-1/2 left-1/2 -translate-1/2 bg-neutral-100 rounded-full w-12 h-12 flex font-extralight items-center justify-center">
+                        <span className="text-black">
+                            ╳
                         </span>
-                        <span className="absolute inline-block overflow-hidden">
-                            <span className="inline-block duration-300" style={{ transform: menuIsOpen? 'translateY(0%)' : 'translateY(-100%)'}}>
-                                Close
-                            </span>
-                        </span>
-                    </button>
-                </div>
+                    </div>
+                </button>
+            </div>
         </header>
     )
 }

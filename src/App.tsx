@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useLocation } from 'react-router-dom'
 import HomePage from './pages/homepage'
 import Header from './components/header/header'
 import Menu from './components/menu/menu'
@@ -9,11 +9,14 @@ import ScrollToTop from './components/scrolltotop/scrolltotop'
 import ProjectsPage from './pages/projectspage'
 import AboutPage from './pages/aboutpage'
 import Loader from './components/loader/loader'
+import ContactModal from './components/contactmodal/contactmodal'
 
 function App() {
   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 1024)
   const [menuIsOpen, setMenuIsOpen] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
+  const [contactModalIsOpen, setContactModalIsOpen] = useState(false)
+  const { pathname } = useLocation()
 
   useEffect(()=> {
     const handleResize = () => {
@@ -24,6 +27,8 @@ function App() {
       }
     }
 
+    handleResize()
+
     window.addEventListener("resize", handleResize);
 
     return () => {
@@ -31,24 +36,35 @@ function App() {
     }    
   }, [])
 
-  if (isLoading) return <Loader isLoading={isLoading} setIsLoading={setIsLoading} isDesktop={isDesktop}/>
+  useEffect(() => {
+      if (pathname !== "/") {
+          setIsLoading(false)
+      }
+  }, [pathname])
+
+  if (isLoading && location.pathname === '/') return <Loader isLoading={isLoading} setIsLoading={setIsLoading} isDesktop={isDesktop}/>
 
   return (
-    <div className='font-[inter]'
-      style={{
-        background: "#fafafa",
-        color: "#131313",
-      }}
+    <div className='font-[inter] bg-neutral-50 text-neutral-950'
     >
       <ScrollToTop />
       <Menu
         menuIsOpen={menuIsOpen}
         setMenuIsOpen={setMenuIsOpen} 
+        isDesktop={isDesktop}
+        contactModalIsOpen={contactModalIsOpen}
+        setContactModalIsOpen={setContactModalIsOpen}
       />
+      <ContactModal
+          contactModalIsOpen={contactModalIsOpen}
+          setContactModalIsOpen={setContactModalIsOpen}
+        />
       <Header
         setMenuIsOpen={setMenuIsOpen}
         menuIsOpen={menuIsOpen}
         isDesktop={isDesktop}
+        contactModalIsOpen={contactModalIsOpen}
+        setContactModalIsOpen={setContactModalIsOpen}
       />
       <Routes>
         <Route path='/' element={<HomePage isDesktop={isDesktop} />}/>
@@ -62,6 +78,5 @@ function App() {
 
 export default App
 
-// SEO
-// optimiser
 // mettre plusieurs sources d'images de tailles differentes
+// finir une modal contact, faire transitions entre les pages
