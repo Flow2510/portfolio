@@ -44,7 +44,7 @@ export default function Header({ setMenuIsOpen, menuIsOpen, isDesktop, contactMo
     }, [menuIsOpen])
 
     return(
-        <header className="w-full flex justify-between fixed top-0 left-0 p-2.5 z-15 md:p-5 mix-blend-exclusion text-neutral-50" ref={headerRef} style={{ alignItems: isDesktop ? "start" : 'center' }}>
+        <header className="w-full flex justify-between fixed top-0 left-0 p-2.5 z-15 md:p-5 mix-blend-exclusion text-white" ref={headerRef} style={{ alignItems: isDesktop ? "start" : 'center' }}>
             <NavLink to={'/'} className={'pointer-events-auto'}>
                 <h1  className="flex flex-col uppercase font-[antonio] text-3xl tracking-[-1px] font-semibold md:text-4xl">
                     <span>

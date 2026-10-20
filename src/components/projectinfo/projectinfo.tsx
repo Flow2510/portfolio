@@ -16,11 +16,20 @@ type ProjectInfoProps = {
         link: string;
         type: string;
         videos: string[];
-        images: string[];
-        alts: string[];
+        images: {
+            mockup: string[];
+            desktop: string[];
+            mobile: string[];
+            background: string[];
+        };
+        alts: {
+            mockup: string[];
+            desktop: string[];
+            mobile: string[];
+        };
+        status: string;
         intro: string;
         text: string;
-        status: string;
     }
 }
 
@@ -51,14 +60,9 @@ export default function ProjectInfo({ selectedProject } : ProjectInfoProps) {
     })
 
     return(
-        <section className="flex flex-col gap-15 p-2.5 md:p-5">
-            <div className="flex flex-col gap-10">
-                <div className="h-[30dvh] flex items-end ">
-                    <h2 className="text-[64px] uppercase font-humane font-extrabold leading-[100%]" ref={titleRef}>
-                        {selectedProject.name}
-                    </h2>
-                </div>
-                <div className="w-full h-px bg-neutral-400"></div>
+        <section className="flex flex-col gap-15 relative z-1 bg-neutral-50">
+            <div className="flex flex-col gap-10 p-2.5 md:p-5 py-15 lg:py-30">
+                <div className="w-full h-px bg-neutral-400 lg:hidden"></div>
                 <div className="flex gap-10">
                     <div className="flex flex-col gap-2">
                         <p className="uppercase tracking-wide font-light">Year</p>
@@ -73,7 +77,10 @@ export default function ProjectInfo({ selectedProject } : ProjectInfoProps) {
                         <p>{selectedProject.status}</p>
                     </div>
                 </div>
-                <div>
+                <div className="flex flex-col gap-5">
+                    <p className="font-light leading-relaxed max-w-200">
+                        {selectedProject.intro}
+                    </p>
                     <p className="font-light leading-relaxed max-w-200">
                         {selectedProject.text}
                     </p>

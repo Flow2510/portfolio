@@ -47,7 +47,7 @@ export default function AnimatedList({ direction, list, title, column, row } : A
                 justifySelf: direction === "left" ? "end" : "start"
             }}
         >
-            <h2 className="text-[64px] uppercase font-humane font-extrabold leading-[100%] title">
+            <h2 className="text-4xl uppercase font-[antonio] font-extrabold leading-[100%] title">
                 {title}
             </h2>
             <ul>

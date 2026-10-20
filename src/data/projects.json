@@ -10,20 +10,56 @@
       "/videos/motion-library-body.mp4",
       "/videos/motion-library-collection.mp4"
     ],
-    "images": [
-      "/images/motion-library-computer-mockup.webp",
-      "/images/motion-library-phone-mockup.webp"
-    ],
-    "alts": [
-      "Mockup of The Motion Library website displayed on a laptop screen",
-      "Mockup of The Motion Library website displayed on a smartphone"
-    ],
+    "images": {
+      "mockup": [
+        "/images/the-motion-library/mockup/motion-library-computer-mockup.webp",
+        "/images/the-motion-library/mockup/motion-library-phone-mockup.webp"
+      ],
+      "desktop": [
+        "/images/the-motion-library/desktop/1.webp",
+        "/images/the-motion-library/desktop/2.webp",
+        "/images/the-motion-library/desktop/3.webp",
+        "/images/the-motion-library/desktop/4.webp",
+        "/images/the-motion-library/desktop/5.webp"
+      ],
+      "mobile": [
+        "/images/the-motion-library/mobile/1.webp",
+        "/images/the-motion-library/mobile/2.webp",
+        "/images/the-motion-library/mobile/3.webp",
+        "/images/the-motion-library/mobile/4.webp",
+        "/images/the-motion-library/mobile/5.webp"
+      ],
+      "background": [
+        "/images/the-motion-library/background1.jpg",
+        "/images/the-motion-library/background2.jpg"
+      ]
+    },
+    "alts": {
+      "mockup": [
+        "Mockup of The Motion Library website displayed on a laptop screen",
+        "Mockup of The Motion Library website displayed on a smartphone"
+      ],
+      "desktop": [
+        "The Motion Library website desktop screenshot 1",
+        "The Motion Library website desktop screenshot 2",
+        "The Motion Library website desktop screenshot 3",
+        "The Motion Library website desktop screenshot 4",
+        "The Motion Library website desktop screenshot 5"
+      ],
+      "mobile": [
+        "The Motion Library website mobile screenshot 1",
+        "The Motion Library website mobile screenshot 2",
+        "The Motion Library website mobile screenshot 3",
+        "The Motion Library website mobile screenshot 4",
+        "The Motion Library website mobile screenshot 5"
+      ]
+    },
     "status": "Completed",
     "intro": "Interactive web animation library, showcasing scroll effects and immersive transitions.",
     "text": "A platform gathering a collection of modern web animations, built to explore and demonstrate scroll interactions, smooth transitions and advanced visual effects. Developed with GSAP and Motion for performant, precise animations, with a responsive layout and a polished user experience across all devices."
   },
   {
-    "name": "Porvenir",
+    "name": "Auberge del Porvenir",
     "id": "porvenir",
     "year": "2026",
     "color": "#a7bb77",
@@ -33,14 +69,50 @@
       "/videos/porvenir-hero.mp4",
       "/videos/porvenir-body.mp4"
     ],
-    "images": [
-      "/images/porvenir-mockup-tablet.webp",
-      "/images/porvenir-mockup-mobile.webp"
-    ],
-    "alts": [
-      "Mockup of the Porvenir website displayed on a tablet",
-      "Mockup of the Porvenir website displayed on a mobile phone"
-    ],
+    "images": {
+      "mockup": [
+        "/images/porvenir/mockup/porvenir-mockup-tablet.webp",
+        "/images/porvenir/mockup/porvenir-mockup-mobile.webp"
+      ],
+      "desktop": [
+        "/images/porvenir/desktop/1.webp",
+        "/images/porvenir/desktop/2.webp",
+        "/images/porvenir/desktop/3.webp",
+        "/images/porvenir/desktop/4.webp",
+        "/images/porvenir/desktop/5.webp"
+      ],
+      "mobile": [
+        "/images/porvenir/mobile/1.webp",
+        "/images/porvenir/mobile/2.webp",
+        "/images/porvenir/mobile/3.webp",
+        "/images/porvenir/mobile/4.webp",
+        "/images/porvenir/mobile/5.webp"
+      ],
+      "background": [
+        "/images/porvenir/background1.jpg",
+        "/images/porvenir/background2.jpg"
+      ]
+    },
+    "alts": {
+      "mockup": [
+        "Mockup of the Porvenir website displayed on a tablet",
+        "Mockup of the Porvenir website displayed on a mobile phone"
+      ],
+      "desktop": [
+        "Auberge del Porvenir website desktop screenshot 1",
+        "Auberge del Porvenir website desktop screenshot 2",
+        "Auberge del Porvenir website desktop screenshot 3",
+        "Auberge del Porvenir website desktop screenshot 4",
+        "Auberge del Porvenir website desktop screenshot 5"
+      ],
+      "mobile": [
+        "Auberge del Porvenir website mobile screenshot 1",
+        "Auberge del Porvenir website mobile screenshot 2",
+        "Auberge del Porvenir website mobile screenshot 3",
+        "Auberge del Porvenir website mobile screenshot 4",
+        "Auberge del Porvenir website mobile screenshot 5"
+      ]
+    },
     "status": "In Progress",
     "intro": "Responsive showcase website for a guesthouse, built for a client.",
     "text": "Showcase website built with React for the Auberge del Porvenir. A clear, readable interface designed to turn visitors into customers. Strong focus on responsive design, accessibility and SEO optimization. My first client project, delivered and deployed to production."
@@ -56,20 +128,54 @@
       "/videos/portfolio-intro.mp4",
       "/videos/portfolio-body.mp4"
     ],
-    "images": [
-      "/images/portfolio-mobile-mockup.webp",
-      "/images/portfolio-laptop-mockup.webp"
-    ],
-    "alts": [
-      "Mockup of portfolio v2 displayed on a laptop",
-      "Mockup of portfolio v2 displayed on a smartphone"
-    ],
+    "images": {
+      "mockup": [
+        "/images/portfolio/mockup/portfolio-mobile-mockup.webp",
+        "/images/portfolio/mockup/portfolio-laptop-mockup.webp"
+      ],
+      "desktop": [
+        "/images/portfolio/desktop/1.webp",
+        "/images/portfolio/desktop/2.webp",
+        "/images/portfolio/desktop/3.webp",
+        "/images/portfolio/desktop/4.webp",
+        "/images/portfolio/desktop/5.webp"
+      ],
+      "mobile": [
+        "/images/portfolio/mobile/portfolio-menu.png",
+        "/images/portfolio/mobile/portfolio-hero.png",
+        "/images/portfolio/mobile/portfolio-page.png"
+      ],
+      "background": [
+        "/images/portfolio/background1.jpg",
+        "/images/portfolio/background2.jpg"
+      ]
+    },
+    "alts": {
+      "mockup": [
+        "Mockup of portfolio v2 displayed on a smartphone",
+        "Mockup of portfolio v2 displayed on a laptop"
+      ],
+      "desktop": [
+        "Personal portfolio website desktop screenshot 1",
+        "Personal portfolio website desktop screenshot 2",
+        "Personal portfolio website desktop screenshot 3",
+        "Personal portfolio website desktop screenshot 4",
+        "Personal portfolio website desktop screenshot 5"
+      ],
+      "mobile": [
+        "Personal portfolio website mobile screenshot 1",
+        "Personal portfolio website mobile screenshot 2",
+        "Personal portfolio website mobile screenshot 3",
+        "Personal portfolio website mobile screenshot 4",
+        "Personal portfolio website mobile screenshot 5"
+      ]
+    },
     "status": "Completed",
     "intro": "React portfolio with advanced animations, refined design and optimized performance.",
     "text": "The second version of my portfolio, designed as a real end-to-end creative project. Animations built with Motion, a design inspired by the best web studios, smooth navigation and an immersive experience."
   },
   {
-    "name": "FX Checker",
+    "name": "FX Checker App",
     "id": "fx-checker",
     "year": "2026",
     "color": "#84CC16",
@@ -79,14 +185,50 @@
       "/videos/fx-checker-charts.mp4",
       "/videos/fx-checker-interface.mp4"
     ],
-    "images": [
-      "/images/fx-checker-mockup-desktop.webp",
-      "/images/fx-checker-mockup-mobile.webp"
-    ],
-    "alts": [
-      "FX Checker interface showing a real-time exchange rate chart on a computer screen",
-      "FX Checker mobile interface with currency selection and conversion history"
-    ],
+    "images": {
+      "mockup": [
+        "/images/fx-checker/mockup/fx-checker-mockup-desktop.webp",
+        "/images/fx-checker/mockup/fx-checker-mockup-mobile.webp"
+      ],
+      "desktop": [
+        "/images/fx-checker/desktop/1.webp",
+        "/images/fx-checker/desktop/2.webp",
+        "/images/fx-checker/desktop/3.webp",
+        "/images/fx-checker/desktop/4.webp",
+        "/images/fx-checker/desktop/5.webp"
+      ],
+      "mobile": [
+        "/images/fx-checker/mobile/1.webp",
+        "/images/fx-checker/mobile/2.webp",
+        "/images/fx-checker/mobile/3.webp",
+        "/images/fx-checker/mobile/4.webp",
+        "/images/fx-checker/mobile/5.webp"
+      ],
+      "background": [
+        "/images/fx-checker/background1.jpg",
+        "/images/fx-checker/background2.jpg"
+      ]
+    },
+    "alts": {
+      "mockup": [
+        "FX Checker interface showing a real-time exchange rate chart on a computer screen",
+        "FX Checker mobile interface with currency selection and conversion history"
+      ],
+      "desktop": [
+        "FX Checker application desktop screenshot 1",
+        "FX Checker application desktop screenshot 2",
+        "FX Checker application desktop screenshot 3",
+        "FX Checker application desktop screenshot 4",
+        "FX Checker application desktop screenshot 5"
+      ],
+      "mobile": [
+        "FX Checker application mobile screenshot 1",
+        "FX Checker application mobile screenshot 2",
+        "FX Checker application mobile screenshot 3",
+        "FX Checker application mobile screenshot 4",
+        "FX Checker application mobile screenshot 5"
+      ]
+    },
     "status": "Completed",
     "intro": "Exchange rate tracking app, with clear and interactive visualization of currency fluctuations.",
     "text": "FX Checker is a web application for tracking and comparing exchange rates in real time. The project emphasizes data clarity with interactive charts, a minimalist interface and a smooth user experience. Built with React and Recharts, it offers dynamic visualization of currency fluctuations, along with a comparison tool and a history feature. Fully responsive and optimized for quick reading of financial data."
@@ -102,14 +244,50 @@
       "/videos/countries-body.mp4",
       "/videos/countries-search.mp4"
     ],
-    "images": [
-      "/images/countries-mockup.webp",
-      "/images/countries-mockup2.webp"
-    ],
-    "alts": [
-      "Mockup of the REST Countries application on a laptop",
-      "Mockup of the REST Countries application on a tablet"
-    ],
+    "images": {
+      "mockup": [
+        "/images/countries-app/mockup/countries-mockup.webp",
+        "/images/countries-app/mockup/countries-mockup2.webp"
+      ],
+      "desktop": [
+        "/images/countries-app/desktop/1.webp",
+        "/images/countries-app/desktop/2.webp",
+        "/images/countries-app/desktop/3.webp",
+        "/images/countries-app/desktop/4.webp",
+        "/images/countries-app/desktop/5.webp"
+      ],
+      "mobile": [
+        "/images/countries-app/mobile/1.webp",
+        "/images/countries-app/mobile/2.webp",
+        "/images/countries-app/mobile/3.webp",
+        "/images/countries-app/mobile/4.webp",
+        "/images/countries-app/mobile/5.webp"
+      ],
+      "background": [
+        "/images/countries-app/background1.jpg",
+        "/images/countries-app/background2.jpg"
+      ]
+    },
+    "alts": {
+      "mockup": [
+        "Mockup of the REST Countries application on a laptop",
+        "Mockup of the REST Countries application on a tablet"
+      ],
+      "desktop": [
+        "REST Countries application desktop screenshot 1",
+        "REST Countries application desktop screenshot 2",
+        "REST Countries application desktop screenshot 3",
+        "REST Countries application desktop screenshot 4",
+        "REST Countries application desktop screenshot 5"
+      ],
+      "mobile": [
+        "REST Countries application mobile screenshot 1",
+        "REST Countries application mobile screenshot 2",
+        "REST Countries application mobile screenshot 3",
+        "REST Countries application mobile screenshot 4",
+        "REST Countries application mobile screenshot 5"
+      ]
+    },
     "status": "Completed",
     "intro": "React application connected to a REST API to explore countries around the world.",
     "text": "A complete application consuming the REST Countries API, with dynamic search, region filters and navigation between detail pages. State management with React Hooks, a responsive interface and a smooth user experience across all devices."
@@ -125,14 +303,50 @@
       "/videos/weather-search.mp4",
       "/videos/weather-switch.mp4"
     ],
-    "images": [
-      "/images/weather-mockup.webp",
-      "/images/weather-mockup2.webp"
-    ],
-    "alts": [
-      "Mockup of the weather application on a laptop",
-      "Mockup of the weather application on two smartphones"
-    ],
+    "images": {
+      "mockup": [
+        "/images/weather-app/mockup/weather-mockup.webp",
+        "/images/weather-app/mockup/weather-mockup2.webp"
+      ],
+      "desktop": [
+        "/images/weather-app/desktop/1.webp",
+        "/images/weather-app/desktop/2.webp",
+        "/images/weather-app/desktop/3.webp",
+        "/images/weather-app/desktop/4.webp",
+        "/images/weather-app/desktop/5.webp"
+      ],
+      "mobile": [
+        "/images/weather-app/mobile/1.webp",
+        "/images/weather-app/mobile/2.webp",
+        "/images/weather-app/mobile/3.webp",
+        "/images/weather-app/mobile/4.webp",
+        "/images/weather-app/mobile/5.webp"
+      ],
+      "background": [
+        "/images/weather-app/background1.jpg",
+        "/images/weather-app/background2.jpg"
+      ]
+    },
+    "alts": {
+      "mockup": [
+        "Mockup of the weather application on a laptop",
+        "Mockup of the weather application on two smartphones"
+      ],
+      "desktop": [
+        "Weather application desktop screenshot 1",
+        "Weather application desktop screenshot 2",
+        "Weather application desktop screenshot 3",
+        "Weather application desktop screenshot 4",
+        "Weather application desktop screenshot 5"
+      ],
+      "mobile": [
+        "Weather application mobile screenshot 1",
+        "Weather application mobile screenshot 2",
+        "Weather application mobile screenshot 3",
+        "Weather application mobile screenshot 4",
+        "Weather application mobile screenshot 5"
+      ]
+    },
     "status": "Completed",
     "intro": "Real-time weather app connected to a geolocation API.",
     "text": "An application to check the weather of any city through an API. Real-time data display, a responsive interface that stays readable on every screen. Includes state management, error handling and a polished user experience."

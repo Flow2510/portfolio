@@ -2,7 +2,7 @@ import { useRef, useState } from "react"
 import { NavLink } from "react-router-dom";
 
 type ProjectCardTypes={
-    readonly project: {
+        readonly project: {
         name: string;
         id: string;
         year: string;
@@ -10,8 +10,16 @@ type ProjectCardTypes={
         link: string;
         type: string;
         videos: string[];
-        images: string[];
-        alts: string[];
+        images: {
+            mockup: string[];
+            desktop: string[];
+            mobile: string[];
+        };
+        alts: {
+            mockup: string[];
+            desktop: string[];
+            mobile: string[];
+        };
         status: string;
         intro: string;
         text: string;
@@ -38,8 +46,8 @@ export default function ProjectCard({ project } : ProjectCardTypes) {
                 <div className="w-full aspect-square relative" onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
                     <img
                         className="absolute inset-0 w-full h-full object-cover"
-                        src={project.images[0]}
-                        alt={project.alts[0]}
+                        src={project.images.mockup[0]}
+                        alt={project.alts.mockup[0]}
                     />
                     <video
                         ref={videoRef}
@@ -56,7 +64,7 @@ export default function ProjectCard({ project } : ProjectCardTypes) {
                     <h2 className="font-semibold text-sm">
                         {project.name}
                     </h2>
-                    <h3 className="text-sm">
+                    <h3 className="text-sm ">
                         {project.type}
                     </h3>
                 </div>

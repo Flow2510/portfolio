@@ -2,6 +2,8 @@ import { NavLink, useParams } from "react-router-dom"
 import projects from '../data/projects.json'
 import ProjectInfo from "../components/projectinfo/projectinfo"
 import HoverTranslate from "../components/hovertranslate/hovertranslate"
+import ProjectHero from "../components/projecthero/projecthero"
+import NextProject from "../components/nextproject/nextproject"
 
 export default function ProjectPage() {
     const { id } = useParams()
@@ -26,22 +28,23 @@ export default function ProjectPage() {
             </div>
         </div>
         <div className='w-full flex items-end justify-center'>
-            <a className='text-sm' href='mailto:sendra.florian@gmail.com'>
+            <a className='text-sm' href='mailto:sendra.florian@gmail.com' target="_blank">
                 Florian Sendra © 2026
             </a>
         </div>
     </main>
     
     return(
-        <main className="p-2.5 md:p-5">
+        <main className="">
+            <ProjectHero 
+                selectedProject={selectedProject}
+            />
             <ProjectInfo 
                 selectedProject={selectedProject}
             />
-            <div className='h-80 w-full flex items-end justify-center'>
-                <a className='text-sm' href='mailto:sendra.florian@gmail.com'>
-                    Florian Sendra © 2026
-                </a>
-            </div>
+            <NextProject 
+                selectedProject={selectedProject}
+            />
         </main>
     )
 }

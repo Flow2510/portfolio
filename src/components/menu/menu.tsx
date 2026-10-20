@@ -52,48 +52,48 @@ export default function Menu({ menuIsOpen, setMenuIsOpen, isDesktop, contactModa
             >
                 <nav className="p-5 flex flex-col items-end gap-5 flex-1 justify-center">
                     <NavLink to={'/'} className="flex items-end gap-3" onClick={() => setMenuIsOpen(!menuIsOpen)}>
-                        <span className="text-6xl uppercase font-extrabold tracking-tight overflow-hidden">
+                        <span className="text-5xl uppercase font-extrabold tracking-tight overflow-hidden">
                             <span className="inline-block text-menu">
                                 Home
                             </span>
                         </span>
-                        <span className="text-sm font-[inter] overflow-hidden">
+                        <span className="text-2xl font-[italianno] overflow-hidden">
                             <span className="inline-block text-menu">
                                 01
                             </span>
                         </span>
                     </NavLink>
                     <NavLink to={'/projects'} className="flex items-end gap-3" onClick={() => setMenuIsOpen(!menuIsOpen)}>
-                        <span className="text-6xl uppercase font-extrabold tracking-tight overflow-hidden">
+                        <span className="text-5xl uppercase font-extrabold tracking-tight overflow-hidden">
                             <span className="inline-block text-menu">
                                 Work
                             </span>
                         </span>
-                        <span className="text-sm font-[inter] overflow-hidden">
+                        <span className="text-2xl font-[italianno] overflow-hidden">
                             <span className="inline-block text-menu">
                                 02
                             </span>
                         </span>
                     </NavLink>
                     <NavLink to={'/about'} className="flex items-end gap-3" onClick={() => setMenuIsOpen(!menuIsOpen)}>
-                        <span className="text-6xl uppercase font-extrabold tracking-tight overflow-hidden">
+                        <span className="text-5xl uppercase font-extrabold tracking-tight overflow-hidden">
                             <span className="inline-block text-menu">
                                 About
                             </span>
                         </span>
-                        <span className="text-sm font-[inter] overflow-hidden">
+                        <span className="text-2xl font-[italianno] overflow-hidden">
                             <span className="inline-block text-menu">
                                 03
                             </span>
                         </span>
                     </NavLink>
                     <button type="button" className="flex items-end gap-3 cursor-pointer" onClick={() => setContactModalIsOpen(!contactModalIsOpen)}>
-                        <span className="text-6xl uppercase font-extrabold tracking-tight overflow-hidden">
+                        <span className="text-5xl uppercase font-extrabold tracking-tight overflow-hidden">
                             <span className="inline-block text-menu">
                                 Contact
                             </span>
                         </span>
-                        <span className="text-sm font-[inter] overflow-hidden">
+                        <span className="text-2xl font-[italianno] overflow-hidden">
                             <span className="inline-block text-menu">
                                 04
                             </span>

@@ -17,14 +17,14 @@ export default function HoverTranslate({ text }: HoverTranslateProps) {
         
         gsap.to(lettersTop, {
             yPercent: isHovered ? -100 : 0,
-            duration: 0.2,
+            duration: 0.15,
             ease: "power4.inOut",
             stagger: 0.05
         })
 
         gsap.to(lettersBottom, {
             yPercent: isHovered ? -100 : 0,
-            duration: 0.2,
+            duration: 0.15,
             ease: "power4.inOut",
             stagger: 0.05
         })
