@@ -99,7 +99,9 @@ export default function ContactModal({ contactModalIsOpen, setContactModalIsOpen
                 </div>
             </div>
             <div className="w-1/2 left-1/2 h-dvh top-full z-100 hidden lg:flex fixed bg-neutral-50" ref={containerRightRef}>
-                
+                <div className="w-full h-full">
+                    <img src='/public/images/portfolio/background2.jpg' className="object-cover w-full h-full" alt="" />
+                </div>
                 <button type="button" className="absolute top-2.5 right-2.5 w-12 h-12 text-neutral-50 cursor-pointer hover:scale-[0.9] duration-200" onClick={() => setContactModalIsOpen(!contactModalIsOpen)}>
                     <div className=" uppercase bg-neutral-900 rounded-full w-full h-full flex font-extralight items-center justify-center contact-modal-button">
                         <span>

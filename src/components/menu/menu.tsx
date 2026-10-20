@@ -5,12 +5,11 @@ import gsap from "gsap";
 type MenuProps = {
     readonly menuIsOpen: boolean;
     readonly setMenuIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
-    readonly isDesktop: boolean;
     readonly contactModalIsOpen: boolean;
     readonly setContactModalIsOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-export default function Menu({ menuIsOpen, setMenuIsOpen, isDesktop, contactModalIsOpen, setContactModalIsOpen } : MenuProps) {
+export default function Menu({ menuIsOpen, setMenuIsOpen, contactModalIsOpen, setContactModalIsOpen } : MenuProps) {
 
     useEffect(() => {
         gsap.to('.menu-container', {

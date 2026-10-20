@@ -51,7 +51,6 @@ function App() {
       <Menu
         menuIsOpen={menuIsOpen}
         setMenuIsOpen={setMenuIsOpen} 
-        isDesktop={isDesktop}
         contactModalIsOpen={contactModalIsOpen}
         setContactModalIsOpen={setContactModalIsOpen}
       />
