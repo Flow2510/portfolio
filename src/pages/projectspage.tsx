@@ -1,29 +1,29 @@
-import ProjectCard from '../components/projectcard/projectcard'
+import ProjectCard from "../components/projectcard/projectcard";
 import projects from '../data/projects.json'
 
 export default function ProjectsPage(){
     return(
-        <main className="bg-neutral-50 p-2.5 md:p-5">
-            <section className="">
-                <div className='h-80 pb-20 flex flex-col justify-end items-center'>
-                    <p className='font-medium max-w-3/4 text-center'>
-                        A Curated Selection of Digital Projects
-                    </p>
-                </div>
-                <div className='flex flex-col gap-15 md:gap-x-2.5 md:grid md:grid-cols-2 xl:grid-cols-3'>
-                    {projects.map((project) => (
-                        <ProjectCard
-                            key={project.id}
-                            project={project}
-                        />
-                    ))}
+        <main className="bg-neutral-50">
+            <section className="relative z-1 bg-neutral-50">
+                <div className="h-[60dvh] flex flex-col justify-end pb-15">
+                    <h2 className="flex flex-col items-center">
+                        <span className="flex gap-2 font-[antonio] text-5xl md:text-6xl lg:text-7xl xl:text-8xl w-fit font-extrabold uppercase">
+                            Selected
+                        </span>
+                        <span className="flex gap-2 font-[italianno] w-fit font-extralight text-6xl md:text-7xl lg:text-8xl xl:text-9xl">
+                            Work
+                        </span>
+                    </h2>
                 </div>
             </section>
-            <div className='h-80 w-full flex items-end justify-center'>
-                <a className='text-sm' href='mailto:sendra.florian@gmail.com'>
-                    Florian Sendra © 2026
-                </a>
-            </div>
+            <section>
+                {projects.map((project) => (
+                    <ProjectCard 
+                        key={project.id}
+                        project={project}
+                    />
+                ))}
+            </section>
         </main>
     )
 }

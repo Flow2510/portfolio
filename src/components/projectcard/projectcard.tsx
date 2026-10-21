@@ -1,8 +1,10 @@
-import { useRef, useState } from "react"
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { useRef } from "react";
 import { NavLink } from "react-router-dom";
 
 type ProjectCardTypes={
-        readonly project: {
+    readonly project: {
         name: string;
         id: string;
         year: string;
@@ -27,48 +29,58 @@ type ProjectCardTypes={
 }
 
 export default function ProjectCard({ project } : ProjectCardTypes) {
-    const [isHovered, setIsHovered] = useState(false)
-    const videoRef = useRef<HTMLVideoElement>(null);
+    const containerRef = useRef<HTMLDivElement>(null)
+    const words = project.name.split(" ")
 
-    const handleEnter = () => {
-        setIsHovered(true);
-        videoRef.current?.play().catch(() => {});
-    };
+    useGSAP(() => {
+        if (!containerRef.current) return
 
-    const handleLeave = () => {
-        setIsHovered(false);
-        videoRef.current?.pause();
-    };
+        gsap.fromTo('.image-projects-card', 
+            {yPercent: -20},
+            {
+                yPercent: 20,
+                    scrollTrigger: {
+                    trigger: containerRef.current,
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: true
+                },
+            }
+        )
+    }, { scope: containerRef})
 
     return(
         <NavLink to={`/projects/${project.id}`}>
-            <article className="cursor-pointer flex flex-col gap-2">
-                <div className="w-full aspect-square relative" onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
-                    <img
-                        className="absolute inset-0 w-full h-full object-cover"
-                        src={project.images.mockup[0]}
-                        alt={project.alts.mockup[0]}
-                    />
-                    <video
-                        ref={videoRef}
-                        src={project.videos[0]}
-                        muted
-                        loop
-                        playsInline
-                        preload="metadata"
-                        className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300"
-                        style={{ opacity: isHovered ? 1 : 0 }}
-                    />
+            <div className="h-dvh w-full relative overflow-hidden text-neutral-50" ref={containerRef}>
+                <div className="absolute top-[-40%] h-[140%] w-full">
+                    <img src={project.images.mockup[0]} className="w-full h-full object-cover image-projects-card" alt="" />
                 </div>
-                <div>
-                    <h2 className="font-semibold text-sm">
-                        {project.name}
-                    </h2>
-                    <h3 className="text-sm ">
+                <div className="absolute inset-0 bg-neutral-900/40 flex justify-center items-center">
+                    <div>
+                        <h2 className="flex flex-col items-center">
+                            <span className="flex gap-2 font-[antonio] text-5xl md:text-6xl lg:text-7xl xl:text-8xl w-fit font-extrabold uppercase">
+                                {words.slice(0, Math.ceil(words.length / 2)).map((word, index) => (
+                                    <span key={word + index} >
+                                        {word}
+                                    </span>
+                                ))}
+                            </span>
+                            <span className="flex gap-2 font-[italianno] w-fit font-extralight text-6xl md:text-7xl lg:text-8xl xl:text-9xl">
+                                {words.slice(Math.ceil(words.length / 2)).map((word, index) => (
+                                    <span key={word + index}>
+                                        {word}
+                                    </span>
+                                ))}
+                            </span>
+                        </h2>
+                    </div>
+                </div>
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 pb-10 lg:pb-15">
+                    <p className="opacity-80 lg:text-xl">
                         {project.type}
-                    </h3>
+                    </p>
                 </div>
-            </article>
+            </div>
         </NavLink>
     )
 }

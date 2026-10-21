@@ -55,9 +55,9 @@ function App() {
         setContactModalIsOpen={setContactModalIsOpen}
       />
       <ContactModal
-          contactModalIsOpen={contactModalIsOpen}
-          setContactModalIsOpen={setContactModalIsOpen}
-        />
+        contactModalIsOpen={contactModalIsOpen}
+        setContactModalIsOpen={setContactModalIsOpen}
+      />
       <Header
         setMenuIsOpen={setMenuIsOpen}
         menuIsOpen={menuIsOpen}
