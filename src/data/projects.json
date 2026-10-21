@@ -16,18 +16,13 @@
         "/images/the-motion-library/mockup/motion-library-phone-mockup.webp"
       ],
       "desktop": [
-        "/images/the-motion-library/desktop/1.webp",
-        "/images/the-motion-library/desktop/2.webp",
-        "/images/the-motion-library/desktop/3.webp",
-        "/images/the-motion-library/desktop/4.webp",
-        "/images/the-motion-library/desktop/5.webp"
+        "/images/the-motion-library/desktop/motion-library-desktop-hero.png",
+        "/images/the-motion-library/desktop/motion-library-desktop-favorite.png"
       ],
       "mobile": [
-        "/images/the-motion-library/mobile/1.webp",
-        "/images/the-motion-library/mobile/2.webp",
-        "/images/the-motion-library/mobile/3.webp",
-        "/images/the-motion-library/mobile/4.webp",
-        "/images/the-motion-library/mobile/5.webp"
+        "/images/the-motion-library/mobile/motion-library-mobile-gallery.png",
+        "/images/the-motion-library/mobile/motion-library-mobile-animation.png",
+        "/images/the-motion-library/mobile/motion-library-mobile-hero.png"
       ],
       "background": [
         "/images/the-motion-library/background1.jpg",
@@ -75,18 +70,13 @@
         "/images/porvenir/mockup/porvenir-mockup-mobile.webp"
       ],
       "desktop": [
-        "/images/porvenir/desktop/1.webp",
-        "/images/porvenir/desktop/2.webp",
-        "/images/porvenir/desktop/3.webp",
-        "/images/porvenir/desktop/4.webp",
-        "/images/porvenir/desktop/5.webp"
+        "/images/porvenir/desktop/porvenir-desktop-animation.png",
+        "/images/porvenir/desktop/porvenir-desktop-card.png"
       ],
       "mobile": [
-        "/images/porvenir/mobile/1.webp",
-        "/images/porvenir/mobile/2.webp",
-        "/images/porvenir/mobile/3.webp",
-        "/images/porvenir/mobile/4.webp",
-        "/images/porvenir/mobile/5.webp"
+        "/images/porvenir/mobile/porvenir-mobile-menu.png",
+        "/images/porvenir/mobile/porvenir-mobile-hero.png",
+        "/images/porvenir/mobile/porvenir-mobile-gallery.png"
       ],
       "background": [
         "/images/porvenir/background1.jpg",
@@ -134,11 +124,8 @@
         "/images/portfolio/mockup/portfolio-laptop-mockup.webp"
       ],
       "desktop": [
-        "/images/portfolio/desktop/1.webp",
-        "/images/portfolio/desktop/2.webp",
-        "/images/portfolio/desktop/3.webp",
-        "/images/portfolio/desktop/4.webp",
-        "/images/portfolio/desktop/5.webp"
+        "/images/portfolio/desktop/portfolio-desktop-home.png",
+        "/images/portfolio/desktop/portfolio-desktop-project.png"
       ],
       "mobile": [
         "/images/portfolio/mobile/portfolio-menu.png",
@@ -191,18 +178,13 @@
         "/images/fx-checker/mockup/fx-checker-mockup-mobile.webp"
       ],
       "desktop": [
-        "/images/fx-checker/desktop/1.webp",
-        "/images/fx-checker/desktop/2.webp",
-        "/images/fx-checker/desktop/3.webp",
-        "/images/fx-checker/desktop/4.webp",
-        "/images/fx-checker/desktop/5.webp"
+        "/images/fx-checker/desktop/fx-checker-desktop-hero.png",
+        "/images/fx-checker/desktop/fx-checker-desktop-compare.png"
       ],
       "mobile": [
-        "/images/fx-checker/mobile/1.webp",
-        "/images/fx-checker/mobile/2.webp",
-        "/images/fx-checker/mobile/3.webp",
-        "/images/fx-checker/mobile/4.webp",
-        "/images/fx-checker/mobile/5.webp"
+        "/images/fx-checker/mobile/fx-checker-mobile-compare.png",
+        "/images/fx-checker/mobile/fx-checker-mobile-favorite.png",
+        "/images/fx-checker/mobile/fx-checker-mobile-history.png"
       ],
       "background": [
         "/images/fx-checker/background1.jpg",
@@ -250,18 +232,13 @@
         "/images/countries-app/mockup/countries-mockup2.webp"
       ],
       "desktop": [
-        "/images/countries-app/desktop/1.webp",
-        "/images/countries-app/desktop/2.webp",
-        "/images/countries-app/desktop/3.webp",
-        "/images/countries-app/desktop/4.webp",
-        "/images/countries-app/desktop/5.webp"
+        "/images/countries-app/desktop/countries-app-desktop-body.png",
+        "/images/countries-app/desktop/countries-app-desktop-dark.png"
       ],
       "mobile": [
-        "/images/countries-app/mobile/1.webp",
-        "/images/countries-app/mobile/2.webp",
-        "/images/countries-app/mobile/3.webp",
-        "/images/countries-app/mobile/4.webp",
-        "/images/countries-app/mobile/5.webp"
+        "/images/countries-app/mobile/countries-app-mobile-country.png",
+        "/images/countries-app/mobile/countries-app-mobile-body.png",
+        "/images/countries-app/mobile/countries-app-mobile-search.png"
       ],
       "background": [
         "/images/countries-app/background1.jpg",
@@ -309,18 +286,13 @@
         "/images/weather-app/mockup/weather-mockup2.webp"
       ],
       "desktop": [
-        "/images/weather-app/desktop/1.webp",
-        "/images/weather-app/desktop/2.webp",
-        "/images/weather-app/desktop/3.webp",
-        "/images/weather-app/desktop/4.webp",
-        "/images/weather-app/desktop/5.webp"
+        "/images/weather-app/desktop/weather-app-desktop-body.png",
+        "/images/weather-app/desktop/weather-app-desktop-hero.png"
       ],
       "mobile": [
-        "/images/weather-app/mobile/1.webp",
-        "/images/weather-app/mobile/2.webp",
-        "/images/weather-app/mobile/3.webp",
-        "/images/weather-app/mobile/4.webp",
-        "/images/weather-app/mobile/5.webp"
+        "/images/weather-app/mobile/weather-app-mobile-page.png",
+        "/images/weather-app/mobile/weather-app-mobile-body.png",
+        "/images/weather-app/mobile/weather-app-mobile-search.png"
       ],
       "background": [
         "/images/weather-app/background1.jpg",

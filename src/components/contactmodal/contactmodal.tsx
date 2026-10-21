@@ -100,7 +100,7 @@ export default function ContactModal({ contactModalIsOpen, setContactModalIsOpen
             </div>
             <div className="w-1/2 left-1/2 h-dvh top-full z-100 hidden lg:flex fixed bg-neutral-50" ref={containerRightRef}>
                 <div className="w-full h-full">
-                    <img src='/public/images/portfolio/background2.jpg' className="object-cover w-full h-full" alt="" />
+                    <img src='/images/porvenir/background2.jpg' className="object-cover w-full h-full" alt="" />
                 </div>
                 <button type="button" className="absolute top-2.5 right-2.5 w-12 h-12 text-neutral-50 cursor-pointer hover:scale-[0.9] duration-200" onClick={() => setContactModalIsOpen(!contactModalIsOpen)}>
                     <div className=" uppercase bg-neutral-900 rounded-full w-full h-full flex font-extralight items-center justify-center contact-modal-button">
@@ -109,11 +109,11 @@ export default function ContactModal({ contactModalIsOpen, setContactModalIsOpen
                         </span>
                     </div>
                 </button>
-                <div className="flex flex-col gap-2.5 absolute items-end bottom-2.5 right-2.5">                        
+                <div className="flex flex-col gap-2.5 absolute items-end bottom-2.5 right-2.5">
                         <div className="b-0 flex gap-5 font-light">
                             <a href="https://github.com/Flow2510" className="overflow-hidden hover:scale-[0.9] duration-300" target="_blank">
                                 <div className="uppercase rounded-full bg-neutral-50 w-10 h-10 flex font-extralight items-center justify-center item-modal">
-                                    <img src="/images/github-black-icon.png" className="w-10 h-10 object-cover scale-[1.2]" alt="" />
+                                    <img src="/images/github-black-icon.png" className="w-10.5 h-10.5 object-cover inline-block scale-[1.2]" alt="" />
                                 </div>
                             </a> 
                             <a href="https://www.linkedin.com/in/florian-sendra-3270961a1" className="overflow-hidden hover:scale-[0.9] duration-300" target="_blank">

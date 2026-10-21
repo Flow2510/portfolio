@@ -36,62 +36,73 @@ type ProjectInfoProps = {
 gsap.registerPlugin(ScrollTrigger, SplitText)
 
 export default function ProjectInfo({ selectedProject } : ProjectInfoProps) {
-    const titleRef = useRef(null)
+    const sectionRef = useRef<HTMLElement>(null)
+    const containerRef = useRef<HTMLDivElement>(null)
 
     useGSAP(() => {
-        if (!titleRef.current) return
+        if (!containerRef.current) return
 
-        const split = SplitText.create(titleRef.current, { type: "chars", mask: "chars" });
-
-        gsap.set(split.chars, {
-            yPercent: -100
-        })
-
-        gsap.to(split.chars, {
-            yPercent: 0,
-            scrollTrigger:{
-                trigger: titleRef.current,
-                start: "top 90%",
-                end: "top 60%",
-            },
-            stagger: 0.05,
-            duration:0.5
+        gsap.to(".image-project-info",{
+            yPercent: 40,
+            scrollTrigger: {
+                trigger: containerRef.current,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: true
+            }
         })
     })
 
     return(
-        <section className="flex flex-col gap-15 relative z-1 bg-neutral-50">
-            <div className="flex flex-col gap-10 p-2.5 md:p-5 py-15 lg:py-30">
-                <div className="w-full h-px bg-neutral-400 lg:hidden"></div>
-                <div className="flex gap-10">
+        <section className="flex flex-col relative z-1 bg-neutral-50" ref={sectionRef}>
+            <div className="w-full relative py-50 overflow-hidden flex justify-center items-center" >
+                <div className="h-full w-full overflow-hidden absolute top-0 left-0" ref={containerRef}>
+                    <img src={selectedProject.images.background[1]} className="h-[140%] absolute left-0 top-[-40%] object-cover w-full image-project-info"  alt="" />
+                </div>
+                <div className="w-2/3 aspect-video relative bg-neutral-50">
+                    <img className="w-full h-full object-cover" src={selectedProject.images.desktop[0]} alt={selectedProject.alts.desktop[0]}/>
+                </div>
+            </div>
+            <div className="px-5 flex justify-center">
+                <div className="flex flex-col gap-10 w-full bg-neutral-800 text-neutral-50 justify-between p-10 -translate-y-1/4 md:flex-row md:-translate-y-1/2 md:w-2/3 md:p-15">
                     <div className="flex flex-col gap-2">
-                        <p className="uppercase tracking-wide font-light">Year</p>
+                        <p className="tracking-wide font-light text-neutral-400">Status</p>
+                        <p>{selectedProject.status}</p>
+                    </div>
+                    <div className="flex flex-col gap-2">
+                        <p className="tracking-wide font-light text-neutral-400">Year</p>
                         <p>{selectedProject.year}</p>
                     </div>
-                    <div className="flex flex-col flex-1 gap-2">
-                        <p className="uppercase tracking-wide font-light">Type</p>
+                    <div className="flex flex-col gap-2">
+                        <p className="tracking-wide font-light text-neutral-400">Type</p>
                         <p>{selectedProject.type}</p>
                     </div>
                     <div className="flex flex-col gap-2">
-                        <p className="uppercase tracking-wide font-light">Status</p>
+                        <p className="tracking-wide font-light text-neutral-400">Status</p>
                         <p>{selectedProject.status}</p>
                     </div>
                 </div>
-                <div className="flex flex-col gap-5">
-                    <p className="font-light leading-relaxed max-w-200">
-                        {selectedProject.intro}
-                    </p>
-                    <p className="font-light leading-relaxed max-w-200">
-                        {selectedProject.text}
-                    </p>
+            </div>
+            <div className="flex flex-col gap-20 p-5 pb-30 items-center">
+                <div className="flex flex-col gap-10 md:flex-row md:w-2/3">
+                    <h3 className="font-semibold">About</h3>
+                    <div className="flex flex-col gap-15">
+                        <div className="flex flex-col gap-5 md:flex-row">
+                            <p className="font-light leading-relaxed max-w-200 w-full">
+                                {selectedProject.intro}
+                            </p>
+                            <p className="font-light leading-relaxed max-w-200 w-full">
+                                {selectedProject.text}
+                            </p>    
+                        </div>    
+                                  
+                    </div>
                 </div>
-                <div>
-                    <NavLink to={selectedProject.link} target="_blank" className={'uppercase text-sm underline tracking-widest font-semibold group'}>
-                        <HoverTranslate 
-                            text="See project"
-                        />
-                    </NavLink>
-                </div>
+                <NavLink to={selectedProject.link} target="_blank" className={'uppercase text-sm underline tracking-widest font-semibold group'}>
+                    <HoverTranslate 
+                        text="See project"
+                    />
+                </NavLink> 
             </div>
             <ProjectGallery 
                 selectedProject={selectedProject}
