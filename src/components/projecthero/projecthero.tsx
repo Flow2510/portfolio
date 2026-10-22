@@ -48,14 +48,14 @@ export default function ProjectHero({ selectedProject } : ProjectInfoProps) {
         <section className="relative z-1 bg-neutral-50 lg:flex">
             <div className="h-[60dvh] lg:h-dvh lg:w-full flex flex-col justify-end pb-15">
                 <h2 className="flex flex-col items-center">
-                    <span className="flex gap-2 font-[antonio] text-5xl md:text-6xl lg:text-7xl xl:text-8xl w-fit font-extrabold uppercase">
+                    <span className="flex gap-2 md:gap-2.5 lg:gap-3 xl:gap-3.5 font-[antonio] text-5xl md:text-6xl lg:text-7xl xl:text-8xl w-fit uppercase tracking-tighter font-bold">
                         {words.slice(0, Math.ceil(words.length / 2)).map((word, index) => (
                             <span key={word + index} >
                                 {word}
                             </span>
                         ))}
                     </span>
-                    <span className="flex gap-2 font-[italianno] w-fit font-extralight text-6xl md:text-7xl lg:text-8xl xl:text-9xl">
+                    <span className="flex gap-2 font-[italianno] w-fit font-extralight italic text-6xl md:text-7xl lg:text-8xl xl:text-9xl">
                         {words.slice(Math.ceil(words.length / 2)).map((word, index) => (
                             <span key={word + index}>
                                 {word}

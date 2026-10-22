@@ -58,14 +58,14 @@ export default function ProjectCard({ project } : ProjectCardTypes) {
                 <div className="absolute inset-0 bg-neutral-900/40 flex justify-center items-center">
                     <div>
                         <h2 className="flex flex-col items-center">
-                            <span className="flex gap-2 font-[antonio] text-5xl md:text-6xl lg:text-7xl xl:text-8xl w-fit font-extrabold uppercase">
+                            <span className="flex gap-2 md:gap-2.5 lg:gap-3 xl:gap-3.5 font-[antonio] text-5xl md:text-6xl lg:text-7xl xl:text-8xl w-fit uppercase tracking-tighter font-bold">
                                 {words.slice(0, Math.ceil(words.length / 2)).map((word, index) => (
                                     <span key={word + index} >
                                         {word}
                                     </span>
                                 ))}
                             </span>
-                            <span className="flex gap-2 font-[italianno] w-fit font-extralight text-6xl md:text-7xl lg:text-8xl xl:text-9xl">
+                            <span className="flex gap-2 font-[italianno] w-fit font-extralight text-6xl md:text-7xl lg:text-8xl xl:text-9xl italic">
                                 {words.slice(Math.ceil(words.length / 2)).map((word, index) => (
                                     <span key={word + index}>
                                         {word}

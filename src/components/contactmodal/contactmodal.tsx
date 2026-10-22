@@ -60,7 +60,7 @@ export default function ContactModal({ contactModalIsOpen, setContactModalIsOpen
                     </div>
                 </button>
                 <div className="text-neutral-50 w-full p-5 flex flex-col gap-10 lg:gap-15">
-                    <h3 className="flex flex-col text-4xl md:text-5xl lg:text-6xl xl:text-7xl uppercase font-extrabold text-center">
+                    <h3 className="flex flex-col text-4xl md:text-5xl lg:text-6xl xl:text-7xl uppercase font-extrabold text-center tracking-tighter font-bold">
                         <span className="item-modal inline-block pr-10 lg:pr-15 font-[antonio]">
                             Get in
                         </span>

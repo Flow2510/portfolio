@@ -78,4 +78,4 @@ function App() {
 export default App
 
 // mettre plusieurs sources d'images de tailles differentes
-// finir une modal contact, faire transitions entre les pages
+// faire transitions entre les pages et rerfaire le loader, animer correctement l'affichage des elements
