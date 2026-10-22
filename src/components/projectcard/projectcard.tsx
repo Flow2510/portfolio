@@ -1,7 +1,6 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useRef } from "react";
-import { NavLink } from "react-router-dom";
 
 type ProjectCardTypes={
     readonly project: {
@@ -26,9 +25,10 @@ type ProjectCardTypes={
         intro: string;
         text: string;
     }
+    readonly navigateWithTransition: (path: string) => void
 }
 
-export default function ProjectCard({ project } : ProjectCardTypes) {
+export default function ProjectCard({ project, navigateWithTransition } : ProjectCardTypes) {
     const containerRef = useRef<HTMLDivElement>(null)
     const words = project.name.split(" ")
 
@@ -50,7 +50,7 @@ export default function ProjectCard({ project } : ProjectCardTypes) {
     }, { scope: containerRef})
 
     return(
-        <NavLink to={`/projects/${project.id}`}>
+        <button onClick={() => navigateWithTransition(`/projects/${project.id}`)}>
             <div className="h-dvh w-full relative overflow-hidden text-neutral-50 animated-item" ref={containerRef}>
                 <div className="absolute top-[-40%] h-[140%] w-full">
                     <img src={project.images.mockup[0]} className="w-full h-full object-cover image-projects-card" alt="" />
@@ -81,6 +81,6 @@ export default function ProjectCard({ project } : ProjectCardTypes) {
                     </p>
                 </div>
             </div>
-        </NavLink>
+        </button>
     )
 }

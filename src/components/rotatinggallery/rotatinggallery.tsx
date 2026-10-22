@@ -4,15 +4,15 @@ import gsap from "gsap"
 import { Draggable } from "gsap/Draggable"
 import InertiaPlugin from "gsap/InertiaPlugin"
 import { useGSAP } from "@gsap/react"
-import { NavLink } from "react-router-dom"
 
 gsap.registerPlugin(Draggable, InertiaPlugin)
 
 type RotatingGalleryProps = {
     readonly isDesktop: boolean;
+    readonly navigateWithTransition: (path: string) => void
 }
 
-export default function RotatingGallery({ isDesktop } : RotatingGalleryProps ){
+export default function RotatingGallery({ isDesktop, navigateWithTransition } : RotatingGalleryProps ){
     const dragProxyRef = useRef<HTMLDivElement>(null)
     const containerRef = useRef<HTMLDivElement>(null)
     const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
@@ -136,9 +136,9 @@ export default function RotatingGallery({ isDesktop } : RotatingGalleryProps ){
                         }}
                         className="absolute w-20 h-12 lg:w-34 lg:h-22 shadow-sm flex items-center justify-center overflow-hidden"
                     >
-                        <NavLink to={`/projects/${item.id}`} className={'active:cursor-grabbing'}>
+                        <button onClick={() => navigateWithTransition(`/projects/${item.id}`)} className={'active:cursor-grabbing'}>
                             <img src={item.images.mockup[0]} alt={item.alts.mockup[0]} className="w-full h-full object-cover image-rotating" />
-                        </NavLink>
+                        </button>
                     </div>
                 ))}
             </div>

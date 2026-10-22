@@ -1,11 +1,15 @@
-import { NavLink, useParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import projects from '../data/projects.json'
 import ProjectInfo from "../components/projectinfo/projectinfo"
 import HoverTranslate from "../components/hovertranslate/hovertranslate"
 import ProjectHero from "../components/projecthero/projecthero"
 import NextProject from "../components/nextproject/nextproject"
 
-export default function ProjectPage() {
+type ProjectPageProps = {
+    readonly navigateWithTransition: (path: string) => void
+}
+
+export default function ProjectPage({navigateWithTransition} : ProjectPageProps) {
     const { id } = useParams()
     const selectedProject = projects.find((project) => project.id === id)
 
@@ -15,16 +19,16 @@ export default function ProjectPage() {
                 Project not found
             </h2>
             <div className="flex gap-5">
-                <NavLink to={'/'} className={'px-5 py-2 border group'}>
+                <button onClick={() => navigateWithTransition('/')} className={'px-5 py-2 border group'}>
                     <HoverTranslate 
                         text="Home"
                     />
-                </NavLink>
-                <NavLink to={'/projects'} className={'px-5 py-2 border group'}>
+                </button>
+                <button onClick={() => navigateWithTransition('/projects')} className={'px-5 py-2 border group'}>
                     <HoverTranslate 
                         text="Projects"
                     />
-                </NavLink>
+                </button>
             </div>
         </div>
         <div className='w-full flex items-end justify-center'>
@@ -43,6 +47,7 @@ export default function ProjectPage() {
                 selectedProject={selectedProject}
             />
             <NextProject 
+                navigateWithTransition={navigateWithTransition}
                 selectedProject={selectedProject}
             />
         </main>

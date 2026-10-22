@@ -4,10 +4,11 @@ import { useEffect, useRef, useState } from "react"
 import RotatingGallery from "../rotatinggallery/rotatinggallery"
 
 type HeroProps = {
-    readonly isDesktop: boolean
+    readonly isDesktop: boolean;
+    readonly navigateWithTransition: (path: string) => void
 }
 
-export default function Hero({ isDesktop } : HeroProps) {
+export default function Hero({ isDesktop, navigateWithTransition } : HeroProps) {
     const [time, setTime] = useState(new Date().toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit', second: '2-digit' }))
     const containerRef = useRef<HTMLDivElement>(null)
 
@@ -38,7 +39,7 @@ export default function Hero({ isDesktop } : HeroProps) {
     return (
         <section className="relative h-dvh w-full overflow-hidden pt-23 flex flex-col justify-end" id="home">
             <div className="absolute inset-0 animated-item">
-                <RotatingGallery isDesktop={isDesktop}/>
+                <RotatingGallery isDesktop={isDesktop} navigateWithTransition={navigateWithTransition}/>
             </div>
             <div className="p-2.5 flex justify-between text-[13px] leading-[90%] md:text-[15px] md:p-5">
                 {isDesktop ?

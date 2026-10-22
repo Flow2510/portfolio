@@ -92,8 +92,13 @@ export default function ContactModal({ contactModalIsOpen, setContactModalIsOpen
                             </button>
                             <p className="text-neutral-400">I've accepted the <NavLink to={'/'} className={'underline underline-offset-2'}>privacy policy</NavLink>.*</p>
                         </label>
-                        <button type="submit" onClick={submitHandleClick} className="duration-300 item-modal uppercase border p-3.5 w-full max-w-90 rounded-full active:bg-neutral-50 active:text-neutral-950 hover:bg-neutral-50 hover:text-neutral-950 cursor-pointer">
-                            submit message
+                        <button className="uppercase py-5 px-10 rounded-full border text-sm cursor-pointer relative group item-modal" type="submit" onClick={submitHandleClick}>
+                            <span className="absolute top-0 left-0 h-full w-full rounded-full bg-neutral-50 scale-0 duration-300 group-hover:scale-100">
+
+                            </span>
+                            <span className="mix-blend-difference text-white uppercase">
+                                Submit message
+                            </span>
                         </button>
                     </form>
                 </div>

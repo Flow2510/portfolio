@@ -1,7 +1,11 @@
 import ProjectCard from "../components/projectcard/projectcard";
 import projects from '../data/projects.json'
 
-export default function ProjectsPage(){
+type ProjectsPageProps = {
+    readonly navigateWithTransition: (path: string) => void
+}
+
+export default function ProjectsPage({ navigateWithTransition } : ProjectsPageProps){
     return(
         <main className="bg-neutral-50">
             <section className="relative z-1 bg-neutral-50">
@@ -19,6 +23,7 @@ export default function ProjectsPage(){
             <section>
                 {projects.map((project) => (
                     <ProjectCard 
+                        navigateWithTransition={navigateWithTransition}
                         key={project.id}
                         project={project}
                     />

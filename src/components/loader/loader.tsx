@@ -1,115 +1,55 @@
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
-import projects from '../../data/projects.json'
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
 
 type LoaderTypes = {
     readonly isLoading: boolean;
     readonly setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
-    readonly isDesktop: boolean;
+    readonly isTransitioning: boolean
 }
 
-export default function Loader({ isLoading, setIsLoading, isDesktop } : LoaderTypes) {
-    const items = [...projects,...projects]
+export default function Loader({ isLoading, setIsLoading, isTransitioning } : LoaderTypes) {
     const loaderRef = useRef<HTMLDivElement>(null)
+    const { pathname } = useLocation()
 
     useGSAP(() => {
-        if (!isLoading) return
+        if (!loaderRef) return
 
-        const cards = gsap.utils.toArray<HTMLDivElement>('.loader-card')
-        const words = gsap.utils.toArray<HTMLSpanElement>('.word')
-
-        const COUNT = cards.length
-
-        const getCirclePositions = (diameter: number, count = COUNT) => {
-            const radius = diameter / 2
-            return Array.from({ length: count }, (_, i) => {
-                const angle = (i / count) * Math.PI * 2 - Math.PI / 2 // démarre en haut
-                return {
-                    x: Math.round(Math.cos(angle) * radius),
-                    y: Math.round(Math.sin(angle) * radius),
-                }
-            })
-        }
-        const positions = getCirclePositions(isDesktop ? 700 : 250)
-
-        gsap.set(
-            cards,
-            { opacity: 0, x: (i) => positions[i].x, y: (i) => positions[i].y, scale: 0.8 },
-        )
-
-        gsap.set(words, {
-            opacity: 0
-        })
-
-        const tl = gsap.timeline({
-            onComplete: () => setIsLoading(false)
-        })
-
-        const TURNS = 1 // nombre de tours autour du centre
-
-        const spiral = cards.map((_, i) => ({
-            t: 0,
-            startAngle: Math.atan2(positions[i].y, positions[i].x), // angle de départ de la carte
-            startRadius: Math.hypot(positions[i].x, positions[i].y), // distance au centre au départ
-        }))
-
-        tl.to(words, {
-            opacity: 1,
-            duration: 0.3,
-        }, 0)
-
-        tl.to(cards, {
-            opacity: 1,
-            stagger: 0.1,
-            duration: 0.2
-        }, 1)
-
-        tl.to(words, {
-            opacity: 0,
-            duration: 0.5
-        }, 2)
-
-        tl.to(spiral, {
-            t: 1,
-            duration: 3,
-            ease: 'power3.inOut',
-            stagger: 0.05,
-            onUpdate: () => {
-                spiral.forEach((s, i) => {
-                    const angle = s.startAngle + s.t * TURNS * Math.PI * 2
-                    const radius = s.startRadius * (1 - s.t)
-                    gsap.set(cards[i], {
-                        x: Math.cos(angle) * radius,
-                        y: Math.sin(angle) * radius - 35 * s.t, // finit à y: -35 comme ta sphère
-                        scale: 0.8 + 0.1 * s.t,                 // 0.8 → 0.9
-                    })
-                })
+        gsap.to('.background-bloc-loader', {
+            yPercent: -100,
+            stagger: {
+                each: 0.15,
+                from: "end"
             },
-        }, 1 )
-    }, { scope: loaderRef })
+            ease: "power4.inOut",
+            duration: 0.7,
+            onComplete: () => setIsLoading(!isLoading)
+        })
+    }, { scope: loaderRef, dependencies: [pathname] })
+
+    useEffect(() => {
+        gsap.to('.background-bloc-loader', {
+            yPercent: isTransitioning? 0 : -100,
+            stagger: {
+                each: 0.15,
+                from: isTransitioning? "start" : "end"
+            },
+            ease: "power4.inOut",
+            duration: 1,
+        })
+    }, [isTransitioning])
 
     return(
-        <div className='absolute inset-0 bg-neutral-50 flex items-center justify-center overflow-hidden' ref={loaderRef}>
-            <div className='relative flex justify-center items-center container'>
-            <div className='absolute'>
-                <h1 className='flex flex-col items-center font-[antonio] text-3xl uppercase tracking-tighter font-semibold lg:text-6xl'>
-                <span className='flex gap-1.5 overflow-hidden lg:gap-2.5'>
-                    <span className='word inline-block'>Florian</span>
-                    <span className='word inline-block'>Sendra</span>
-                </span>
-                <span className='flex gap-1.5 overflow-hidden lg:gap-2.5'>
-                    <span className='word inline-block'>Creative</span>
-                    <span className='word inline-block'>Web</span>
-                    <span className='word inline-block'>Developer</span>
-                </span>
-                </h1>
+        <div className='fixed w-full h-full overflow-hidden pointer-events-none z-100' ref={loaderRef}>
+            <div className="absolute inset-0 bg-neutral-500 background-bloc-loader pointer-events-auto">
+
             </div>
-            {items.map((item, index) => (
-                <div className='absolute w-20 h-12 lg:w-34 lg:h-22 loader-card' key={item.id + `${index}`}>
-                <img src={item.images.mockup[0]} className='w-full h-full' alt={item.alts.mockup[0]}/>
-                </div>
-            ))}
+            <div className="absolute inset-0 bg-neutral-700 background-bloc-loader pointer-events-auto">
+
+            </div>
+            <div className="absolute inset-0 bg-neutral-900 background-bloc-loader pointer-events-auto">
+
             </div>
         </div>
     )

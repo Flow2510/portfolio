@@ -1,4 +1,3 @@
-import { NavLink } from "react-router-dom";
 import HoverTranslate from "../hovertranslate/hovertranslate";
 import { useEffect } from "react";
 import gsap from "gsap";
@@ -9,9 +8,10 @@ type HeaderProps = {
     readonly isDesktop: boolean;
     readonly contactModalIsOpen: boolean;
     readonly setContactModalIsOpen: React.Dispatch<React.SetStateAction<boolean>>
+    readonly navigateWithTransition: (path: string) => void
 }
 
-export default function Header({ setMenuIsOpen, menuIsOpen, isDesktop, contactModalIsOpen, setContactModalIsOpen } : HeaderProps ){
+export default function Header({ setMenuIsOpen, menuIsOpen, isDesktop, contactModalIsOpen, setContactModalIsOpen, navigateWithTransition } : HeaderProps ){
 
     useEffect(() => {
         gsap.to('.button-line-top',{
@@ -29,8 +29,8 @@ export default function Header({ setMenuIsOpen, menuIsOpen, isDesktop, contactMo
     }, [menuIsOpen])
 
     return(
-        <header className="w-full flex justify-between fixed top-0 left-0 p-2.5 z-15 md:p-5 mix-blend-exclusion text-white" style={{ alignItems: isDesktop ? "start" : 'center' }}>
-            <NavLink to={'/'} className={'pointer-events-auto animated-item'}>
+        <header className="w-full flex justify-between fixed top-0 left-0 p-2.5 z-15 md:p-5 mix-blend-exclusion text-white animated-item" style={{ alignItems: isDesktop ? "start" : 'center' }}>
+            <button onClick={() => navigateWithTransition('/')} className={'pointer-events-auto cursor-pointer'}>
                 <h1  className="flex flex-col uppercase font-[antonio] text-3xl tracking-[-1px] font-semibold md:text-4xl">
                     <span>
                         Florian
@@ -39,24 +39,24 @@ export default function Header({ setMenuIsOpen, menuIsOpen, isDesktop, contactMo
                         Sendra
                     </span>
                 </h1>
-            </NavLink>
-            <div className="hidden md:inline-block pointer-events-auto animated-item">
+            </button>
+            <div className="hidden md:inline-block pointer-events-auto ">
                 <nav className="flex gap-5">
-                    <NavLink to={'/'} className="flex gap-5 group">
+                    <button onClick={() => navigateWithTransition('/')} className="cursor-pointer">
                         <HoverTranslate 
                             text="Home"
                         />
-                    </NavLink>
-                    <NavLink to={'/projects'} className="flex gap-5 group">
+                    </button>
+                    <button onClick={() => navigateWithTransition('/projects')} className="cursor-pointer">
                         <HoverTranslate 
                             text="Projects"
                         />
-                    </NavLink>
-                    <NavLink to={'/about'} className="flex gap-5 group">
-                        <HoverTranslate
+                    </button>
+                    <button onClick={() => navigateWithTransition('/about')} className="cursor-pointer">
+                        <HoverTranslate 
                             text="About"
                         />
-                    </NavLink>
+                    </button>
                     <button type="button" onClick={() => setContactModalIsOpen(!contactModalIsOpen)} className="flex gap-5 group cursor-pointer">
                         <HoverTranslate 
                             text="Contact"
@@ -64,7 +64,7 @@ export default function Header({ setMenuIsOpen, menuIsOpen, isDesktop, contactMo
                     </button>
                 </nav>
             </div>
-            <div className="md:hidden animated-item">
+            <div className="md:hidden ">
                 <button
                     onClick={() => setMenuIsOpen(!menuIsOpen)}
                     className="flex flex-col gap-1.5 button-open cursor-pointer relative py-4"

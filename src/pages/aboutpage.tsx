@@ -3,7 +3,12 @@ import AboutSection from "../components/aboutsection/aboutsection";
 import { useGSAP } from "@gsap/react";
 import AboutSticky from "../components/aboutsticky/aboutsticky";
 
-export default function AboutPage() {
+type AboutPageTypes = {
+    readonly setContactModalIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+    readonly contactModalIsOpen: boolean;
+}
+
+export default function AboutPage({ contactModalIsOpen, setContactModalIsOpen } : AboutPageTypes) {
 
     // const contactList = [
     //     {
@@ -32,7 +37,7 @@ export default function AboutPage() {
         <main className="bg-neutral-50">
             <AboutHero />
             <AboutSection />
-            <AboutSticky />
+            <AboutSticky contactModalIsOpen={contactModalIsOpen} setContactModalIsOpen={setContactModalIsOpen}/>
         </main>
     )
 }

@@ -1,6 +1,5 @@
 import { useRef } from 'react';
 import projects from '../../data/projects.json'
-import { NavLink } from 'react-router-dom';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import HoverTranslate from '../hovertranslate/hovertranslate';
@@ -29,9 +28,10 @@ type NextProjectProps = {
         intro: string;
         text: string;
     }
+    readonly navigateWithTransition: (path: string) => void
 }
 
-export default function NextProject({ selectedProject } : NextProjectProps) {
+export default function NextProject({ selectedProject, navigateWithTransition } : NextProjectProps) {
     if (!selectedProject) return
 
     const containerRef = useRef<HTMLDivElement>(null)
@@ -59,7 +59,7 @@ export default function NextProject({ selectedProject } : NextProjectProps) {
     return(
         <section >
             <div className="fixed inset-0 z-0" >
-                <NavLink to={`/projects/${projects[nextProjectIndex].id}`} className="h-full w-full relative overflow-hidden">
+                <button onClick={() => navigateWithTransition(`/projects/${projects[nextProjectIndex].id}`)} className="h-full w-full relative overflow-hidden cursor-pointer">
                     <img src={projects[nextProjectIndex].images.mockup[0]} alt="" className="absolute w-full h-full object-cover scale-200 next-project-image" />
                     <div className='h-full w-full bg-neutral-950/60 relative'>
 
@@ -85,9 +85,9 @@ export default function NextProject({ selectedProject } : NextProjectProps) {
                             </h2>
                         </div>
                     </div>                    
-                </NavLink>
+                </button>
                 <div className='absolute left-0 bottom-0 w-full flex justify-between items-end p-2.5 md:p-5'>
-                        <NavLink to={'/projects'} className='flex items-center text-neutral-50 gap-2.5'>
+                        <button onClick={() => navigateWithTransition('/projects')} className='flex items-center text-neutral-50 gap-2.5'>
                             <div className='grid grid-cols-2 h-2.5 w-2.5 gap-0.5'>
                                 <div className='w-full h-full bg-neutral-50'></div>
                                 <div className='w-full h-full bg-neutral-50'></div>
@@ -99,7 +99,7 @@ export default function NextProject({ selectedProject } : NextProjectProps) {
                                     text='All Projects'
                                 />
                             </p>
-                        </NavLink>
+                        </button>
                         <button type='button' onClick={backToTop} className='bg-neutral-100 rounded-full w-12 h-12 flex text-xl items-center justify-center text-neutral-950 cursor-pointer hover:scale-[0.9] duration-300'>
                             <span>
                                 ↑
