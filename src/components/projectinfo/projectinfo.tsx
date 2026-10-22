@@ -55,7 +55,7 @@ export default function ProjectInfo({ selectedProject } : ProjectInfoProps) {
 
     return(
         <section className="flex flex-col relative z-1 bg-neutral-50" ref={sectionRef}>
-            <div className="w-full relative py-50 overflow-hidden flex justify-center items-center" >
+            <div className="w-full relative py-50 overflow-hidden flex justify-center items-center animated-item" >
                 <div className="h-full w-full overflow-hidden absolute top-0 left-0" ref={containerRef}>
                     <img src={selectedProject.images.background[1]} className="h-[140%] absolute left-0 top-[-40%] object-cover w-full image-project-info"  alt="" />
                 </div>
@@ -63,7 +63,7 @@ export default function ProjectInfo({ selectedProject } : ProjectInfoProps) {
                     <img className="w-full h-full object-cover" src={selectedProject.images.desktop[0]} alt={selectedProject.alts.desktop[0]}/>
                 </div>
             </div>
-            <div className="px-5 flex justify-center">
+            <div className="px-5 flex justify-center animated-item">
                 <div className="flex flex-col gap-10 w-full bg-neutral-800 text-neutral-50 justify-between p-10 -translate-y-1/4 md:flex-row md:-translate-y-1/2 md:w-2/3 md:p-15">
                     <div className="flex flex-col gap-2">
                         <p className="tracking-wide font-light text-neutral-400">Status</p>

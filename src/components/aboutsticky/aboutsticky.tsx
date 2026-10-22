@@ -21,7 +21,6 @@ export default function AboutSticky() {
                 start: "top center",
                 end: "bottom bottom",
                 scrub: true,
-                markers: true
             }
         })
 
@@ -78,8 +77,11 @@ export default function AboutSticky() {
                                 <span className="font-[antonio] text-7xl md:text-8xl uppercase tracking-tighter font-bold">
                                     Contact title 
                                 </span>
-                                <span className="font-[italianno] text-8xl md:text-9xl italic">
-                                    On 2 Lines
+                                <span className="font-[italianno] text-8xl md:text-9xl italic -mb-5">
+                                    Display On 
+                                </span>
+                                <span className="font-[antonio] text-7xl md:text-8xl uppercase tracking-tighter font-bold">
+                                    3 Lines
                                 </span>
                             </h2>
                         </div>

@@ -51,7 +51,7 @@ export default function ProjectCard({ project } : ProjectCardTypes) {
 
     return(
         <NavLink to={`/projects/${project.id}`}>
-            <div className="h-dvh w-full relative overflow-hidden text-neutral-50" ref={containerRef}>
+            <div className="h-dvh w-full relative overflow-hidden text-neutral-50 animated-item" ref={containerRef}>
                 <div className="absolute top-[-40%] h-[140%] w-full">
                     <img src={project.images.mockup[0]} className="w-full h-full object-cover image-projects-card" alt="" />
                 </div>

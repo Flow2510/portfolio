@@ -15,18 +15,20 @@ type HeaderProps = {
 export default function Header({ setMenuIsOpen, menuIsOpen, isDesktop, contactModalIsOpen, setContactModalIsOpen } : HeaderProps ){
     const headerRef = useRef<HTMLHeadElement>(null)
 
-    useGSAP(() => {
-        if(!headerRef.current) return
+    // useGSAP(() => {
+    //     if(!headerRef.current) return
 
-        gsap.fromTo(headerRef.current, {
-                yPercent: -100
-            },{
-                yPercent: 0,
-                duration: 0.3,
-                delay: 0.5
-            }
-        )
-    })
+    //     gsap.fromTo(headerRef.current, {
+    //             yPercent: 100,
+    //             opacity:0
+    //         },{
+    //             yPercent: 0,
+    //             opacity:1,
+    //             duration: 0.3,
+    //             delay: 0.5
+    //         }
+    //     )
+    // }, {scope: headerRef})
 
     useEffect(() => {
         gsap.to('.button-line-top',{
@@ -45,7 +47,7 @@ export default function Header({ setMenuIsOpen, menuIsOpen, isDesktop, contactMo
 
     return(
         <header className="w-full flex justify-between fixed top-0 left-0 p-2.5 z-15 md:p-5 mix-blend-exclusion text-white" ref={headerRef} style={{ alignItems: isDesktop ? "start" : 'center' }}>
-            <NavLink to={'/'} className={'pointer-events-auto'}>
+            <NavLink to={'/'} className={'pointer-events-auto animated-item'}>
                 <h1  className="flex flex-col uppercase font-[antonio] text-3xl tracking-[-1px] font-semibold md:text-4xl">
                     <span>
                         Florian
@@ -55,7 +57,7 @@ export default function Header({ setMenuIsOpen, menuIsOpen, isDesktop, contactMo
                     </span>
                 </h1>
             </NavLink>
-            <div className="hidden md:inline-block pointer-events-auto">
+            <div className="hidden md:inline-block pointer-events-auto animated-item">
                 <nav className="flex gap-5">
                     <NavLink to={'/'} className="flex gap-5 group">
                         <HoverTranslate 
@@ -79,7 +81,7 @@ export default function Header({ setMenuIsOpen, menuIsOpen, isDesktop, contactMo
                     </button>
                 </nav>
             </div>
-            <div className="md:hidden">
+            <div className="md:hidden animated-item">
                 <button
                     onClick={() => setMenuIsOpen(!menuIsOpen)}
                     className="flex flex-col gap-1.5 button-open cursor-pointer relative py-4"

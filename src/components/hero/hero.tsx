@@ -10,7 +10,6 @@ type HeroProps = {
 export default function Hero({ isDesktop } : HeroProps) {
     const [time, setTime] = useState(new Date().toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit', second: '2-digit' }))
     const containerRef = useRef<HTMLDivElement>(null)
-    const heroFooterRef = useRef<HTMLDivElement>(null)
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -34,24 +33,16 @@ export default function Hero({ isDesktop } : HeroProps) {
             duration: 1.5,
             repeat: -1
         })
-
-        gsap.fromTo(heroFooterRef.current, {
-            yPercent: 100
-        },{
-            yPercent: 0,
-            duration: 0.3,
-            delay: 0.5
-        })
     })
 
     return (
         <section className="relative h-dvh w-full overflow-hidden pt-23 flex flex-col justify-end" id="home">
-            <div className="absolute inset-0">     
+            <div className="absolute inset-0 animated-item">
                 <RotatingGallery isDesktop={isDesktop}/>
             </div>
-            <div className="p-2.5 flex justify-between text-[13px] leading-[90%] md:text-[15px] md:p-5" ref={heroFooterRef}>
+            <div className="p-2.5 flex justify-between text-[13px] leading-[90%] md:text-[15px] md:p-5">
                 {isDesktop ?
-                    <p className="flex gap-1.5 items-center uppercase">
+                    <p className="flex gap-1.5 items-center uppercase animated-item">
                         <span>Web Developer</span>
                         <span className="h-1 w-1 bg-neutral-950 inline-block rounded-full"></span>
                         <span>Perpignan, France</span>
@@ -59,13 +50,13 @@ export default function Hero({ isDesktop } : HeroProps) {
                         <span>{time}</span>
                     </p>
                 :
-                    <p className="flex gap-1.5 items-center uppercase">
+                    <p className="flex gap-1.5 items-center uppercase animated-item">
                         <span>Web Developer</span>
                         <span className="h-1 w-1 bg-neutral-950 inline-block rounded-full"></span>
                         <span>Perpignan, Fr</span>
                     </p>
                 }
-                <div className="uppercase flex items-center gap-1">
+                <div className="uppercase flex items-center gap-1 animated-item">
                     <div className="relative">
                         <div className="h-6 w-6 rounded-full bg-green-500 flex items-center justify-center" ref={containerRef}>
                             

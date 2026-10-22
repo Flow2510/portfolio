@@ -10,6 +10,8 @@ import ProjectsPage from './pages/projectspage'
 import AboutPage from './pages/aboutpage'
 import Loader from './components/loader/loader'
 import ContactModal from './components/contactmodal/contactmodal'
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
 
 function App() {
   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 1024)
@@ -41,6 +43,18 @@ function App() {
           setIsLoading(false)
       }
   }, [pathname])
+
+  useGSAP(() => [
+    gsap.fromTo('.animated-item', {
+      y: 100,
+      opacity: 0,
+    },{
+      y: 0,
+      opacity: 1,
+      duration: 0.5,
+      stagger: 0.1
+    })
+  ], {dependencies: [pathname]})
 
   if (isLoading && location.pathname === '/') return <Loader isLoading={isLoading} setIsLoading={setIsLoading} isDesktop={isDesktop}/>
 
@@ -78,4 +92,5 @@ function App() {
 export default App
 
 // mettre plusieurs sources d'images de tailles differentes
-// faire transitions entre les pages et rerfaire le loader, animer correctement l'affichage des elements
+// faire transitions entre les pages et rerfaire le loader, verifier et finir animation
+// faire une page privacy policy
