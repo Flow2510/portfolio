@@ -1,8 +1,7 @@
 import { NavLink } from "react-router-dom";
 import HoverTranslate from "../hovertranslate/hovertranslate";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
 
 type HeaderProps = {
     readonly setMenuIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -13,22 +12,6 @@ type HeaderProps = {
 }
 
 export default function Header({ setMenuIsOpen, menuIsOpen, isDesktop, contactModalIsOpen, setContactModalIsOpen } : HeaderProps ){
-    const headerRef = useRef<HTMLHeadElement>(null)
-
-    // useGSAP(() => {
-    //     if(!headerRef.current) return
-
-    //     gsap.fromTo(headerRef.current, {
-    //             yPercent: 100,
-    //             opacity:0
-    //         },{
-    //             yPercent: 0,
-    //             opacity:1,
-    //             duration: 0.3,
-    //             delay: 0.5
-    //         }
-    //     )
-    // }, {scope: headerRef})
 
     useEffect(() => {
         gsap.to('.button-line-top',{
@@ -46,7 +29,7 @@ export default function Header({ setMenuIsOpen, menuIsOpen, isDesktop, contactMo
     }, [menuIsOpen])
 
     return(
-        <header className="w-full flex justify-between fixed top-0 left-0 p-2.5 z-15 md:p-5 mix-blend-exclusion text-white" ref={headerRef} style={{ alignItems: isDesktop ? "start" : 'center' }}>
+        <header className="w-full flex justify-between fixed top-0 left-0 p-2.5 z-15 md:p-5 mix-blend-exclusion text-white" style={{ alignItems: isDesktop ? "start" : 'center' }}>
             <NavLink to={'/'} className={'pointer-events-auto animated-item'}>
                 <h1  className="flex flex-col uppercase font-[antonio] text-3xl tracking-[-1px] font-semibold md:text-4xl">
                     <span>

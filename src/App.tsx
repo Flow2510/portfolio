@@ -46,7 +46,7 @@ function App() {
 
   useGSAP(() => [
     gsap.fromTo('.animated-item', {
-      y: 100,
+      y: 50,
       opacity: 0,
     },{
       y: 0,

@@ -85,14 +85,14 @@ export default function AboutSection() {
                     </span>
                 </h2>
             </div>
-            <div className="w-full p-2.5 md:p-5 flex flex-col gap-5">
+            <div className="w-full p-2.5 md:p-5 flex flex-col gap-5 max-w-150 m-auto">
                 <p>
                     I turn designs into responsive, high-performance
                     interfaces using React and TypeScript. I care deeply
                     about code quality, accessibility, and smooth user
                     interactions that elevate the overall experience
                 </p>
-                <p>
+                <p className="pb-15">
                     To become a more complete developer, I'm currently
                     expanding into the back-end with Node.js, Express,
                     and Supabase. Building personal projects helps me
