@@ -103,7 +103,7 @@ function App() {
         <Route path='/' element={<HomePage isDesktop={isDesktop} navigateWithTransition={navigateWithTransition} />}/>
         <Route path='/projects/:id' element={<ProjectPage navigateWithTransition={navigateWithTransition}/>}/>
         <Route path='/projects' element={<ProjectsPage navigateWithTransition={navigateWithTransition}/>}/>
-        <Route path='/about' element={<AboutPage contactModalIsOpen={contactModalIsOpen} setContactModalIsOpen={setContactModalIsOpen}/>}/>
+        <Route path='/about' element={<AboutPage contactModalIsOpen={contactModalIsOpen} setContactModalIsOpen={setContactModalIsOpen} navigateWithTransition={navigateWithTransition}/>}/>
       </Routes>
     </div>
   )

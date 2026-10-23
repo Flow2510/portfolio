@@ -1,15 +1,15 @@
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import { useRef, useState } from "react"
-import { NavLink } from "react-router-dom";
 import HoverTranslate from "../hovertranslate/hovertranslate";
 
 type AboutStickyTypes = {
     readonly setContactModalIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
     readonly contactModalIsOpen: boolean;
+    readonly navigateWithTransition: (path: string) => void
 }
 
-export default function AboutSticky({ contactModalIsOpen, setContactModalIsOpen } : AboutStickyTypes) {
+export default function AboutSticky({ contactModalIsOpen, setContactModalIsOpen, navigateWithTransition } : AboutStickyTypes) {
     const containerRef = useRef<HTMLDivElement>(null)
     const titleRef = useRef<HTMLHeadingElement>(null)
 
@@ -99,7 +99,7 @@ export default function AboutSticky({ contactModalIsOpen, setContactModalIsOpen 
                 <div className="sticky h-dvh w-full top-0 ">
                     <div className="absolute inset-0 flex z-1 stripes-container overflow-hidden">
                         {stripeWidth.map((width, index) => (
-                            <div className="h-dvh shrink-0" key={`${width}` + `${index}`} style={{ width: `${width}%`}}>
+                            <div className="h-dvh shrink-0 scale-x-[1.5]" key={`${width}` + `${index}`} style={{ width: `${width}%` }}>
                                 <div className="h-dvh bg-neutral-900 background-bloc w-full" />
                             </div>
                         ))}
@@ -157,7 +157,7 @@ export default function AboutSticky({ contactModalIsOpen, setContactModalIsOpen 
                         <div className="absolute bottom-0 left-0 w-full p-2.5 md:p-5 flex flex-col gap-2.5">
                             <div className="flex justify-between items-end">
                                 <div>
-                                    <NavLink to={'/projects'} className='flex items-center gap-2.5'>
+                                    <button type="button" onClick={() => navigateWithTransition('/projects')} className='flex items-center gap-2.5'>
                                         <div className='grid grid-cols-2 h-2.5 w-2.5 gap-0.5'>
                                             <div className='w-full h-full bg-neutral-900'></div>
                                             <div className='w-full h-full bg-neutral-900'></div>
@@ -169,7 +169,7 @@ export default function AboutSticky({ contactModalIsOpen, setContactModalIsOpen 
                                                 text='All Projects'
                                             />
                                         </p>
-                                    </NavLink>
+                                    </button>
                                 </div>
                                 <button type='button' onClick={backToTop} className='bg-neutral-900 rounded-full w-12 h-12 flex text-xl items-center justify-center text-neutral-50 cursor-pointer hover:scale-[0.9] duration-300'>
                                     <span>
