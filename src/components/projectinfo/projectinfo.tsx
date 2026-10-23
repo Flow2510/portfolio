@@ -66,10 +66,6 @@ export default function ProjectInfo({ selectedProject } : ProjectInfoProps) {
             <div className="px-5 flex justify-center animated-item">
                 <div className="flex flex-col gap-10 w-full bg-neutral-800 text-neutral-50 justify-between p-10 -translate-y-1/4 md:flex-row md:-translate-y-1/2 md:w-2/3 md:p-15">
                     <div className="flex flex-col gap-2">
-                        <p className="tracking-wide font-light text-neutral-400">Status</p>
-                        <p>{selectedProject.status}</p>
-                    </div>
-                    <div className="flex flex-col gap-2">
                         <p className="tracking-wide font-light text-neutral-400">Year</p>
                         <p>{selectedProject.year}</p>
                     </div>
