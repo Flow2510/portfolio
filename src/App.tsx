@@ -19,9 +19,9 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [contactModalIsOpen, setContactModalIsOpen] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false)
+
   const { pathname } = useLocation();
   const navigate = useNavigate();
-
 
   const navigateWithTransition = (path: string) => {
     if (isTransitioning || pathname === path) return;
@@ -86,6 +86,8 @@ function App() {
         setContactModalIsOpen={setContactModalIsOpen}
       />
       <ContactModal
+        setMenuIsOpen={setMenuIsOpen} 
+        navigateWithTransition={navigateWithTransition}
         contactModalIsOpen={contactModalIsOpen}
         setContactModalIsOpen={setContactModalIsOpen}
       />
@@ -110,5 +112,4 @@ function App() {
 export default App
 
 // mettre plusieurs sources d'images de tailles differentes
-// faire transitions entre les pages et rerfaire le loader, verifier et finir animation
 // faire une page privacy policy

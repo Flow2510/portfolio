@@ -136,7 +136,7 @@ export default function RotatingGallery({ isDesktop, navigateWithTransition } : 
                         }}
                         className="absolute w-20 h-12 lg:w-34 lg:h-22 shadow-sm flex items-center justify-center overflow-hidden"
                     >
-                        <button onClick={() => navigateWithTransition(`/projects/${item.id}`)} className={'active:cursor-grabbing'}>
+                        <button onClick={() => navigateWithTransition(`/projects/${item.id}`)} className={'active:cursor-grabbing cursor-pointer'}>
                             <img src={item.images.mockup[0]} alt={item.alts.mockup[0]} className="w-full h-full object-cover image-rotating" />
                         </button>
                     </div>

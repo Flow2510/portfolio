@@ -1,16 +1,19 @@
+import { useForm, ValidationError } from "@formspree/react";
 import gsap from "gsap";
 import { useEffect, useRef, useState } from "react";
-import { NavLink } from "react-router-dom";
 
 type ContactModalProps = {
     readonly contactModalIsOpen: boolean;
     readonly setContactModalIsOpen: React.Dispatch<React.SetStateAction<boolean>>
+    readonly navigateWithTransition: (path: string) => void
+    readonly setMenuIsOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-export default function ContactModal({ contactModalIsOpen, setContactModalIsOpen } : ContactModalProps){
+export default function ContactModal({ contactModalIsOpen, setContactModalIsOpen, navigateWithTransition, setMenuIsOpen } : ContactModalProps){
     const containerRef = useRef<HTMLDivElement>(null)
     const containerRightRef = useRef<HTMLDivElement>(null)
     const [isChecked, setIsChecked] = useState(false)
+    const [state, handleSubmit] = useForm("meaajwle");
 
     useEffect(() => {
         gsap.to('.item-modal', {
@@ -41,10 +44,11 @@ export default function ContactModal({ contactModalIsOpen, setContactModalIsOpen
         })
     }, [contactModalIsOpen])
 
-    const submitHandleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-        e.preventDefault()
-        // faire un formulaire avec formspree
-    } 
+    const privacyHandleClick = () => {
+        setContactModalIsOpen(false);
+        setMenuIsOpen(false);
+        navigateWithTransition("/policy");
+    };
 
     return(
         <>
@@ -68,38 +72,87 @@ export default function ContactModal({ contactModalIsOpen, setContactModalIsOpen
                             Touch
                         </span>
                     </h3>
-                    <form action="" className="flex flex-col gap-5 max-w-150 m-auto">
+                    <form
+                        onSubmit={handleSubmit}
+                        className="flex flex-col gap-5 max-w-150 m-auto"
+                        >
                         <div className="flex flex-col gap-5 md:flex-row">
-                            <label htmlFor="" className="w-full item-modal">
-                                <p className="sr-only">Your name</p>
-                                <input type="text" className="border w-full px-5 py-3.5 outline-none" placeholder="Your name" />
+                            <label htmlFor="name" className="w-full item-modal">
+                            <p className="sr-only">Your name</p>
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                autoComplete="name"
+                                className="border w-full px-5 py-3.5 outline-none"
+                                placeholder="Your name"
+                                required
+                            />
+                            <ValidationError field="name" errors={state.errors} />
                             </label>
-                            <label htmlFor="" className="w-full item-modal">
-                                <p className="sr-only">Your email adress</p>
-                                <input type="email" className="border w-full px-5 py-3.5 outline-none" placeholder="Your email adress" />
+
+                            <label htmlFor="email" className="w-full item-modal">
+                            <p className="sr-only">Your email address</p>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                autoComplete="email"
+                                className="border w-full px-5 py-3.5 outline-none"
+                                placeholder="Your email address"
+                                required
+                            />
+                            <ValidationError field="email" errors={state.errors} />
                             </label>
                         </div>
-                        <label htmlFor="" className="w-full item-modal">
+
+                        <label htmlFor="message" className="w-full item-modal">
                             <p className="sr-only">Your message</p>
-                            <textarea name="" id="" className="border w-full h-40 px-5 py-3.5 outline-none" placeholder="Your message"></textarea>
+                            <textarea
+                            name="message"
+                            id="message"
+                            className="border w-full h-40 px-5 py-3.5 outline-none"
+                            placeholder="Your message"
+                            required
+                            />
+                            <ValidationError field="message" errors={state.errors} />
                         </label>
-                        <label htmlFor="" className="flex gap-2.5 item-modal items-center">
-                            <input type="checkbox" className="sr-only" name="" id="" />
-                            <button type='button' onClick={() => setIsChecked(!isChecked)} className="h-4 w-4 border rounded-full cursor-pointer">
-                                <div className="h-full w-full bg-neutral-50 rounded-full duration-300" style={{ scale: isChecked? 1 : 0 }}>
 
-                                </div>
-                            </button>
-                            <p className="text-neutral-400">I've accepted the <NavLink to={'/'} className={'underline underline-offset-2'}>privacy policy</NavLink>.*</p>
+                        <label className="flex gap-2.5 item-modal items-center">
+                            <input
+                            type="checkbox"
+                            name="privacy_policy"
+                            checked={isChecked}
+                            onChange={(e) => setIsChecked(e.target.checked)}
+                            required
+                            className="h-4 w-4 accent-neutral-900 cursor-pointer"
+                            />
+                            <p className="text-neutral-400">
+                                I've accepted the{" "}
+                                <button type="button" onClick={privacyHandleClick} className="underline underline-offset-2 cursor-pointer">
+                                    privacy policy
+                                </button>.*
+                            </p>
                         </label>
-                        <button className="uppercase py-5 px-10 rounded-full border text-sm cursor-pointer relative group item-modal" type="submit" onClick={submitHandleClick}>
-                            <span className="absolute top-0 left-0 h-full w-full rounded-full bg-neutral-50 scale-0 duration-300 group-hover:scale-100">
 
-                            </span>
+                        <ValidationError errors={state.errors} />
+
+                        <button
+                            className="uppercase py-5 px-10 rounded-full border text-sm cursor-pointer relative group item-modal disabled:opacity-50"
+                            type="submit"
+                            disabled={state.submitting}
+                        >
+                            <span className="absolute top-0 left-0 h-full w-full rounded-full bg-neutral-50 scale-0 duration-300 group-hover:scale-100" />
                             <span className="mix-blend-difference text-white uppercase">
-                                Submit message
+                            {state.submitting ? "Sending..." : "Submit message"}
                             </span>
                         </button>
+
+                        {state.succeeded && (
+                            <output>
+                                Your message has been sent successfully!
+                            </output>
+                        )}
                     </form>
                 </div>
             </div>

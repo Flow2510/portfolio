@@ -4,7 +4,7 @@ export default function AboutHero() {
             <div className="h-full w-full overflow-hidden relative flex items-end justify-center">
                 <img src="/images/background-black.jpg" className="absolute w-full h-full brightness-150 object-cover" alt="" />                   
             </div>
-            <div className="absolute inset-0 flex items-center justify-center">
+            <div className="absolute inset-0 flex items-center justify-center bg-neutral-900">
                 <div>
                     <h2 className="flex flex-col items-center">
                         <span className="font-[antonio] text-7xl pr-10 md:text-8xl tracking-tighter font-bold uppercase animated-item">
