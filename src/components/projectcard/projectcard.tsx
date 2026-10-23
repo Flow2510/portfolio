@@ -50,7 +50,7 @@ export default function ProjectCard({ project, navigateWithTransition } : Projec
     }, { scope: containerRef})
 
     return(
-        <button onClick={() => navigateWithTransition(`/projects/${project.id}`)}>
+        <button onClick={() => navigateWithTransition(`/projects/${project.id}`)} className="h-dvh w-full flex cursor-pointer">
             <div className="h-dvh w-full relative overflow-hidden text-neutral-50 animated-item" ref={containerRef}>
                 <div className="absolute top-[-40%] h-[140%] w-full">
                     <img src={project.images.mockup[0]} className="w-full h-full object-cover image-projects-card" alt="" />

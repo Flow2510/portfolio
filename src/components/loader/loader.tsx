@@ -23,7 +23,7 @@ export default function Loader({ isLoading, setIsLoading, isTransitioning } : Lo
                 from: "end"
             },
             ease: "power4.inOut",
-            duration: 0.7,
+            duration: 0.6,
             onComplete: () => setIsLoading(!isLoading)
         })
     }, { scope: loaderRef, dependencies: [pathname] })

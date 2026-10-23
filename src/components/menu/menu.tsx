@@ -105,16 +105,16 @@ export default function Menu({ menuIsOpen, setMenuIsOpen, contactModalIsOpen, se
                     </div>
                     <div className="flex flex-col gap-5">
                         <div className="overflow-hidden">
-                            <a href="mailto:sendra.florian@gmail.com" className="text inline-block" target="_blank">sendra.florian@gmail.com</a>
+                            <a href="mailto:sendra.florian@gmail.com" className="text inline-block text-menu" target="_blank">sendra.florian@gmail.com</a>
                         </div>
                         <div className="b-0 flex gap-10 font-light">
                             <a href="https://www.linkedin.com/in/florian-sendra-3270961a1" className="overflow-hidden" target="_blank">
-                                <div className="uppercase rounded-full bg-neutral-900 w-10 h-10 flex font-extralight items-center justify-center text">
+                                <div className="uppercase rounded-full bg-neutral-900 w-10 h-10 flex font-extralight items-center justify-center text-menu">
                                     <img src="/images/github-icon.png" className="w-10 h-10 object-cover scale-[1.2]" alt="" />
                                 </div>
                             </a> 
                             <a href="https://www.linkedin.com/in/florian-sendra-3270961a1" className="overflow-hidden" target="_blank">
-                                <div className="uppercase bg-neutral-100 rounded-full w-10 h-10 flex font-extralight items-center justify-center text">
+                                <div className="uppercase bg-neutral-100 rounded-full w-10 h-10 flex font-extralight items-center justify-center text-menu">
                                     <img src="/images/linkedin-icon.png" className="w-7 h-7 object-cover" alt="" />
                                 </div>
                             </a>                       

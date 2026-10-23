@@ -87,7 +87,7 @@ export default function NextProject({ selectedProject, navigateWithTransition } 
                     </div>                    
                 </button>
                 <div className='absolute left-0 bottom-0 w-full flex justify-between items-end p-2.5 md:p-5'>
-                        <button onClick={() => navigateWithTransition('/projects')} className='flex items-center text-neutral-50 gap-2.5'>
+                        <button onClick={() => navigateWithTransition('/projects')} className='flex items-center text-neutral-50 gap-2.5 cursor-pointer'>
                             <div className='grid grid-cols-2 h-2.5 w-2.5 gap-0.5'>
                                 <div className='w-full h-full bg-neutral-50'></div>
                                 <div className='w-full h-full bg-neutral-50'></div>

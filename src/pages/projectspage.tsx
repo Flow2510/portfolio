@@ -6,6 +6,10 @@ type ProjectsPageProps = {
 }
 
 export default function ProjectsPage({ navigateWithTransition } : ProjectsPageProps){
+    const backToTop = () => {
+        window.scrollTo(0, 0)
+    }
+    
     return(
         <main className="bg-neutral-50">
             <section className="relative z-1 bg-neutral-50">
@@ -20,7 +24,7 @@ export default function ProjectsPage({ navigateWithTransition } : ProjectsPagePr
                     </h2>
                 </div>
             </section>
-            <section>
+            <section className="relative">
                 {projects.map((project) => (
                     <ProjectCard 
                         navigateWithTransition={navigateWithTransition}

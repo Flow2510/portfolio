@@ -69,7 +69,7 @@ function App() {
       y: 0,
       opacity: 1,
       duration: 0.5,
-      delay: 0.5,
+      delay: 0.6,
       stagger: 0.1
     })
   ], {dependencies: [pathname]})
