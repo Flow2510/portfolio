@@ -40,7 +40,7 @@ export default function ContactButton({ setContactModalIsOpen, contactModalIsOpe
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
-            <svg viewBox="0 0 200 200" className="absolute hidden lg:inline-block">
+            <svg viewBox="0 0 200 200" className="absolute hidden lg:inline-block" aria-hidden="true">
                 <circle
                     ref={circleRef}
                     cx="100"
