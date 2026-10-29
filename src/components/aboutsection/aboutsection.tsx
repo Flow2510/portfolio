@@ -67,7 +67,7 @@ export default function AboutSection() {
     return(
         <section className="p-2.5 md:p-5">
             <div className="flex items-center justify-center py-20 md:py-52 lg:py-30 xl:py-35 overflow-hidden w-full" ref={containerRef}>
-                <h2 className="flex flex-col leading-[110%] items-center">
+                <h2 className="flex flex-col leading-[110%] items-center animated-item">
                     <span className="font-[inter] text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold -mb-2.5 uppercase tracking-tight right-animation-top">
                         Turning
                     </span>
@@ -86,13 +86,13 @@ export default function AboutSection() {
                 </h2>
             </div>
             <div className="w-full p-2.5 md:p-5 flex flex-col gap-5 max-w-150 m-auto">
-                <p>
+                <p className="animated-item">
                     I turn designs into responsive, high-performance
                     interfaces using React and TypeScript. I care deeply
                     about code quality, accessibility, and smooth user
                     interactions that elevate the overall experience
                 </p>
-                <p className="pb-15">
+                <p className="pb-15 animated-item">
                     To become a more complete developer, I'm currently
                     expanding into the back-end with Node.js, Express,
                     and Supabase. Building personal projects helps me

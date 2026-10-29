@@ -2,6 +2,7 @@ import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import { useRef, useState } from "react"
 import HoverTranslate from "../hovertranslate/hovertranslate";
+import ContactButton from "../contactbutton/contactbutton";
 
 type AboutStickyTypes = {
     readonly setContactModalIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -11,7 +12,6 @@ type AboutStickyTypes = {
 
 export default function AboutSticky({ contactModalIsOpen, setContactModalIsOpen, navigateWithTransition } : AboutStickyTypes) {
     const containerRef = useRef<HTMLDivElement>(null)
-    const titleRef = useRef<HTMLHeadingElement>(null)
 
     const [stripeWidth] = useState(() => {
         const n = 20
@@ -20,7 +20,7 @@ export default function AboutSticky({ contactModalIsOpen, setContactModalIsOpen,
     })
 
     useGSAP(() => {
-        if (!titleRef.current || !containerRef.current) return
+        if (!containerRef.current) return
 
         const tl = gsap.timeline({
             scrollTrigger: {
@@ -48,19 +48,21 @@ export default function AboutSticky({ contactModalIsOpen, setContactModalIsOpen,
             yPercent: 100
         })
 
-        tl.fromTo(titleRef.current, {
+        tl.fromTo('.first-title', {
             opacity: 0,
-            y: 50
+            y: 100
         }, {
             opacity: 1,
             y: 0,
-            duration: 1
+            duration: 1,
+            stagger: 0.2
         })
 
-        tl.to(titleRef.current, {
+        tl.to('.first-title', {
             opacity: 0,
-            y: -50,
-            duration: 1
+            y: -100,
+            duration: 1,
+            stagger: 0.2
         }, "+=1.5")
 
         tl.fromTo('.second-title', {
@@ -69,13 +71,15 @@ export default function AboutSticky({ contactModalIsOpen, setContactModalIsOpen,
         }, {
             opacity: 1,
             y: 0,
-            duration: 1
+            duration: 1,
+            stagger: 0.2
         })
 
         tl.to('.second-title', {
             opacity: 0,
             y: -50,
-            duration: 1
+            duration: 1,
+            stagger: 0.2
         }, "+=1.5")
 
         tl.to(".background-bloc", {
@@ -96,7 +100,7 @@ export default function AboutSticky({ contactModalIsOpen, setContactModalIsOpen,
 
     return(
         <div className="relative h-[500dvh]" ref={containerRef}>
-                <div className="sticky h-dvh w-full top-0 ">
+                <div className="sticky h-dvh w-full top-0">
                     <div className="absolute inset-0 flex z-1 stripes-container overflow-hidden">
                         {stripeWidth.map((width, index) => (
                             <div className="h-dvh shrink-0 scale-x-[1.5]" key={`${width}` + `${index}`} style={{ width: `${width}%` }}>
@@ -106,19 +110,19 @@ export default function AboutSticky({ contactModalIsOpen, setContactModalIsOpen,
                     </div>
                     <div className="absolute h-dvh w-full flex items-center justify-center z-2 title-container">
                         <div className="relative flex items-center justify-center">
-                            <h2 className="flex flex-col items-center text-neutral-50" ref={titleRef}>
-                                <span className="font-[antonio] text-7xl md:text-8xl uppercase pr-10">
+                            <h2 className="flex flex-col items-center text-neutral-50">
+                                <span className="font-[antonio] text-7xl md:text-8xl uppercase pr-10 first-title">
                                     BEYOND THE
                                 </span>
-                                <span className="font-[italianno] text-8xl md:text-9xl italic pl-10">
+                                <span className="font-[italianno] text-8xl md:text-9xl italic pl-10 first-title">
                                     Ordinary
                                 </span>                                
                             </h2>
-                            <h2 className="absolute flex flex-col items-center text-neutral-50 text-center second-title">
-                                    <span className="font-[antonio] text-7xl md:text-8xl uppercase text-nowrap  pr-10">
+                            <h2 className="absolute flex flex-col items-center text-neutral-50 text-center">
+                                    <span className="font-[antonio] text-7xl md:text-8xl uppercase text-nowrap pr-10 second-title">
                                         THINK IT. 
                                     </span>
-                                    <span className="font-[italianno] text-8xl md:text-9xl italic pl-10">
+                                    <span className="font-[italianno] text-8xl md:text-9xl italic pl-10 second-title">
                                         Build it.
                                     </span>
                                 </h2>
@@ -145,19 +149,15 @@ export default function AboutSticky({ contactModalIsOpen, setContactModalIsOpen,
                                     TOGETHER.
                                 </span>
                             </h2>
-                            <button className="uppercase py-5 px-10 rounded-full border text-sm cursor-pointer relative group lg:absolute lg:-bottom-5 lg:-left-20 lg:w-50 lg:h-50" type="button" onClick={() => setContactModalIsOpen(!contactModalIsOpen)}>
-                                <span className="absolute top-0 left-0 h-full w-full rounded-full bg-neutral-900 scale-0 duration-300 group-hover:scale-100">
-
-                                </span>
-                                <span className="mix-blend-difference text-white">
-                                    GET IN TOUCH
-                                </span>
-                            </button>
+                            <ContactButton 
+                                setContactModalIsOpen={setContactModalIsOpen}
+                                contactModalIsOpen={contactModalIsOpen}
+                            />
                         </div>
                         <div className="absolute bottom-0 left-0 w-full p-2.5 md:p-5 flex flex-col gap-2.5">
                             <div className="flex justify-between items-end">
                                 <div>
-                                    <button type="button" onClick={() => navigateWithTransition('/projects')} className='flex items-center gap-2.5'>
+                                    <button type="button" onClick={() => navigateWithTransition('/projects')} className='flex items-center gap-2.5 cursor-pointer'>
                                         <div className='grid grid-cols-2 h-2.5 w-2.5 gap-0.5'>
                                             <div className='w-full h-full bg-neutral-900'></div>
                                             <div className='w-full h-full bg-neutral-900'></div>

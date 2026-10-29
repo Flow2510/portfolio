@@ -126,7 +126,7 @@ export default function ProjectGallery({ selectedProject } : ProjectGalleryProps
     }, { scope: containerRef })
 
     return(
-        <div className="flex flex-col gap-10 items-center relative pb-25" ref={containerRef}>
+        <div className="flex flex-col gap-10 items-center relative pb-25 animated-item" ref={containerRef}>
             <div className="w-full relative py-50 overflow-hidden flex justify-center items-center" ref={imageContainer1Ref}>
                 <div className="h-full w-full overflow-hidden absolute top-0 left-0" >
                     <img src={selectedProject.images.background[0]} className="h-[140%] absolute left-0 top-[-40%] object-cover w-full" ref={image1Ref}  alt="" />

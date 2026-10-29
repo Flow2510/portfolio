@@ -1,11 +1,10 @@
 import { NavLink } from "react-router-dom";
 import ProjectGallery from "../projectgallery/projectgallery";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
 import { useGSAP } from "@gsap/react";
-import HoverTranslate from "../hovertranslate/hovertranslate";
 
 type ProjectInfoProps = {
     readonly selectedProject: {
@@ -38,6 +37,8 @@ gsap.registerPlugin(ScrollTrigger, SplitText)
 export default function ProjectInfo({ selectedProject } : ProjectInfoProps) {
     const sectionRef = useRef<HTMLElement>(null)
     const containerRef = useRef<HTMLDivElement>(null)
+    const circleRef = useRef<SVGCircleElement | null>(null);
+    const [isHovered, setIsHovered] = useState(false)
 
     useGSAP(() => {
         if (!containerRef.current) return
@@ -52,6 +53,27 @@ export default function ProjectInfo({ selectedProject } : ProjectInfoProps) {
             }
         })
     })
+
+    useEffect(() => {
+        const circle = circleRef.current;
+
+        if (!circle) return;
+
+        const length = circle.getTotalLength() + 1;
+
+        gsap.to(circle, {
+            strokeDasharray: length,
+            strokeDashoffset: isHovered? length : 0,
+            duration: isHovered? 0.5: 1,
+            ease: "power1.inOut",
+        });
+
+        gsap.to('.button-background', {
+            scale: isHovered? 1 : 0,
+            duration: 0.7,
+            ease: "power4.inOut",
+        });
+    }, [isHovered])
 
     return(
         <section className="flex flex-col relative z-1 bg-neutral-50" ref={sectionRef}>
@@ -81,24 +103,44 @@ export default function ProjectInfo({ selectedProject } : ProjectInfoProps) {
             </div>
             <div className="flex flex-col gap-20 p-5 pb-30 items-center">
                 <div className="flex flex-col gap-10 md:flex-row md:w-2/3">
-                    <h3 className="font-semibold">About</h3>
+                    <h3 className="font-semibold animated-item">About</h3>
                     <div className="flex flex-col gap-15">
                         <div className="flex flex-col gap-5 md:flex-row">
-                            <p className="font-light leading-relaxed max-w-200 w-full">
+                            <p className="font-light leading-relaxed max-w-200 w-full animated-item">
                                 {selectedProject.intro}
                             </p>
-                            <p className="font-light leading-relaxed max-w-200 w-full">
+                            <p className="font-light leading-relaxed max-w-200 w-full animated-item">
                                 {selectedProject.text}
                             </p>    
                         </div>    
                                   
                     </div>
                 </div>
-                <NavLink to={selectedProject.link} target="_blank" className={'uppercase text-sm underline tracking-widest font-semibold group'}>
-                    <HoverTranslate 
-                        text="See project"
-                    />
-                </NavLink> 
+                <NavLink 
+                    onMouseEnter={() => setIsHovered(true)}
+                    onMouseLeave={() => setIsHovered(false)}
+                    to={selectedProject.link} 
+                    target="_blank" 
+                    className="uppercase py-5 px-10 rounded-full text-sm cursor-pointer border md:border-0 relative group md:w-50 md:h-50 md:flex md:items-center md:justify-center animated-item bg-neutral-50" 
+                >
+                    <svg viewBox="0 0 200 200" className="absolute hidden md:inline-block">
+                        <circle
+                            ref={circleRef}
+                            cx="100"
+                            cy="100"
+                            r="99"
+                            stroke="#171717"
+                            strokeWidth="1"
+                            fill="none"
+                        />
+                    </svg>
+                    <span className="absolute top-0 left-0 h-full w-full rounded-full bg-neutral-900 scale-0 button-background">
+                
+                    </span>
+                    <span className="mix-blend-difference text-white">
+                        See Project
+                    </span>
+                </NavLink>
             </div>
             <ProjectGallery 
                 selectedProject={selectedProject}

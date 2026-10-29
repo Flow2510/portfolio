@@ -12,6 +12,7 @@ import Loader from './components/loader/loader'
 import ContactModal from './components/contactmodal/contactmodal'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
+import PolicyPage from './pages/policypage'
 
 function App() {
   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 1024);
@@ -104,6 +105,7 @@ function App() {
         <Route path='/projects/:id' element={<ProjectPage navigateWithTransition={navigateWithTransition}/>}/>
         <Route path='/projects' element={<ProjectsPage navigateWithTransition={navigateWithTransition}/>}/>
         <Route path='/about' element={<AboutPage contactModalIsOpen={contactModalIsOpen} setContactModalIsOpen={setContactModalIsOpen} navigateWithTransition={navigateWithTransition}/>}/>
+        <Route path='/policy' element={<PolicyPage contactModalIsOpen={contactModalIsOpen} setContactModalIsOpen={setContactModalIsOpen} navigateWithTransition={navigateWithTransition}/>} />
       </Routes>
     </div>
   )
