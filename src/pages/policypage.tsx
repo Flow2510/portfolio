@@ -75,134 +75,152 @@ export default function PolicyPage({ setContactModalIsOpen, contactModalIsOpen, 
                 <div className="flex flex-col gap-5 relative md:flex-row md:gap-25">                    
                     <div className="flex flex-col gap-5 max-w-250">
                         <div className="flex flex-col gap-2.5 animated-item">
-                            <h3 className="font-semibold text-xl">1. Responsable du traitement</h3>
+                            <h3 className="font-semibold text-xl">1. Data Controller</h3>
                             <div>
                                 <p>
-                                    Le présent site est édité par Sendra Florian,
-                                    joignable à l'adresse suivante : sendra.florian@gmail.com.
+                                    This website is operated by Sendra Florian,
+                                    who can be contacted at the following email address: <a href="mailto:sendra.florian@gmail.com" target="_blank" className="underline">sendra.florian@gmail.com.</a>
                                 </p>
                                 <p>
-                                    Le responsable du traitement des données personnelles est Sendra Florian.
+                                    Sendra Florian is the data controller responsible for the processing of personal data.
                                 </p>
                             </div>
                         </div>
+
                         <div className="flex flex-col gap-2.5 animated-item">
-                            <h3 className="font-semibold text-xl">2. Données personnelles collectées</h3>
+                            <h3 className="font-semibold text-xl">2. Personal Data Collected</h3>
                             <div>
                                 <p>
-                                    Lorsque vous utilisez le formulaire de contact, les informations que vous
-                                    renseignez sont collectées afin de permettre le traitement de votre demande.
+                                    When you use the contact form, the information you provide
+                                    is collected in order to process your request.
                                 </p>
                                 <p>
-                                    Selon les champs présents dans le formulaire, ces informations peuvent
-                                    comprendre votre nom, votre adresse e-mail, l'objet de votre demande
-                                    et le contenu de votre message.
+                                    Depending on the fields included in the form, this information
+                                    may include your name, email address, subject of your request,
+                                    and the content of your message.
                                 </p>
                                 <p>
-                                    Seules les données nécessaires au traitement de votre demande doivent être collectées.
+                                    Only the data necessary to process your request should be collected.
                                 </p>
                                 <p>
-                                    Lors de la consultation du site, des données techniques peuvent également
-                                    être traitées par l'hébergeur afin d'assurer le fonctionnement, la maintenance
-                                    et la sécurité du site.
+                                    When browsing the website, technical data may also be processed
+                                    by the hosting provider to ensure the website's operation,
+                                    maintenance, and security.
                                 </p>
                             </div>
                         </div>
+
                         <div className="flex flex-col gap-2.5 animated-item">
-                            <h3 className="font-semibold text-xl">3. Finalités et bases légales</h3>
+                            <h3 className="font-semibold text-xl">3. Purposes and Legal Bases</h3>
                             <div>
                                 <p>
-                                    Les données transmises via le formulaire de contact sont utilisées pour
-                                    répondre aux demandes reçues. Ce traitement repose sur l'intérêt légitime
-                                    du responsable du traitement à répondre aux sollicitations qui lui sont
-                                    adressées ou, lorsque cela est pertinent, sur les mesures précontractuelles
-                                    prises à la demande de la personne concernée.
+                                    Data submitted through the contact form is used to respond
+                                    to incoming requests. This processing is based on the
+                                    legitimate interest of the data controller in responding
+                                    to inquiries received or, where applicable, on pre-contractual
+                                    measures taken at the request of the data subject.
                                 </p>
                                 <p>
-                                    Les données techniques strictement nécessaires peuvent être traitées
-                                    pour assurer le fonctionnement et la sécurité du site, sur la base légale
-                                    applicable au traitement concerné.
+                                    Technical data that is strictly necessary may be processed
+                                    to ensure the operation and security of the website,
+                                    on the applicable legal basis for the processing concerned.
                                 </p>
                             </div>
                         </div>
+
                         <div className="flex flex-col gap-2.5 animated-item">
-                            <h3 className="font-semibold text-xl">4. Hébergement et services externes</h3>
+                            <h3 className="font-semibold text-xl">4. Hosting and External Services</h3>
                             <div>
                                 <p>
-                                    Le site est hébergé et déployé à l'aide de Vercel. Dans le cadre de ce
-                                    service, certaines données techniques peuvent être traitées pour assurer
-                                    la disponibilité, le fonctionnement et la sécurité du site.
+                                    This website is hosted and deployed using Vercel. As part
+                                    of this service, certain technical data may be processed
+                                    to ensure the website's availability, operation, and security.
                                 </p>
                                 <p>
-                                    Le site peut charger des polices de caractères depuis un service externe.
-                                    Le chargement de ces ressources peut entraîner la transmission de données
-                                    techniques, notamment l'adresse IP, au fournisseur concerné.
+                                    The website may load fonts from an external service.
+                                    Loading these resources may involve the transmission
+                                    of technical data, including your IP address, to the
+                                    relevant provider.
                                 </p>
                                 <p>
-                                    GitHub est utilisé pour gérer et héberger le code source du projet.
-                                    Son utilisation pour le développement ne signifie pas nécessairement que
-                                    les visiteurs transmettent directement des données personnelles à GitHub.
+                                    GitHub is used to manage and host the project's source code.
+                                    Its use for development purposes does not necessarily mean
+                                    that visitors directly transmit personal data to GitHub.
                                 </p>
                             </div>
                         </div>
+
                         <div className="flex flex-col gap-2.5 animated-item">
-                            <h3 className="font-semibold text-xl">5. Cookies et traceurs</h3>
+                            <h3 className="font-semibold text-xl">5. Cookies and Tracking Technologies</h3>
                             <div>
                                 <p>
-                                    Le site n'utilise pas d'outil de mesure d'audience tel que Google Analytics.
+                                    This website does not use audience measurement tools
+                                    such as Google Analytics.
                                 </p>
                                 <p>
-                                    Les éventuels cookies ou autres traceurs utilisés dépendent des fonctionnalités
-                                    réellement présentes sur le site et des services externes intégrés.
-                                    Les traceurs non exemptés de consentement ne sont utilisés qu'après
-                                    le recueil du consentement requis par la réglementation.
+                                    Any cookies or other tracking technologies used depend
+                                    on the features actually available on the website and
+                                    the external services integrated into it.
+                                    Tracking technologies that are not exempt from consent
+                                    requirements are only used after the required consent
+                                    has been obtained in accordance with applicable regulations.
                                 </p>
                             </div>
                         </div>
+
                         <div className="flex flex-col gap-2.5 animated-item">
-                            <h3 className="font-semibold text-xl">6. Destinataires des données</h3>
+                            <h3 className="font-semibold text-xl">6. Data Recipients</h3>
                             <p>
-                                Les données peuvent être accessibles au responsable du traitement et aux
-                                prestataires techniques concernés, dans la mesure nécessaire à leurs missions.
-                                Les destinataires effectifs dépendent des services activés et de la
-                                configuration du site.
+                                Data may be accessed by the data controller and relevant
+                                technical service providers, to the extent necessary for
+                                the performance of their duties.
+                                The actual recipients depend on the services enabled
+                                and the website's configuration.
                             </p>
                         </div>
+
                         <div className="flex flex-col gap-2.5 animated-item">
-                            <h3 className="font-semibold text-xl">7. Durée de conservation</h3>
+                            <h3 className="font-semibold text-xl">7. Data Retention Period</h3>
                             <div>
                                 <p>
-                                    Les données personnelles sont conservées pendant la durée nécessaire à la finalité poursuivie.
+                                    Personal data is retained for as long as necessary
+                                    to fulfil the purpose for which it was collected.
                                 </p>
                                 <p>
-                                    Les messages du formulaire de contact sont conservés pendant 6 mois.
+                                    Messages submitted through the contact form are retained for 6 months.
                                 </p>
                                 <p>
-                                    Les données techniques et journaux de sécurité sont conservés pendant 6 mois.
+                                    Technical data and security logs are retained for 6 months.
                                 </p>
                                 <p>
-                                    À l'issue de la durée applicable, les données sont supprimées ou archivées lorsque cela est justifié et autorisé.
+                                    Once the applicable retention period has expired,
+                                    the data is deleted or archived where justified and permitted.
                                 </p>
                             </div>
                         </div>
+
                         <div className="flex flex-col gap-2.5 animated-item">
-                            <h3 className="font-semibold text-xl">8. Vos droits</h3>
+                            <h3 className="font-semibold text-xl">8. Your Rights</h3>
                             <div>
                                 <p>
-                                    Conformément à la réglementation applicable, vous pouvez, selon les
-                                    conditions prévues par celle-ci, demander l'accès à vos données personnelles,
-                                    leur rectification, leur effacement, la limitation du traitement ou exercer
-                                    votre droit d'opposition.
+                                    In accordance with applicable regulations, you may,
+                                    subject to the conditions set out therein, request
+                                    access to your personal data, its rectification,
+                                    erasure, restriction of processing, or exercise
+                                    your right to object.
                                 </p>
                                 <p>
-                                    Vous pouvez également exercer votre droit à la portabilité lorsque celui-ci
-                                    s'applique.
+                                    You may also exercise your right to data portability
+                                    where applicable.
                                 </p>
                                 <p>
-                                    Pour exercer vos droits, contactez : [adresse e-mail de contact].
+                                    To exercise your rights, please contact:
+                                    [contact email address].
                                 </p>
                                 <p>
-                                    Vous pouvez également déposer une réclamation auprès de la CNIL :{" "}
+                                    You may also lodge a complaint with the French Data
+                                    Protection Authority (CNIL):
+                                    {" "}
                                     <a
                                         href="https://www.cnil.fr/"
                                         target="_blank"
@@ -216,23 +234,24 @@ export default function PolicyPage({ setContactModalIsOpen, contactModalIsOpen, 
                         </div>
 
                         <div className="flex flex-col gap-2.5 animated-item">
-                            <h3 className="font-semibold text-xl">9. Sécurité</h3>
+                            <h3 className="font-semibold text-xl">9. Security</h3>
                             <p>
-                                Des mesures techniques et organisationnelles adaptées sont mises en œuvre
-                                pour protéger les données personnelles, selon les moyens et les services utilisés.
+                                Appropriate technical and organisational measures are
+                                implemented to protect personal data, depending on
+                                the resources and services used.
                             </p>
                         </div>
 
                         <div className="flex flex-col gap-2.5 animated-item">
-                            <h3 className="font-semibold text-xl">10. Mise à jour</h3>
+                            <h3 className="font-semibold text-xl">10. Updates</h3>
                             <p>
-                                Cette politique peut être modifiée afin de refléter les évolutions du site,
-                                de ses fonctionnalités ou de la réglementation applicable.
+                                This policy may be updated to reflect changes to the
+                                website, its features, or applicable regulations.
                             </p>
                         </div>
 
                         <h3 className="text-sm pt-15">
-                            Dernière mise à jour : 24 octobre 2026
+                            Last updated: October 24, 2026
                         </h3>
                     </div>
                 </div>                

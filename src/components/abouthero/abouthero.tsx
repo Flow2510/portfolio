@@ -14,7 +14,7 @@ export default function AboutHero() {
                             Sendra
                         </span>
                     </h2>
-                    <p className="uppercase font-light text-2xl opacity-50 -translate-y-1/2 md:-translate-y-2/3 lg:-translate-y-full">
+                    <p className="uppercase font-light md:text-xl lg:text-2xl opacity-50 -translate-y-1/2 md:-translate-y-2/3 lg:-translate-y-full">
                         <span className="animated-item inline-block">
                             Web Developer
                         </span>

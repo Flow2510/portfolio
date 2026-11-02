@@ -113,4 +113,3 @@ function App() {
 export default App
 
 // mettre plusieurs sources d'images de tailles differentes
-// faire une page privacy policy
