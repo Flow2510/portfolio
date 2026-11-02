@@ -1,6 +1,6 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type ProjectCardTypes={
     readonly project: {
@@ -31,6 +31,32 @@ type ProjectCardTypes={
 export default function ProjectCard({ project, navigateWithTransition } : ProjectCardTypes) {
     const containerRef = useRef<HTMLDivElement>(null)
     const words = project.name.split(" ")
+    const [isHovered, setIsHovered] = useState(false)
+
+    const tooltipRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const xTo = gsap.quickTo(tooltipRef.current, "x", {
+            duration: 0.5,
+            ease: "power3.out",
+        });
+
+        const yTo = gsap.quickTo(tooltipRef.current, "y", {
+            duration: 0.5,
+            ease: "power3.out",
+        });
+
+        const handleMouseMove = (e: MouseEvent) => {
+            xTo(e.clientX);
+            yTo(e.clientY);
+        };
+
+        window.addEventListener("mousemove", handleMouseMove);
+
+        return () => {
+            window.removeEventListener("mousemove", handleMouseMove);
+        };
+    }, []);
 
     useGSAP(() => {
         if (!containerRef.current) return
@@ -49,8 +75,22 @@ export default function ProjectCard({ project, navigateWithTransition } : Projec
         )
     }, { scope: containerRef})
 
+    useEffect(() => {
+        gsap.to(tooltipRef.current, {
+            scale: isHovered ? 1 : 0,
+            duration: 0.3,
+            ease: "power3.out",
+            overwrite: "auto",
+        });
+    }, [isHovered]);
+
     return(
-        <button onClick={() => navigateWithTransition(`/projects/${project.id}`)} className="h-dvh w-full flex cursor-pointer">
+        <button 
+            onClick={() => navigateWithTransition(`/projects/${project.id}`)} 
+            className="h-dvh w-full flex cursor-pointer"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+        >
             <div className="h-dvh w-full relative overflow-hidden text-neutral-50 animated-item" ref={containerRef}>
                 <div className="absolute top-[-40%] h-[140%] w-full">
                     <img src={project.images.mockup[0]} className="w-full h-full object-cover image-projects-card" alt="" />
@@ -80,6 +120,14 @@ export default function ProjectCard({ project, navigateWithTransition } : Projec
                         {project.type}
                     </p>
                 </div>
+            </div>
+            <div
+                ref={tooltipRef}
+                className="fixed top-0 left-0"
+            >
+                <p className="px-2.5 py-1 bg-neutral-50 rounded-lg uppercase font-[antonio] font-light translate-x-1/2 cursor-info">
+                    View Project
+                </p>
             </div>
         </button>
     )

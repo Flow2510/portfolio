@@ -11,7 +11,9 @@ type AboutPageTypes = {
 export default function AboutPage({ contactModalIsOpen, setContactModalIsOpen, navigateWithTransition } : AboutPageTypes) {
     
     return(
-        <main className="bg-neutral-50">
+        <main 
+            className="bg-neutral-50"
+        >            
             <AboutHero />
             <AboutSection />
             <AboutSticky contactModalIsOpen={contactModalIsOpen} setContactModalIsOpen={setContactModalIsOpen} navigateWithTransition={navigateWithTransition}/>

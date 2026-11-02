@@ -117,7 +117,12 @@ export default function Menu({ menuIsOpen, setMenuIsOpen, contactModalIsOpen, se
                                 <div className="uppercase bg-neutral-100 rounded-full w-10 h-10 flex font-extralight items-center justify-center text-menu">
                                     <img src="/images/linkedin-icon.png" className="w-7 h-7 object-cover" alt="" />
                                 </div>
-                            </a>                       
+                            </a>
+                            <a href="/CV_Sendra_Florian.pdf" className="overflow-hidden" target="_blank">
+                                <div className="uppercase bg-neutral-100 rounded-full w-10 h-10 flex font-extralight items-center justify-center text-menu">
+                                    <p className="text-neutral-900 font-bold">CV</p>
+                                </div>
+                            </a>              
                         </div>
                     </div>
                 </div>

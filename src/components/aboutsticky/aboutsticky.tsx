@@ -104,7 +104,7 @@ export default function AboutSticky({ contactModalIsOpen, setContactModalIsOpen,
                     <div className="absolute inset-0 flex z-1 stripes-container overflow-hidden">
                         {stripeWidth.map((width, index) => (
                             <div className="h-dvh shrink-0 scale-x-[1.5]" key={`${width}` + `${index}`} style={{ width: `${width}%` }}>
-                                <div className="h-dvh bg-neutral-900 background-bloc w-full" />
+                                <div className="h-dvh bg-neutral-900 background-bloc w-full origin-right" />
                             </div>
                         ))}
                     </div>

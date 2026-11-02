@@ -95,7 +95,6 @@ function App() {
       <Header
         setMenuIsOpen={setMenuIsOpen}
         menuIsOpen={menuIsOpen}
-        isDesktop={isDesktop}
         contactModalIsOpen={contactModalIsOpen}
         setContactModalIsOpen={setContactModalIsOpen}
         navigateWithTransition={navigateWithTransition}

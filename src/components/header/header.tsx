@@ -5,13 +5,12 @@ import gsap from "gsap";
 type HeaderProps = {
     readonly setMenuIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
     readonly menuIsOpen: boolean;
-    readonly isDesktop: boolean;
     readonly contactModalIsOpen: boolean;
     readonly setContactModalIsOpen: React.Dispatch<React.SetStateAction<boolean>>
     readonly navigateWithTransition: (path: string) => void
 }
 
-export default function Header({ setMenuIsOpen, menuIsOpen, isDesktop, contactModalIsOpen, setContactModalIsOpen, navigateWithTransition } : HeaderProps ){
+export default function Header({ setMenuIsOpen, menuIsOpen, contactModalIsOpen, setContactModalIsOpen, navigateWithTransition } : HeaderProps ){
 
     useEffect(() => {
         gsap.to('.button-line-top',{
@@ -29,7 +28,7 @@ export default function Header({ setMenuIsOpen, menuIsOpen, isDesktop, contactMo
     }, [menuIsOpen])
 
     return(
-        <header className="w-full flex justify-between fixed top-0 left-0 p-2.5 z-15 md:p-5 mix-blend-exclusion text-white animated-item" style={{ alignItems: isDesktop ? "start" : 'center' }}>
+        <header className="w-full flex justify-between fixed top-0 left-0 p-2.5 z-15 md:p-5 mix-blend-exclusion text-white animated-item md:items-start">
             <button onClick={() => navigateWithTransition('/')} className={'pointer-events-auto cursor-pointer'}>
                 <h1  className="flex flex-col uppercase font-[antonio] text-3xl tracking-[-1px] font-semibold md:text-4xl">
                     <span>

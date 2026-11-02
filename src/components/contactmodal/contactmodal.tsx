@@ -171,7 +171,7 @@ export default function ContactModal({ contactModalIsOpen, setContactModalIsOpen
                         <div className="b-0 flex gap-5 font-light">
                             <a href="https://github.com/Flow2510" className="overflow-hidden hover:scale-[0.9] duration-300" target="_blank">
                                 <div className="uppercase rounded-full bg-neutral-50 w-10 h-10 flex font-extralight items-center justify-center item-modal">
-                                    <img src="/images/github-black-icon.png" className="w-10.25 h-10.25 object-cover inline-block scale-[1.2]" alt="" />
+                                    <img src="/images/github-black-icon.png" className="w-10.5 h-10.5 object-cover inline-block scale-[1.2]" alt="" />
                                 </div>
                             </a> 
                             <a href="https://www.linkedin.com/in/florian-sendra-3270961a1" className="overflow-hidden hover:scale-[0.9] duration-300" target="_blank">
@@ -183,7 +183,12 @@ export default function ContactModal({ contactModalIsOpen, setContactModalIsOpen
                                 <div className="uppercase bg-neutral-900 rounded-full w-10 h-10 flex font-extralight items-center justify-center item-modal">
                                     <img src="/images/mail-icon.png" className="w-7 h-7 object-cover brightness-[100]" alt="" />
                                 </div>
-                            </a>                  
+                            </a>      
+                            <a href="/CV_Sendra_Florian.pdf" className="hover:scale-[0.9] duration-300" target="_blank">
+                                <div className="uppercase bg-neutral-900 rounded-full w-10 h-10 flex font-extralight items-center justify-center item-modal">
+                                    <p className="text-neutral-50 font-bold">CV</p>
+                                </div>
+                            </a>              
                         </div>
                     </div>
             </div>
