@@ -137,6 +137,13 @@ export default function AboutSticky({ contactModalIsOpen, setContactModalIsOpen,
                         </div>
                     </div>
                     <div className="h-dvh w-full flex items-center justify-center bg-neutral-50 relative contact-container">
+                        <div className="absolute w-full h-full top-1/2 left-1/2 -translate-1/2 flex items-center max-w-150 justify-center">
+                            <img
+                                src="/images/background.png"
+                                className="h-full w-full object-cover grayscale-100 opacity-30 fade-image invert-100"
+                                alt=""
+                            />
+                        </div>
                         <div className="flex flex-col items-center gap-10 relative">
                             <h2 className="flex flex-col items-center">
                                 <span className="font-[antonio] text-7xl md:text-8xl lg:text-9xl xl:text-[150px] uppercase tracking-tight font-bold pr-10 md:pr-20 lg:pr-30 xl:pr-50">
