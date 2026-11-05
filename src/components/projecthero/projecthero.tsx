@@ -46,7 +46,14 @@ export default function ProjectHero({ selectedProject } : ProjectInfoProps) {
 
     return(
         <section className="relative z-1 bg-neutral-50 lg:flex">
-            <div className="h-[60dvh] lg:h-dvh lg:w-full flex flex-col justify-end pb-15">
+            <div className="h-[60dvh] lg:h-dvh lg:w-full flex flex-col justify-end pb-15 relative">
+                <div className="absolute w-full h-full top-1/2 left-1/2 -translate-1/2 flex items-center max-w-150 justify-center">
+                <img
+                    src="/images/background.png"
+                    className="h-full w-full object-cover grayscale-100 opacity-30 fade-image invert-100"
+                    alt=""
+                />
+            </div>
                 <h2 className="flex flex-col items-center">
                     <span className="flex gap-2 md:gap-2.5 lg:gap-3 xl:gap-3.5 font-[antonio] text-5xl md:text-6xl lg:text-7xl xl:text-8xl w-fit uppercase tracking-tighter font-bold animated-item pr-10">
                         {words.slice(0, Math.ceil(words.length / 2)).map((word, index) => (

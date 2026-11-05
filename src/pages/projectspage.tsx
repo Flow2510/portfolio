@@ -9,7 +9,14 @@ export default function ProjectsPage({ navigateWithTransition } : ProjectsPagePr
     return(
         <main className="bg-neutral-50">
             <section className="relative z-1 bg-neutral-50">
-                <div className="h-[60dvh] flex flex-col justify-end pb-15">
+                <div className="h-[60dvh] relative flex flex-col justify-end pb-15">
+                    <div className="absolute w-full h-full top-1/2 left-1/2 -translate-1/2 flex items-center max-w-150 justify-center">
+                <img
+                    src="/images/background.png"
+                    className="h-full w-full object-cover grayscale-100 opacity-30 fade-image invert-100"
+                    alt=""
+                />
+            </div>
                     <h2 className="flex flex-col items-center">
                         <span className="flex gap-2 font-[antonio] text-5xl md:text-6xl lg:text-7xl xl:text-8xl w-fit uppercase tracking-tighter font-bold animated-item">
                             Selected

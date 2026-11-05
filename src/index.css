@@ -1,1 +1,14 @@
 @import "tailwindcss";
+
+.fade-image {
+    -webkit-mask-image: radial-gradient(
+        ellipse,
+        black 30%,
+        transparent 85%
+    );
+    mask-image: radial-gradient(
+        ellipse,
+        black 30%,
+        transparent 85%
+    );
+}
