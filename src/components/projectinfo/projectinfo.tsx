@@ -125,7 +125,7 @@ export default function ProjectInfo({ selectedProject } : ProjectInfoProps) {
                     target="_blank" 
                     className="uppercase py-5 px-10 rounded-full text-sm cursor-pointer border md:border-0 relative group md:w-50 md:h-50 md:flex md:items-center md:justify-center animated-item bg-neutral-50" 
                 >
-                    <svg viewBox="0 0 200 200" className="absolute hidden md:inline-block">
+                    <svg viewBox="0 0 200 200" className="absolute hidden md:inline-block" aria-hidden>
                         <circle
                             ref={circleRef}
                             cx="100"
