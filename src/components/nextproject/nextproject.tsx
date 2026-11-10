@@ -1,8 +1,9 @@
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import projects from '../../data/projects.json'
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import HoverTranslate from '../hovertranslate/hovertranslate';
+import { useTranslation } from 'react-i18next';
 
 type NextProjectProps = {
     readonly selectedProject: {
@@ -35,6 +36,9 @@ export default function NextProject({ selectedProject, navigateWithTransition } 
     if (!selectedProject) return
 
     const containerRef = useRef<HTMLDivElement>(null)
+    const { t } = useTranslation()
+    
+    const [isHovered, setIsHovered] = useState(false)
 
     const backToTop = () => {
         window.scrollTo(0, 0)
@@ -56,6 +60,12 @@ export default function NextProject({ selectedProject, navigateWithTransition } 
         })
     })
 
+    useEffect(() => {
+        gsap.to(".back-to-top-container", {
+            xPercent: isHovered? 0 : 110
+        })
+    })
+
     return(
         <section >
             <div className="fixed inset-0 z-0" >
@@ -66,7 +76,7 @@ export default function NextProject({ selectedProject, navigateWithTransition } 
                     </div>
                     <div className='absolute h-full w-full top-0 left-0 text-neutral-50 flex items-center justify-center'>
                         <div className='flex flex-col items-center'>
-                            <p>Next Project</p>
+                            <p>{t("project.next-project.subtitle")}</p>
                             <h2 className="flex flex-col items-center">
                                 <span className="flex gap-2 font-[antonio] text-5xl md:text-6xl lg:text-7xl xl:text-8xl w-fit font-extrabold uppercase">
                                     {words.slice(0, Math.ceil(words.length / 2)).map((word, index) => (
@@ -96,15 +106,30 @@ export default function NextProject({ selectedProject, navigateWithTransition } 
                             </div>
                             <p className='text-sm'>
                                 <HoverTranslate 
-                                    text='All Projects'
+                                    text={t("project.next-project.button")}
                                 />
                             </p>
                         </button>
-                        <button type='button' onClick={backToTop} className='bg-neutral-100 rounded-full w-12 h-12 flex text-xl items-center justify-center text-neutral-950 cursor-pointer hover:scale-[0.9] duration-300'>
-                            <span>
-                                ↑
-                            </span>
-                        </button>
+                        <div className='relative'>
+                            <div className='absolute right-0 -top-11 overflow-hidden'>
+                                <p className='back-to-top-container overflow-hidden text-nowrap px-2.5 py-1 bg-neutral-50 rounded-lg uppercase font-[antonio] font-light'>
+                                    <span className='inline-block back-to-top-text'>
+                                        Back to top
+                                    </span>
+                                </p>
+                            </div>
+                            <button 
+                                type='button' 
+                                onClick={backToTop}
+                                onMouseEnter={() => setIsHovered(true)}
+                                onMouseLeave={() => setIsHovered(false)}
+                                className='bg-neutral-100 rounded-full w-12 h-12 flex text-xl items-center justify-center text-neutral-950 cursor-pointer hover:scale-[0.9] duration-300'
+                            >
+                                <span>
+                                    ↑
+                                </span>
+                            </button>  
+                        </div>                      
                     </div>
                 </div>
             <div className="h-dvh w-full" ref={containerRef}>

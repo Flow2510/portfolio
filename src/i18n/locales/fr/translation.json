@@ -1,12 +1,138 @@
 {
-  "header": {
-    "home": "Accueil",
-    "projects": "Projets",
-    "about": "Info",
-    "contact": "Contact"
+    "header": {
+        "home": "Accueil",
+        "projects": "Projets",
+        "about": "À propos",
+        "contact": "Contact"
+    },
+    "hero": {
+        "developer": "Développeur Web",
+        "opportunities": "Ouvert aux opportunités"
+    },
+    "contact-modal": {
+        "title": {
+        "line1": "Entrons",
+        "line2": "En contact"
+        },
+        "form": {
+        "name": "Votre nom",
+        "email": "Votre adresse e-mail",
+        "message": "Votre message",
+        "policy": "J'accepte la",
+        "policy-link": "politique de confidentialité",
+        "button": {
+            "send": "Envoyer le message",
+            "sending": "Envoi en cours"
+        },
+        "state": "Votre message a bien été envoyé !"
+        }
   },
-  "hero": {
-    "developer": "Développeur Web",
-    "opportunities" : "Ouvert aux opportunités"
-  }
+    "about": {
+        "hero": {
+        "subtitle": "Développeur Web",
+        "info": {
+            "line1": "Développeur créatif",
+            "line2": "Basé à Perpignan"
+        }
+    },
+    "info": {
+        "title": {
+            "line1": "Transformer",
+            "line2": "Les idées",
+            "line3": "En",
+            "line4": "Expériences",
+            "line5": "Interactives"
+        },
+        "about": {
+            "title": "À propos",
+            "text1": "Je transforme des maquettes en interfaces performantes et adaptatives grâce à React et TypeScript. J'accorde une grande importance à la qualité du code, à l'accessibilité et à la fluidité des interactions pour offrir une expérience utilisateur soignée.",
+            "text2": "Afin de devenir un développeur plus polyvalent, j'élargis actuellement mes compétences au back-end avec Node.js, Express et Supabase. La réalisation de projets personnels me permet d'appréhender un projet dans son ensemble, de la conception de la base de données jusqu'à l'interface utilisateur.",
+            "text3": "Je suis actuellement à la recherche de nouvelles opportunités en tant que développeur Front-End, où je pourrai mettre mes compétences à profit, continuer à apprendre et collaborer avec une équipe pour créer des expériences numériques porteuses de sens."
+        },
+        "stack": {
+            "title": "Technologies"
+        }
+    },
+    "sticky": {
+        "first-title": {
+            "line1": "Sortir",
+            "line2": "Du cadre"
+        },
+        "second-title": {
+            "line1": "Voir",
+            "line2": "Plus grand"
+        },
+        "footer": {
+            "title": {
+                "line1": "Du concept",
+                "line2": "Au digital",
+                "line3": "Ensemble"
+            },
+            "button": "Me contacter",
+            "projects": "Tous les projets"
+        }
+    }
+    },
+    "policy": {
+        "title": {
+        "line1": "Politique",
+        "line2": "De confidentialité"
+        },
+        "part1": {
+            "title": "Responsable du traitement",
+            "text1": "Ce site est exploité par Florian Sendra, qui peut être contacté à l'adresse e-mail suivante :",
+            "text2": "Florian Sendra est le responsable du traitement des données personnelles collectées."
+        },
+        "part2": {
+            "title": "Données personnelles collectées",
+            "text1": "Lorsque vous utilisez le formulaire de contact, les informations que vous renseignez sont collectées afin de traiter votre demande.",
+            "text2": "Selon les champs présents dans le formulaire, ces informations peuvent inclure votre nom, votre adresse e-mail, l'objet de votre demande ainsi que le contenu de votre message.",
+            "text3": "Seules les données nécessaires au traitement de votre demande doivent être collectées.",
+            "text4": "Lors de votre navigation sur le site, des données techniques peuvent également être traitées par l'hébergeur afin d'assurer le fonctionnement, la maintenance et la sécurité du site."
+        },
+        "part3": {
+            "title": "Finalités et bases légales du traitement",
+            "text1": "Les données transmises via le formulaire de contact sont utilisées pour répondre aux demandes reçues. Ce traitement repose sur l'intérêt légitime du responsable du traitement à répondre aux sollicitations reçues ou, le cas échéant, sur les mesures précontractuelles prises à la demande de la personne concernée.",
+            "text2": "Les données techniques strictement nécessaires peuvent être traitées afin de garantir le fonctionnement et la sécurité du site, sur la base légale applicable au traitement concerné."
+        },
+        "part4": {
+            "title": "Hébergement et services externes",
+            "text1": "Ce site est hébergé et déployé à l'aide de Vercel. Dans le cadre de ce service, certaines données techniques peuvent être traitées afin de garantir la disponibilité, le fonctionnement et la sécurité du site.",
+            "text2": "Le site peut charger des polices de caractères depuis un service externe. Le chargement de ces ressources peut entraîner la transmission de données techniques, notamment votre adresse IP, au fournisseur concerné.",
+            "text3": "GitHub est utilisé pour gérer et héberger le code source du projet. Son utilisation à des fins de développement n'implique pas nécessairement que les visiteurs transmettent directement des données personnelles à GitHub."
+        },
+        "part5": {
+            "title": "Cookies et technologies de suivi",
+            "text1": "Ce site n'utilise pas d'outils de mesure d'audience tels que Google Analytics.",
+            "text2": "L'utilisation éventuelle de cookies ou d'autres technologies de suivi dépend des fonctionnalités réellement disponibles sur le site et des services externes qui y sont intégrés.",
+            "text3": "Les technologies de suivi qui ne sont pas exemptées de l'obligation de consentement ne sont utilisées qu'après l'obtention du consentement requis, conformément à la réglementation applicable."
+        },
+        "part6": {
+            "title": "Destinataires des données",
+            "text1": "Les données peuvent être consultées par le responsable du traitement et les prestataires techniques concernés, dans la mesure nécessaire à l'exercice de leurs missions. Les destinataires effectifs dépendent des services activés et de la configuration du site."
+        },
+        "part7": {
+            "title": "Durée de conservation des données",
+            "text1": "Les données personnelles sont conservées pendant la durée nécessaire à la réalisation de la finalité pour laquelle elles ont été collectées.",
+            "text2": "Les messages envoyés via le formulaire de contact sont conservés pendant 6 mois.",
+            "text3": "Les données techniques et les journaux de sécurité sont conservés pendant 6 mois.",
+            "text4": "À l'issue de la durée de conservation applicable, les données sont supprimées ou archivées lorsque cela est justifié et autorisé."
+        },
+        "part8": {
+            "title": "Vos droits",
+            "text1": "Conformément à la réglementation applicable, vous pouvez, sous réserve des conditions prévues par celle-ci, demander l'accès à vos données personnelles, leur rectification, leur effacement, la limitation de leur traitement ou exercer votre droit d'opposition.",
+            "text2": "Vous pouvez également exercer votre droit à la portabilité de vos données lorsque celui-ci est applicable.",
+            "text3": "Pour exercer vos droits, veuillez contacter :",
+            "text4": "Vous pouvez également adresser une réclamation à la Commission nationale de l'informatique et des libertés (CNIL) :"
+        },
+        "part9": {
+            "title": "Sécurité",
+            "text1": "Des mesures techniques et organisationnelles appropriées sont mises en œuvre afin de protéger les données personnelles, en fonction des ressources et des services utilisés."
+        },
+        "part10": {
+            "title": "Mises à jour",
+            "text1": "Cette politique peut être mise à jour afin de tenir compte des évolutions du site, de ses fonctionnalités ou de la réglementation applicable."
+        },
+        "update": "Dernière mise à jour"
+    }
 }

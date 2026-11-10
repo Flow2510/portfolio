@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
 import { useGSAP } from "@gsap/react";
+import { useTranslation } from "react-i18next";
 
 type ProjectInfoProps = {
     readonly selectedProject: {
@@ -39,6 +40,7 @@ export default function ProjectInfo({ selectedProject } : ProjectInfoProps) {
     const containerRef = useRef<HTMLDivElement>(null)
     const circleRef = useRef<SVGCircleElement | null>(null);
     const [isHovered, setIsHovered] = useState(false)
+    const { t } = useTranslation();
 
     useGSAP(() => {
         if (!containerRef.current) return
@@ -88,22 +90,22 @@ export default function ProjectInfo({ selectedProject } : ProjectInfoProps) {
             <div className="px-5 flex justify-center animated-item">
                 <div className="flex flex-col gap-10 w-full bg-neutral-800 text-neutral-50 justify-between p-10 -translate-y-1/4 md:flex-row md:-translate-y-1/2 md:w-2/3 md:p-15">
                     <div className="flex flex-col gap-2">
-                        <p className="tracking-wide font-light text-neutral-400">Year</p>
+                        <p className="tracking-wide font-light text-neutral-400">{t("project.info.year")}</p>
                         <p>{selectedProject.year}</p>
                     </div>
                     <div className="flex flex-col gap-2">
-                        <p className="tracking-wide font-light text-neutral-400">Type</p>
+                        <p className="tracking-wide font-light text-neutral-400">{t("project.info.type")}</p>
                         <p>{selectedProject.type}</p>
                     </div>
                     <div className="flex flex-col gap-2">
-                        <p className="tracking-wide font-light text-neutral-400">Status</p>
+                        <p className="tracking-wide font-light text-neutral-400">{t("project.info.status")}</p>
                         <p>{selectedProject.status}</p>
                     </div>
                 </div>
             </div>
             <div className="flex flex-col gap-20 p-5 pb-30 items-center">
                 <div className="flex flex-col gap-10 md:flex-row md:w-2/3">
-                    <h3 className="font-semibold animated-item">About</h3>
+                    <h3 className="font-semibold animated-item">{t("project.about.title")}</h3>
                     <div className="flex flex-col gap-15">
                         <div className="flex flex-col gap-5 md:flex-row">
                             <p className="font-light leading-relaxed max-w-200 w-full animated-item">
@@ -138,7 +140,7 @@ export default function ProjectInfo({ selectedProject } : ProjectInfoProps) {
                 
                     </span>
                     <span className="mix-blend-difference text-white">
-                        See Project
+                        {t("project.about.button")}
                     </span>
                 </NavLink>
             </div>

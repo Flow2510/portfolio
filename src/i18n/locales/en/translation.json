@@ -134,5 +134,30 @@
             "text1": "This policy may be updated to reflect changes to the website, its features, or applicable regulations."
         },
         "update": "Last updated"
+    },
+    "projects": {
+        "title": {
+            "line1": "Selected",
+            "line2": "Work"
+        }
+    },
+    "project-card":{
+        "tool-tip": "View Project"
+    },
+    "project":{
+        "info": {
+            "year": "Year",
+            "type": "Type",
+            "status": "Status"
+        },
+        "about": {
+            "title": "About",
+            "button": "See Project"
+        },
+        "next-project":{
+            "subtitle": "Next Project",
+            "button": "All Projects",
+            "top": "Back to top"
+        }
     }
 }

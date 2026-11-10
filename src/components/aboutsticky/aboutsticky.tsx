@@ -113,10 +113,10 @@ export default function AboutSticky({ contactModalIsOpen, setContactModalIsOpen,
                     <div className="absolute h-dvh w-full flex items-center justify-center z-2 title-container">
                         <div className="relative flex items-center justify-center">
                             <h2 className="flex flex-col items-center text-neutral-50">
-                                <span className="font-[antonio] text-7xl md:text-8xl uppercase pr-10 first-title">
+                                <span className="font-[antonio] text-7xl md:text-8xl uppercase pr-10 first-title text-nowrap">
                                     {t('about.sticky.first-title.line1')}
                                 </span>
-                                <span className="font-[italianno] text-8xl md:text-9xl italic pl-10 first-title">
+                                <span className="font-[italianno] text-8xl md:text-9xl italic pl-10 first-title text-nowrap">
                                     {t('about.sticky.first-title.line2')}
                                 </span>                                
                             </h2>
@@ -124,7 +124,7 @@ export default function AboutSticky({ contactModalIsOpen, setContactModalIsOpen,
                                     <span className="font-[antonio] text-7xl md:text-8xl uppercase text-nowrap pr-10 second-title">
                                         {t('about.sticky.second-title.line1')}
                                     </span>
-                                    <span className="font-[italianno] text-8xl md:text-9xl italic pl-10 second-title">
+                                    <span className="font-[italianno] text-8xl md:text-9xl italic pl-10 second-title text-nowrap">
                                         {t('about.sticky.second-title.line2')}
                                     </span>
                                 </h2>

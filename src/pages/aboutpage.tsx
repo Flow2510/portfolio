@@ -13,10 +13,11 @@ export default function AboutPage({ contactModalIsOpen, setContactModalIsOpen, n
     return(
         <main 
             className="bg-neutral-50"
-        >            
+        >
             <AboutHero />
             <AboutSection />
             <AboutSticky contactModalIsOpen={contactModalIsOpen} setContactModalIsOpen={setContactModalIsOpen} navigateWithTransition={navigateWithTransition}/>
+            
         </main>
     )
 }

@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import ProjectCard from "../components/projectcard/projectcard";
 import projects from '../data/projects.json'
 
@@ -6,6 +7,8 @@ type ProjectsPageProps = {
 }
 
 export default function ProjectsPage({ navigateWithTransition } : ProjectsPageProps){    
+    const { t } = useTranslation()
+    
     return(
         <main className="bg-neutral-50">
             <section className="relative z-1 bg-neutral-50">
@@ -19,10 +22,10 @@ export default function ProjectsPage({ navigateWithTransition } : ProjectsPagePr
             </div>
                     <h2 className="flex flex-col items-center">
                         <span className="flex gap-2 font-[antonio] text-5xl md:text-6xl lg:text-7xl xl:text-8xl w-fit uppercase tracking-tighter font-bold animated-item">
-                            Selected
+                            {t("projects.title.line1")}
                         </span>
                         <span className="flex gap-2 font-[italianno] w-fit font-extralight text-6xl md:text-7xl lg:text-8xl xl:text-9xl italic animated-item">
-                            Work
+                            {t("projects.title.line2")}
                         </span>
                     </h2>
                 </div>

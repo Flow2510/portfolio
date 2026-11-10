@@ -9,7 +9,7 @@ gsap.registerPlugin(Draggable, InertiaPlugin)
 
 type RotatingGalleryProps = {
     readonly isDesktop: boolean;
-    readonly navigateWithTransition: (path: string) => void
+    readonly navigateWithTransition: (path: string) => void;
 }
 
 export default function RotatingGallery({ isDesktop, navigateWithTransition } : RotatingGalleryProps ){

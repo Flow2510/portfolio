@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import './App.css'
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom'
 import HomePage from './pages/homepage'
@@ -101,10 +101,10 @@ function App() {
       />
       <Routes>
         <Route path='/' element={<HomePage isDesktop={isDesktop} navigateWithTransition={navigateWithTransition} />}/>
-        <Route path='/projects/:id' element={<ProjectPage navigateWithTransition={navigateWithTransition}/>}/>
-        <Route path='/projects' element={<ProjectsPage navigateWithTransition={navigateWithTransition}/>}/>
-        <Route path='/about' element={<AboutPage contactModalIsOpen={contactModalIsOpen} setContactModalIsOpen={setContactModalIsOpen} navigateWithTransition={navigateWithTransition}/>}/>
-        <Route path='/policy' element={<PolicyPage contactModalIsOpen={contactModalIsOpen} setContactModalIsOpen={setContactModalIsOpen} navigateWithTransition={navigateWithTransition}/>} />
+        <Route path='/projects/:id' element={<ProjectPage navigateWithTransition={navigateWithTransition} />}/>
+        <Route path='/projects' element={<ProjectsPage navigateWithTransition={navigateWithTransition} />}/>
+        <Route path='/about' element={<AboutPage contactModalIsOpen={contactModalIsOpen} setContactModalIsOpen={setContactModalIsOpen} navigateWithTransition={navigateWithTransition} />}/>
+        <Route path='/policy' element={<PolicyPage contactModalIsOpen={contactModalIsOpen} setContactModalIsOpen={setContactModalIsOpen} navigateWithTransition={navigateWithTransition} />} />
       </Routes>
     </div>
   )
@@ -116,3 +116,4 @@ export default App
 // ameliorer performances
 // refaire bouton changement langue
 // continuer la traduction en francais avec i18n
+// gerer toutes les erreurs

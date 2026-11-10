@@ -1,6 +1,7 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 type ProjectCardTypes={
     readonly project: {
@@ -32,6 +33,7 @@ export default function ProjectCard({ project, navigateWithTransition } : Projec
     const containerRef = useRef<HTMLDivElement>(null)
     const words = project.name.split(" ")
     const [isHovered, setIsHovered] = useState(false)
+    const { t } = useTranslation()
 
     const tooltipRef = useRef<HTMLDivElement>(null);
 
@@ -126,7 +128,7 @@ export default function ProjectCard({ project, navigateWithTransition } : Projec
                 className="fixed top-0 left-0"
             >
                 <p className="px-2.5 py-1 bg-neutral-50 rounded-lg uppercase font-[antonio] font-light translate-x-1/2 cursor-info">
-                    View Project
+                    {t("project-card.tool-tip")}
                 </p>
             </div>
         </button>

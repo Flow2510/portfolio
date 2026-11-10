@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next"
 
 type HeroProps = {
     readonly isDesktop: boolean;
-    readonly navigateWithTransition: (path: string) => void
+    readonly navigateWithTransition: (path: string) => void;
 }
 
 export default function Hero({ isDesktop, navigateWithTransition } : HeroProps) {
@@ -48,7 +48,7 @@ export default function Hero({ isDesktop, navigateWithTransition } : HeroProps) 
                 />
             </div>
             <div className="absolute inset-0 animated-item">
-                <RotatingGallery isDesktop={isDesktop} navigateWithTransition={navigateWithTransition}/>
+                <RotatingGallery isDesktop={isDesktop} navigateWithTransition={navigateWithTransition} />
             </div>
             <div className="p-2.5 flex justify-between text-[12px] leading-[90%] md:text-[15px] md:p-5">
                 {isDesktop ?
