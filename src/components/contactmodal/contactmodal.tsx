@@ -1,6 +1,7 @@
 import { useForm, ValidationError } from "@formspree/react";
 import gsap from "gsap";
 import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 type ContactModalProps = {
     readonly contactModalIsOpen: boolean;
@@ -14,6 +15,7 @@ export default function ContactModal({ contactModalIsOpen, setContactModalIsOpen
     const containerRightRef = useRef<HTMLDivElement>(null)
     const [isChecked, setIsChecked] = useState(false)
     const [state, handleSubmit] = useForm("meaajwle");
+    const { t } = useTranslation();
 
     useEffect(() => {
         gsap.to('.item-modal', {
@@ -66,10 +68,10 @@ export default function ContactModal({ contactModalIsOpen, setContactModalIsOpen
                 <div className="text-neutral-50 w-full p-5 flex flex-col gap-10 lg:gap-15">
                     <h3 className="flex flex-col text-4xl md:text-5xl lg:text-6xl xl:text-7xl uppercase text-center tracking-tighter font-bold">
                         <span className="item-modal inline-block pr-10 lg:pr-15 font-[antonio]">
-                            Get in
+                            {t("contact-modal.title.line1")}
                         </span>
                         <span className="item-modal inline-block pl-10 lg:pl-15 font-[antonio]">
-                            Touch
+                            {t("contact-modal.title.line2")}
                         </span>
                     </h3>
                     <form
@@ -78,28 +80,28 @@ export default function ContactModal({ contactModalIsOpen, setContactModalIsOpen
                         >
                         <div className="flex flex-col gap-5 md:flex-row">
                             <label htmlFor="name" className="w-full item-modal">
-                            <p className="sr-only">Your name</p>
+                            <p className="sr-only">{t("contact-modal.form.name")}</p>
                             <input
                                 type="text"
                                 id="name"
                                 name="name"
                                 autoComplete="name"
                                 className="border w-full px-5 py-3.5 outline-none"
-                                placeholder="Your name"
+                                placeholder={t("contact-modal.form.name")}
                                 required
                             />
                             <ValidationError field="name" errors={state.errors} />
                             </label>
 
                             <label htmlFor="email" className="w-full item-modal">
-                            <p className="sr-only">Your email address</p>
+                            <p className="sr-only">{t("contact-modal.form.email")}</p>
                             <input
                                 type="email"
                                 id="email"
                                 name="email"
                                 autoComplete="email"
                                 className="border w-full px-5 py-3.5 outline-none"
-                                placeholder="Your email address"
+                                placeholder={t("contact-modal.form.email")}
                                 required
                             />
                             <ValidationError field="email" errors={state.errors} />
@@ -107,12 +109,12 @@ export default function ContactModal({ contactModalIsOpen, setContactModalIsOpen
                         </div>
 
                         <label htmlFor="message" className="w-full item-modal">
-                            <p className="sr-only">Your message</p>
+                            <p className="sr-only">{t("contact-modal.form.message")}</p>
                             <textarea
                             name="message"
                             id="message"
                             className="border w-full h-40 px-5 py-3.5 outline-none"
-                            placeholder="Your message"
+                            placeholder={t("contact-modal.form.message")}
                             required
                             />
                             <ValidationError field="message" errors={state.errors} />
@@ -128,9 +130,9 @@ export default function ContactModal({ contactModalIsOpen, setContactModalIsOpen
                             className="h-4 w-4 accent-neutral-900 cursor-pointer"
                             />
                             <p className="text-neutral-400">
-                                I've accepted the{" "}
+                                {t("contact-modal.form.policy")}{" "}
                                 <button type="button" onClick={privacyHandleClick} className="underline underline-offset-2 cursor-pointer">
-                                    privacy policy
+                                    {t("contact-modal.form.policy-link")}
                                 </button>.*
                             </p>
                         </label>
@@ -144,13 +146,13 @@ export default function ContactModal({ contactModalIsOpen, setContactModalIsOpen
                         >
                             <span className="absolute top-0 left-0 h-full w-full rounded-full bg-neutral-50 scale-0 duration-300 group-hover:scale-100" />
                             <span className="mix-blend-difference text-white uppercase">
-                            {state.submitting ? "Sending..." : "Submit message"}
+                            {state.submitting ? t("contact-modal.form.button.sending") : t("contact-modal.form.button.send")}
                             </span>
                         </button>
 
                         {state.succeeded && (
                             <output>
-                                Your message has been sent successfully!
+                                {t("contact-modal.form.state")}
                             </output>
                         )}
                     </form>

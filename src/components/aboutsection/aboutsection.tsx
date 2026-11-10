@@ -1,9 +1,11 @@
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import { useRef } from "react"
+import { useTranslation } from "react-i18next"
 
 export default function AboutSection() {
     const containerRef = useRef<HTMLDivElement>(null)
+    const { t } = useTranslation();
 
     useGSAP(() => {
         gsap.fromTo('.right-animation-top', 
@@ -76,43 +78,36 @@ export default function AboutSection() {
             <div className="flex items-center justify-center py-20 md:py-52 lg:py-30 xl:py-35 overflow-hidden w-full" ref={containerRef}>
                 <h2 className="flex flex-col leading-[110%] items-center animated-item">
                     <span className="font-[inter] text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold -mb-2.5 uppercase tracking-tight right-animation-top">
-                        Turning
+                        {t("about.info.title.line1")}
                     </span>
                     <span className="font-[italianno] text-6xl -mb-5 md:text-7xl lg:text-8xl xl:text-9xl left-animation-top italic">
-                        Creative Visions
+                        {t("about.info.title.line2")}
                     </span>
                     <span className="font-[inter] text-5xl font-extrabold md:text-6xl lg:text-7xl xl:text-8xl -mb-2.5 uppercase tracking-tight">
-                        into 
+                        {t("about.info.title.line3")}
                     </span>
                     <span className="font-[inter] text-5xl font-extrabold md:text-6xl lg:text-7xl xl:text-8xl -mb-2.5 uppercase tracking-tight right-animation-bottom">
-                        immersive
+                        {t("about.info.title.line4")}
                     </span>
                     <span className="font-[italianno] text-6xl -mb-5 md:text-7xl lg:text-8xl xl:text-9xl left-animation-bottom italic">
-                        Digital Experiences
+                        {t("about.info.title.line5")}
                     </span>
                 </h2>
             </div>
             <div className="w-full p-2.5 md:p-5 flex flex-col gap-5 max-w-150 m-auto">
-                <h3 className="font-[italianno] text-4xl animated-item">01 - About</h3>
+                <h3 className="font-[italianno] text-4xl animated-item">01 - {t("about.info.about.title")}</h3>
                 <p className="animated-item text-neutral-500">
-                    I turn designs into responsive, high-performance
-                    interfaces using React and TypeScript. I care deeply
-                    about code quality, accessibility, and smooth user
-                    interactions that elevate the overall experience
+                    {t("about.info.about.text1")}
                 </p>
                 <p className="animated-item text-neutral-500">
-                    To become a more complete developer, I'm currently
-                    expanding into the back-end with Node.js, Express,
-                    and Supabase. Building personal projects helps me
-                    understand the full picture, from database design to
-                    the user interface.
+                    {t("about.info.about.text2")}
                 </p>
                 <p className="animated-item text-neutral-500">
-                    I'm currently looking for new opportunities as a Front-End Developer, where I can contribute my skills, keep learning, and work alongside a team to build meaningful digital experiences.
+                    {t("about.info.about.text3")}
                 </p>                
             </div>
             <div className="w-full p-2.5 md:p-5 flex flex-col gap-5 max-w-150 m-auto pb-15 md:pb-20 lg:pb-25">
-                <h3 className="font-[italianno] text-4xl animated-item">02 - Stack</h3>
+                <h3 className="font-[italianno] text-4xl animated-item">02 - {t("about.info.stack.title")}</h3>
                 <p className="text-neutral-500 animated-item">
                     React · TypeScript ·  Tailwind CSS · GSAP · Motion
                 </p>

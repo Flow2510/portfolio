@@ -1,0 +1,12 @@
+{
+  "header": {
+    "home": "Accueil",
+    "projects": "Projets",
+    "about": "Info",
+    "contact": "Contact"
+  },
+  "hero": {
+    "developer": "Développeur Web",
+    "opportunities" : "Ouvert aux opportunités"
+  }
+}

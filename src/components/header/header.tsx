@@ -1,16 +1,18 @@
 import HoverTranslate from "../hovertranslate/hovertranslate";
 import { useEffect } from "react";
 import gsap from "gsap";
+import { useTranslation } from "react-i18next";
 
 type HeaderProps = {
     readonly setMenuIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
     readonly menuIsOpen: boolean;
     readonly contactModalIsOpen: boolean;
-    readonly setContactModalIsOpen: React.Dispatch<React.SetStateAction<boolean>>
-    readonly navigateWithTransition: (path: string) => void
+    readonly setContactModalIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+    readonly navigateWithTransition: (path: string) => void;
 }
 
 export default function Header({ setMenuIsOpen, menuIsOpen, contactModalIsOpen, setContactModalIsOpen, navigateWithTransition } : HeaderProps ){
+    const { t, i18n } = useTranslation();
 
     useEffect(() => {
         gsap.to('.button-line-top',{
@@ -43,24 +45,50 @@ export default function Header({ setMenuIsOpen, menuIsOpen, contactModalIsOpen, 
                 <nav className="flex gap-5">
                     <button onClick={() => navigateWithTransition('/')} className="cursor-pointer">
                         <HoverTranslate 
-                            text="Home"
+                            text={t('header.home')}
                         />
                     </button>
                     <button onClick={() => navigateWithTransition('/projects')} className="cursor-pointer">
                         <HoverTranslate 
-                            text="Projects"
+                            text={t('header.projects')}
                         />
                     </button>
                     <button onClick={() => navigateWithTransition('/about')} className="cursor-pointer">
                         <HoverTranslate 
-                            text="About"
+                            text={t('header.about')}
                         />
                     </button>
                     <button type="button" onClick={() => setContactModalIsOpen(!contactModalIsOpen)} className="flex gap-5 group cursor-pointer">
                         <HoverTranslate 
-                            text="Contact"
+                            text={t('header.contact')}
                         />
                     </button>
+                    <div className="h-5 w-0.5 bg-neutral-50/50 translate-y-1/8"></div>
+                    <div className="flex gap-2.5 text-neutral-400">                        
+                        <div className="flex gap-2.5 text-neutral-400">
+                            <button
+                            style={{
+                                cursor: "pointer",
+                                fontWeight: i18n.language === "en" ? 500 : 400,
+                                color: i18n.language === "en" ? '#fafafa' : "#a1a1a1"
+                            }}
+                            onClick={() => void i18n.changeLanguage('en')}
+                            >
+                                En
+                            </button>
+                            <span>/</span>
+                            <button
+                                style={{
+                                    cursor: "pointer",
+                                    fontWeight: i18n.language === "fr" ? 500 : 400,
+                                    color: i18n.language === "fr" ? '#fafafa' : "#a1a1a1"
+                                }}
+                                onClick={() => void i18n.changeLanguage('fr')}
+                            >
+                                Fr
+                            </button>
+                        </div>
+                    </div>
                 </nav>
             </div>
             <div className="md:hidden ">

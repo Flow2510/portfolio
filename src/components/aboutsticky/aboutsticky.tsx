@@ -3,6 +3,7 @@ import gsap from "gsap"
 import { useRef, useState } from "react"
 import HoverTranslate from "../hovertranslate/hovertranslate";
 import ContactButton from "../contactbutton/contactbutton";
+import { useTranslation } from "react-i18next";
 
 type AboutStickyTypes = {
     readonly setContactModalIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -12,6 +13,7 @@ type AboutStickyTypes = {
 
 export default function AboutSticky({ contactModalIsOpen, setContactModalIsOpen, navigateWithTransition } : AboutStickyTypes) {
     const containerRef = useRef<HTMLDivElement>(null)
+    const { t } = useTranslation();
 
     const [stripeWidth] = useState(() => {
         const n = 20
@@ -112,18 +114,18 @@ export default function AboutSticky({ contactModalIsOpen, setContactModalIsOpen,
                         <div className="relative flex items-center justify-center">
                             <h2 className="flex flex-col items-center text-neutral-50">
                                 <span className="font-[antonio] text-7xl md:text-8xl uppercase pr-10 first-title">
-                                    BEYOND THE
+                                    {t('about.sticky.first-title.line1')}
                                 </span>
                                 <span className="font-[italianno] text-8xl md:text-9xl italic pl-10 first-title">
-                                    Ordinary
+                                    {t('about.sticky.first-title.line2')}
                                 </span>                                
                             </h2>
                             <h2 className="absolute flex flex-col items-center text-neutral-50 text-center">
                                     <span className="font-[antonio] text-7xl md:text-8xl uppercase text-nowrap pr-10 second-title">
-                                        THINK IT. 
+                                        {t('about.sticky.second-title.line1')}
                                     </span>
                                     <span className="font-[italianno] text-8xl md:text-9xl italic pl-10 second-title">
-                                        Build it.
+                                        {t('about.sticky.second-title.line2')}
                                     </span>
                                 </h2>
                         </div>
@@ -147,13 +149,13 @@ export default function AboutSticky({ contactModalIsOpen, setContactModalIsOpen,
                         <div className="flex flex-col items-center gap-10 relative">
                             <h2 className="flex flex-col items-center">
                                 <span className="font-[antonio] text-7xl md:text-8xl lg:text-9xl xl:text-[150px] uppercase tracking-tight font-bold pr-10 md:pr-20 lg:pr-30 xl:pr-50">
-                                    LET'S CREATE
+                                    {t('about.sticky.footer.title.line1')}
                                 </span>
                                 <span className="font-[italianno] text-8xl md:text-9xl italic -mb-5 lg:text-9xl xl:text-[180px]">
-                                    Something
+                                    {t('about.sticky.footer.title.line2')}
                                 </span>
                                 <span className="font-[antonio] text-7xl md:text-8xl uppercase tracking-tight font-bold lg:text-9xl xl:text-[150px] pl-10 md:pl-20 lg:pl-30 xl:pl-50">
-                                    TOGETHER.
+                                    {t('about.sticky.footer.title.line3')}
                                 </span>
                             </h2>
                             <ContactButton 
@@ -173,7 +175,7 @@ export default function AboutSticky({ contactModalIsOpen, setContactModalIsOpen,
                                         </div>
                                         <p className='text-sm'>
                                             <HoverTranslate
-                                                text='All Projects'
+                                                text={t('about.sticky.footer.projects')}
                                             />
                                         </p>
                                     </button>

@@ -1,0 +1,138 @@
+{
+    "header": {
+        "home": "Home",
+        "projects": "Projects",
+        "about": "About",
+        "contact": "Contact"
+    },
+    "hero": {
+        "developer": "Web Developer",
+        "opportunities" : "Open to work"
+    },
+    "contact-modal": {
+        "title": {
+            "line1": "Get in",
+            "line2": "Touch"
+        },
+        "form": {
+            "name": "Your name",
+            "email": "Your email",
+            "message": "Your message",
+            "policy": "I've accepted the",
+            "policy-link" : "privacy policy",
+            "button": {
+                "send": "Submit Message",
+                "sending": "Sending"
+            },
+            "state": "Your message has been sent successfully!"
+        }
+    },
+    "about": {
+        "hero": {
+            "subtitle": "Web Developer",
+            "info": {
+                "line1": "Creative Developer",
+                "line2": "Based in Perpignan"
+            }
+        },
+        "info": {
+            "title": {
+                "line1" : "Turning",
+                "line2" : "Creative Visions",
+                "line3" : "Into",
+                "line4" : "Immersive",
+                "line5" : "Digital Experiences"
+            },
+            "about": {
+                "title": "About",
+                "text1": "I turn designs into responsive, high-performance interfaces using React and TypeScript. I care deeply about code quality, accessibility, and smooth user interactions that elevate the overall experience",
+                "text2": "To become a more complete developer, I'm expanding into the back-end with Node.js, Express, and Supabase. Building personal projects helps me understand the full picture, from database design to the user interface.",
+                "text3": "I'm currently looking for new opportunities as a Front-End Developer, where I can contribute my skills, keep learning, and work alongside a team to build meaningful digital experiences."
+            },
+            "stack": {
+                "title": "Stack"
+            }
+        },
+        "sticky": {
+            "first-title": {
+                "line1" : "Beyound the",
+                "line2": "Ordinary"
+            },
+            "second-title": {
+                "line1": "Think it",
+                "line2": "Build it"
+            },
+            "footer": {
+                "title": {
+                    "line1": "Let's create",
+                    "line2": "Something",
+                    "line3": "Together"
+                },
+                "button": "Get in touch",
+                "projects": "All Projects"
+            }
+        }
+    },
+    "policy": {
+        "title": {
+            "line1": "Privacy",
+            "line2": "Policy"
+        },
+        "part1": {
+            "title": "Data Controller",
+            "text1": "This website is operated by Sendra Florian, who can be contacted at the following email address",
+            "text2": "Sendra Florian is the data controller responsible for the processing of personal data."
+        },
+        "part2": {
+            "title": "Personal Data Collected",
+            "text1": "When you use the contact form, the information you provide is collected in order to process your request.",
+            "text2": "Depending on the fields included in the form, this information may include your name, email address, subject of your request, and the content of your message.",
+            "text3": "Only the data necessary to process your request should be collected.",
+            "text4": "When browsing the website, technical data may also be processed by the hosting provider to ensure the website's operation, maintenance, and security."
+        },
+        "part3": {
+            "title": "Purposes and Legal Bases",
+            "text1": "Data submitted through the contact form is used to respond to incoming requests. This processing is based on the legitimate interest of the data controller in responding to inquiries received or, where applicable, on pre-contractual measures taken at the request of the data subject.",
+            "text2": "Technical data that is strictly necessary may be processed to ensure the operation and security of the website, on the applicable legal basis for the processing concerned."
+        },
+        "part4": {
+            "title": "Hosting and External Services",
+            "text1": "This website is hosted and deployed using Vercel. As part of this service, certain technical data may be processed to ensure the website's availability, operation, and security.",
+            "text2": "The website may load fonts from an external service. Loading these resources may involve the transmission of technical data, including your IP address, to the relevant provider.",
+            "text3": "GitHub is used to manage and host the project's source code. Its use for development purposes does not necessarily mean that visitors directly transmit personal data to GitHub."
+        },
+        "part5": {
+            "title": "Cookies and Tracking Technologies",
+            "text1": "This website does not use audience measurement tools such as Google Analytics.",
+            "text2": "Any cookies or other tracking technologies used depend on the features actually available on the website and the external services integrated into it.",
+            "text3": "Tracking technologies that are not exempt from consent requirements are only used after the required consent has been obtained in accordance with applicable regulations."
+        },
+        "part6": {
+            "title": "Data Recipients",
+            "text1": "Data may be accessed by the data controller and relevant technical service providers, to the extent necessary for the performance of their duties. The actual recipients depend on the services enabled and the website's configuration."
+        },
+        "part7": {
+            "title": "Data Retention Period",
+            "text1": "Personal data is retained for as long as necessary to fulfil the purpose for which it was collected.",
+            "text2": "Messages submitted through the contact form are retained for 6 months.",
+            "text3": "Technical data and security logs are retained for 6 months.",
+            "text4": "Once the applicable retention period has expired, the data is deleted or archived where justified and permitted."
+        },
+        "part8": {
+            "title": "Your Rights",
+            "text1": "In accordance with applicable regulations, you may, subject to the conditions set out therein, request access to your personal data, its rectification, erasure, restriction of processing, or exercise your right to object.",
+            "text2": "You may also exercise your right to data portability where applicable.",
+            "text3": "To exercise your rights, please contact",
+            "text4": "You may also lodge a complaint with the French Data Protection Authority (CNIL):"
+        },
+        "part9": {
+            "title": "Security",
+            "text1": "Appropriate technical and organisational measures are implemented to protect personal data, depending on the resources and services used."
+        },
+        "part10": {
+            "title": "Updates",
+            "text1": "This policy may be updated to reflect changes to the website, its features, or applicable regulations."
+        },
+        "update": "Last updated"
+    }
+}

@@ -1,5 +1,6 @@
 import gsap from "gsap";
 import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 type ContactButtonProps = {
     readonly setContactModalIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -9,6 +10,7 @@ type ContactButtonProps = {
 export default function ContactButton({ setContactModalIsOpen, contactModalIsOpen} : ContactButtonProps) {
     const circleRef = useRef<SVGCircleElement | null>(null);
     const [isHovered, setIsHovered] = useState(false)
+    const { t } =  useTranslation();
 
     useEffect(() => {
         const circle = circleRef.current;
@@ -55,7 +57,7 @@ export default function ContactButton({ setContactModalIsOpen, contactModalIsOpe
 
             </span>
             <span className="mix-blend-difference text-white">
-                GET IN TOUCH
+                {t('about.sticky.footer.button')}
             </span>
         </button>
     )

@@ -1,4 +1,8 @@
+import { useTranslation } from "react-i18next"
+
 export default function AboutHero() {
+    const { t } = useTranslation()
+
     return(
         <section className="h-dvh w-full relative text-neutral-50 bg-neutral-900">
             <div className="absolute w-full h-full top-1/2 left-1/2 -translate-1/2 flex items-center max-w-150 justify-center">
@@ -20,7 +24,7 @@ export default function AboutHero() {
                     </h2>
                     <p className="uppercase font-light md:text-lg lg:text-xl opacity-50 -translate-y-1/2 md:-translate-y-2/3 lg:-translate-y-full">
                         <span className="animated-item inline-block">
-                            Web Developer
+                            {t('about.hero.subtitle')}
                         </span>
                     </p>
                 </div>
@@ -28,8 +32,8 @@ export default function AboutHero() {
             <div className="absolute left-0 bottom-0 opacity-50 w-full flex justify-between items-center p-2.5 md:p-5">
                 <div>
                     <p className="flex flex-col md:flex-row md:gap-1 animated-item">
-                        <span>Creative Developer</span>
-                        <span>Based in Perpignan</span>
+                        <span>{t('about.hero.info.line1')}</span>
+                        <span>{t('about.hero.info.line2')}</span>
                     </p>
                 </div>
             </div>

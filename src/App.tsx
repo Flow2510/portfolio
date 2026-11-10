@@ -113,3 +113,6 @@ function App() {
 export default App
 
 // mettre plusieurs sources d'images de tailles differentes
+// ameliorer performances
+// refaire bouton changement langue
+// continuer la traduction en francais avec i18n

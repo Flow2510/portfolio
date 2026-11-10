@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import HoverTranslate from "../components/hovertranslate/hovertranslate";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { useTranslation } from "react-i18next";
 
 type PolicyPageProps = {
     readonly setContactModalIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -14,6 +15,7 @@ export default function PolicyPage({ setContactModalIsOpen, contactModalIsOpen, 
     const mainRef = useRef<HTMLElement>(null)
     const circleRef = useRef<SVGCircleElement | null>(null);
     const [isHovered, setIsHovered] = useState(false)
+    const { t, i18n } =  useTranslation();
 
     const backToTop = () => {
         window.scrollTo(0, 0)
@@ -63,163 +65,125 @@ export default function PolicyPage({ setContactModalIsOpen, contactModalIsOpen, 
                 <div className="h-[60dvh] w-full flex flex-col justify-end pb-15 bg-neutral-900 text-neutral-50">
                     <h2 className="flex flex-col items-center">
                         <span className="flex gap-2 md:gap-2.5 lg:gap-3 xl:gap-3.5 font-[antonio] text-5xl md:text-6xl lg:text-7xl xl:text-8xl w-fit uppercase tracking-tighter font-bold animated-item pr-10 animated-item">
-                            Privacy
+                            {t("policy.title.line1")}
                         </span>
                         <span className="flex gap-2 font-[italianno] w-fit font-extralight italic text-6xl md:text-7xl lg:text-8xl xl:text-9xl animated-item pl-10 animated-item">
-                            Policy
+                            {t("policy.title.line2")}
                         </span>
                     </h2>
                 </div>
             </section>
             <section className="bg-neutral-50 w-full p-2.5 md:p-5 flex flex-col gap-5 py-15 md:py-25 relative z-1">                
                 <div className="flex flex-col gap-5 relative md:flex-row md:gap-25">                    
-                    <div className="flex flex-col gap-5 max-w-250">
+                    <div className="flex flex-col gap-5 max-w-250 text-sm">
                         <div className="flex flex-col gap-2.5 animated-item">
-                            <h3 className="font-semibold text-xl">1. Data Controller</h3>
+                            <h3 className="font-semibold text-xl">1. {t("policy.part1.title")}</h3>
                             <div>
                                 <p>
-                                    This website is operated by Sendra Florian,
-                                    who can be contacted at the following email address: <a href="mailto:sendra.florian@gmail.com" target="_blank" className="underline">sendra.florian@gmail.com.</a>
+                                    {t("policy.part1.text1")}: <a href="mailto:sendra.florian@gmail.com" target="_blank" className="underline">sendra.florian@gmail.com</a>.
                                 </p>
                                 <p>
-                                    Sendra Florian is the data controller responsible for the processing of personal data.
+                                    {t("policy.part1.text2")}
                                 </p>
                             </div>
                         </div>
 
                         <div className="flex flex-col gap-2.5 animated-item">
-                            <h3 className="font-semibold text-xl">2. Personal Data Collected</h3>
+                            <h3 className="font-semibold text-xl">2. {t("policy.part2.title")}</h3>
                             <div>
                                 <p>
-                                    When you use the contact form, the information you provide
-                                    is collected in order to process your request.
+                                    {t("policy.part2.text1")}
                                 </p>
                                 <p>
-                                    Depending on the fields included in the form, this information
-                                    may include your name, email address, subject of your request,
-                                    and the content of your message.
+                                    {t("policy.part2.text2")}
                                 </p>
                                 <p>
-                                    Only the data necessary to process your request should be collected.
+                                    {t("policy.part2.text3")}
                                 </p>
                                 <p>
-                                    When browsing the website, technical data may also be processed
-                                    by the hosting provider to ensure the website's operation,
-                                    maintenance, and security.
+                                    {t("policy.part2.text4")}
                                 </p>
                             </div>
                         </div>
 
                         <div className="flex flex-col gap-2.5 animated-item">
-                            <h3 className="font-semibold text-xl">3. Purposes and Legal Bases</h3>
+                            <h3 className="font-semibold text-xl">3. {t("policy.part3.title")}</h3>
                             <div>
                                 <p>
-                                    Data submitted through the contact form is used to respond
-                                    to incoming requests. This processing is based on the
-                                    legitimate interest of the data controller in responding
-                                    to inquiries received or, where applicable, on pre-contractual
-                                    measures taken at the request of the data subject.
+                                    {t("policy.part3.text1")}
                                 </p>
                                 <p>
-                                    Technical data that is strictly necessary may be processed
-                                    to ensure the operation and security of the website,
-                                    on the applicable legal basis for the processing concerned.
+                                    {t("policy.part3.text2")}
                                 </p>
                             </div>
                         </div>
 
                         <div className="flex flex-col gap-2.5 animated-item">
-                            <h3 className="font-semibold text-xl">4. Hosting and External Services</h3>
+                            <h3 className="font-semibold text-xl">4. {t("policy.part4.title")}</h3>
                             <div>
                                 <p>
-                                    This website is hosted and deployed using Vercel. As part
-                                    of this service, certain technical data may be processed
-                                    to ensure the website's availability, operation, and security.
+                                    {t("policy.part4.text1")}
                                 </p>
                                 <p>
-                                    The website may load fonts from an external service.
-                                    Loading these resources may involve the transmission
-                                    of technical data, including your IP address, to the
-                                    relevant provider.
+                                    {t("policy.part4.text2")}
                                 </p>
                                 <p>
-                                    GitHub is used to manage and host the project's source code.
-                                    Its use for development purposes does not necessarily mean
-                                    that visitors directly transmit personal data to GitHub.
+                                    {t("policy.part4.text3")}
                                 </p>
                             </div>
                         </div>
 
                         <div className="flex flex-col gap-2.5 animated-item">
-                            <h3 className="font-semibold text-xl">5. Cookies and Tracking Technologies</h3>
+                            <h3 className="font-semibold text-xl">5. {t("policy.part5.title")}</h3>
                             <div>
                                 <p>
-                                    This website does not use audience measurement tools
-                                    such as Google Analytics.
+                                    {t("policy.part5.text1")}
                                 </p>
                                 <p>
-                                    Any cookies or other tracking technologies used depend
-                                    on the features actually available on the website and
-                                    the external services integrated into it.
-                                    Tracking technologies that are not exempt from consent
-                                    requirements are only used after the required consent
-                                    has been obtained in accordance with applicable regulations.
+                                    {t("policy.part5.text2")}
                                 </p>
                             </div>
                         </div>
 
                         <div className="flex flex-col gap-2.5 animated-item">
-                            <h3 className="font-semibold text-xl">6. Data Recipients</h3>
+                            <h3 className="font-semibold text-xl">6. {t("policy.part6.title")}</h3>
                             <p>
-                                Data may be accessed by the data controller and relevant
-                                technical service providers, to the extent necessary for
-                                the performance of their duties.
-                                The actual recipients depend on the services enabled
-                                and the website's configuration.
+                                {t("policy.part6.text1")}
                             </p>
                         </div>
 
                         <div className="flex flex-col gap-2.5 animated-item">
-                            <h3 className="font-semibold text-xl">7. Data Retention Period</h3>
+                            <h3 className="font-semibold text-xl">7. {t("policy.part7.title")}</h3>
                             <div>
                                 <p>
-                                    Personal data is retained for as long as necessary
-                                    to fulfil the purpose for which it was collected.
+                                    {t("policy.part7.text1")}
                                 </p>
                                 <p>
-                                    Messages submitted through the contact form are retained for 6 months.
+                                    {t("policy.part7.text2")}
                                 </p>
                                 <p>
-                                    Technical data and security logs are retained for 6 months.
+                                    {t("policy.part7.text3")}
                                 </p>
                                 <p>
-                                    Once the applicable retention period has expired,
-                                    the data is deleted or archived where justified and permitted.
+                                    {t("policy.part7.text4")}
                                 </p>
                             </div>
                         </div>
 
                         <div className="flex flex-col gap-2.5 animated-item">
-                            <h3 className="font-semibold text-xl">8. Your Rights</h3>
+                            <h3 className="font-semibold text-xl">8. {t("policy.part8.title")}</h3>
                             <div>
                                 <p>
-                                    In accordance with applicable regulations, you may,
-                                    subject to the conditions set out therein, request
-                                    access to your personal data, its rectification,
-                                    erasure, restriction of processing, or exercise
-                                    your right to object.
+                                    {t("policy.part8.text1")}
                                 </p>
                                 <p>
-                                    You may also exercise your right to data portability
-                                    where applicable.
+                                    {t("policy.part8.text2")}
                                 </p>
                                 <p>
-                                    To exercise your rights, please contact:
-                                    [contact email address].
+                                    {t("policy.part8.text3")}: <a href="mailto:sendra.florian@gmail.com" target="_blank" className="underline">sendra.florian@gmail.com</a>.
                                 </p>
                                 <p>
-                                    You may also lodge a complaint with the French Data
-                                    Protection Authority (CNIL):
+                                   {t("policy.part8.text4")}:
                                     {" "}
                                     <a
                                         href="https://www.cnil.fr/"
@@ -234,24 +198,21 @@ export default function PolicyPage({ setContactModalIsOpen, contactModalIsOpen, 
                         </div>
 
                         <div className="flex flex-col gap-2.5 animated-item">
-                            <h3 className="font-semibold text-xl">9. Security</h3>
+                            <h3 className="font-semibold text-xl">9. {t("policy.part9.title")}</h3>
                             <p>
-                                Appropriate technical and organisational measures are
-                                implemented to protect personal data, depending on
-                                the resources and services used.
+                                {t("policy.part9.text1")}
                             </p>
                         </div>
 
                         <div className="flex flex-col gap-2.5 animated-item">
-                            <h3 className="font-semibold text-xl">10. Updates</h3>
+                            <h3 className="font-semibold text-xl">10. {t("policy.part10.title")}</h3>
                             <p>
-                                This policy may be updated to reflect changes to the
-                                website, its features, or applicable regulations.
+                                {t("policy.part10.text1")}
                             </p>
                         </div>
 
                         <h3 className="text-sm pt-15">
-                            Last updated: October 24, 2026
+                            {t("policy.update")}: {i18n.language === "en" ? "October 24, 2026" : "24 Octobre 2026"}
                         </h3>
                     </div>
                 </div>                

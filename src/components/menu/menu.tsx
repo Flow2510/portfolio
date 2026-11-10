@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useEffect } from "react";
 import gsap from "gsap";
+import { useTranslation } from "react-i18next";
 
 type MenuProps = {
     readonly menuIsOpen: boolean;
@@ -10,6 +11,7 @@ type MenuProps = {
 }
 
 export default function Menu({ menuIsOpen, setMenuIsOpen, contactModalIsOpen, setContactModalIsOpen } : MenuProps) {
+    const { t, i18n } = useTranslation()
 
     useEffect(() => {
         gsap.to('.menu-container', {
@@ -53,7 +55,7 @@ export default function Menu({ menuIsOpen, setMenuIsOpen, contactModalIsOpen, se
                     <NavLink to={'/'} className="flex items-end gap-3" onClick={() => setMenuIsOpen(!menuIsOpen)}>
                         <span className="text-5xl uppercase font-extrabold tracking-tight overflow-hidden">
                             <span className="inline-block text-menu">
-                                Home
+                                {t("header.home")}
                             </span>
                         </span>
                         <span className="text-2xl font-[italianno] overflow-hidden">
@@ -65,7 +67,7 @@ export default function Menu({ menuIsOpen, setMenuIsOpen, contactModalIsOpen, se
                     <NavLink to={'/projects'} className="flex items-end gap-3" onClick={() => setMenuIsOpen(!menuIsOpen)}>
                         <span className="text-5xl uppercase font-extrabold tracking-tight overflow-hidden">
                             <span className="inline-block text-menu">
-                                Work
+                                {t("header.projects")}
                             </span>
                         </span>
                         <span className="text-2xl font-[italianno] overflow-hidden">
@@ -77,7 +79,7 @@ export default function Menu({ menuIsOpen, setMenuIsOpen, contactModalIsOpen, se
                     <NavLink to={'/about'} className="flex items-end gap-3" onClick={() => setMenuIsOpen(!menuIsOpen)}>
                         <span className="text-5xl uppercase font-extrabold tracking-tight overflow-hidden">
                             <span className="inline-block text-menu">
-                                About
+                                {t("header.about")}
                             </span>
                         </span>
                         <span className="text-2xl font-[italianno] overflow-hidden">
@@ -89,7 +91,7 @@ export default function Menu({ menuIsOpen, setMenuIsOpen, contactModalIsOpen, se
                     <button type="button" className="flex items-end gap-3 cursor-pointer" onClick={() => setContactModalIsOpen(!contactModalIsOpen)}>
                         <span className="text-5xl uppercase font-extrabold tracking-tight overflow-hidden">
                             <span className="inline-block text-menu">
-                                Contact
+                                {t("header.contact")}
                             </span>
                         </span>
                         <span className="text-2xl font-[italianno] overflow-hidden">
@@ -103,26 +105,55 @@ export default function Menu({ menuIsOpen, setMenuIsOpen, contactModalIsOpen, se
                     <div className="overflow-hidden">
                         <div className="w-full h-px bg-neutral-500 line-menu" />
                     </div>
-                    <div className="flex flex-col gap-5">
-                        <div className="overflow-hidden">
-                            <a href="mailto:sendra.florian@gmail.com" className="text inline-block text-menu" target="_blank">sendra.florian@gmail.com</a>
+                    <div className="flex justify-between items-end">
+                        <div className="flex flex-col gap-5">
+                            <div className="overflow-hidden">
+                                <a href="mailto:sendra.florian@gmail.com" className="text inline-block text-menu" target="_blank">sendra.florian@gmail.com</a>
+                            </div>
+                            <div className="b-0 flex gap-10 font-light">
+                                <a href="https://www.linkedin.com/in/florian-sendra-3270961a1" className="overflow-hidden" target="_blank">
+                                    <div className="uppercase rounded-full bg-neutral-900 w-10 h-10 flex font-extralight items-center justify-center text-menu">
+                                        <img src="/images/github-icon.png" className="w-10 h-10 object-cover scale-[1.2]" alt="" />
+                                    </div>
+                                </a> 
+                                <a href="https://www.linkedin.com/in/florian-sendra-3270961a1" className="overflow-hidden" target="_blank">
+                                    <div className="uppercase bg-neutral-100 rounded-full w-10 h-10 flex font-extralight items-center justify-center text-menu">
+                                        <img src="/images/linkedin-icon.png" className="w-7 h-7 object-cover" alt="" />
+                                    </div>
+                                </a>
+                                <a href="/CV_Sendra_Florian.pdf" className="overflow-hidden" target="_blank">
+                                    <div className="uppercase bg-neutral-100 rounded-full w-10 h-10 flex font-extralight items-center justify-center text-menu">
+                                        <p className="text-neutral-900 font-bold">CV</p>
+                                    </div>
+                                </a>              
+                            </div>
                         </div>
-                        <div className="b-0 flex gap-10 font-light">
-                            <a href="https://www.linkedin.com/in/florian-sendra-3270961a1" className="overflow-hidden" target="_blank">
-                                <div className="uppercase rounded-full bg-neutral-900 w-10 h-10 flex font-extralight items-center justify-center text-menu">
-                                    <img src="/images/github-icon.png" className="w-10 h-10 object-cover scale-[1.2]" alt="" />
-                                </div>
-                            </a> 
-                            <a href="https://www.linkedin.com/in/florian-sendra-3270961a1" className="overflow-hidden" target="_blank">
-                                <div className="uppercase bg-neutral-100 rounded-full w-10 h-10 flex font-extralight items-center justify-center text-menu">
-                                    <img src="/images/linkedin-icon.png" className="w-7 h-7 object-cover" alt="" />
-                                </div>
-                            </a>
-                            <a href="/CV_Sendra_Florian.pdf" className="overflow-hidden" target="_blank">
-                                <div className="uppercase bg-neutral-100 rounded-full w-10 h-10 flex font-extralight items-center justify-center text-menu">
-                                    <p className="text-neutral-900 font-bold">CV</p>
-                                </div>
-                            </a>              
+                        <div className="overflow-hidden">
+                            <div className="flex text-neutral-400 text-menu">
+                                <button
+                                    className="px-2.5"
+                                    style={{
+                                        cursor: "pointer",
+                                        fontWeight: i18n.language === "en" ? 800 : 500,
+                                        color: i18n.language === "en" ? '#fafafa' : "#a1a1a1"
+                                    }}
+                                    onClick={() => void i18n.changeLanguage('en')}
+                                >
+                                    En
+                                </button>
+                                <span>/</span>
+                                <button
+                                    className="px-2.5"
+                                    style={{
+                                        cursor: "pointer",
+                                        fontWeight: i18n.language === "fr" ? 800 : 500,
+                                        color: i18n.language === "fr" ? '#fafafa' : "#a1a1a1"
+                                    }}
+                                    onClick={() => void i18n.changeLanguage('fr')}
+                                >
+                                    Fr
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
