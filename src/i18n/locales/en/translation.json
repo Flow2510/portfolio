@@ -159,5 +159,125 @@
             "button": "All Projects",
             "top": "Back to top"
         }
+    },
+    "the-motion-library": {
+        "alts": {
+            "mockup": [
+                "Mockup of The Motion Library website displayed on a laptop screen",
+                "Mockup of The Motion Library website displayed on a smartphone"
+            ],
+            "desktop": [
+                "The Motion Library website desktop screenshot 1",
+                "The Motion Library website desktop screenshot 2"
+            ],
+            "mobile": [
+                "The Motion Library website mobile screenshot 1",
+                "The Motion Library website mobile screenshot 2",
+                "The Motion Library website mobile screenshot 3"
+            ]
+        },
+        "status": "Completed",
+        "intro": "Interactive web animation library, showcasing scroll effects and immersive transitions.",
+        "text": "A platform gathering a collection of modern web animations, built to explore and demonstrate scroll interactions, smooth transitions and advanced visual effects. Developed with GSAP and Motion for performant, precise animations, with a responsive layout and a polished user experience across all devices."
+    },
+    "porvenir": {
+        "alts": {
+            "mockup": [
+                "Mockup of the Porvenir website displayed on a tablet",
+                "Mockup of the Porvenir website displayed on a mobile phone"
+            ],
+            "desktop": [
+                "Auberge del Porvenir website desktop screenshot 1",
+                "Auberge del Porvenir website desktop screenshot 2"
+            ],
+            "mobile": [
+                "Auberge del Porvenir website mobile screenshot 1",
+                "Auberge del Porvenir website mobile screenshot 2",
+                "Auberge del Porvenir website mobile screenshot 3"
+            ]
+        },
+        "status": "In Progress",
+        "intro": "Responsive showcase website for a guesthouse, built for a client.",
+        "text": "Showcase website built with React for the Auberge del Porvenir. A clear, readable interface designed to turn visitors into customers. Strong focus on responsive design, accessibility and SEO optimization. My first client project, delivered and deployed to production."
+    },
+    "portfolio": {
+        "alts": {
+            "mockup": [
+                "Mockup of portfolio v2 displayed on a smartphone",
+                "Mockup of portfolio v2 displayed on a laptop"
+            ],
+            "desktop": [
+                "Personal portfolio website desktop screenshot 1",
+                "Personal portfolio website desktop screenshot 2"
+            ],
+            "mobile": [
+                "Personal portfolio website mobile screenshot 1",
+                "Personal portfolio website mobile screenshot 2",
+                "Personal portfolio website mobile screenshot 3"
+            ]
+        },
+        "status": "Completed",
+        "intro": "React portfolio with advanced animations, refined design and optimized performance.",
+        "text": "The second version of my portfolio, designed as a real end-to-end creative project. Animations built with Motion, a design inspired by the best web studios, smooth navigation and an immersive experience."
+    },
+    "fx-checker": {
+        "alts": {
+            "mockup": [
+                "FX Checker interface showing a real-time exchange rate chart on a computer screen",
+                "FX Checker mobile interface with currency selection and conversion history"
+            ],
+            "desktop": [
+                "FX Checker application desktop screenshot 1",
+                "FX Checker application desktop screenshot 2"
+            ],
+            "mobile": [
+                "FX Checker application mobile screenshot 1",
+                "FX Checker application mobile screenshot 2",
+                "FX Checker application mobile screenshot 3"
+            ]
+        },
+        "status": "Completed",
+        "intro": "Exchange rate tracking app, with clear and interactive visualization of currency fluctuations.",
+        "text": "FX Checker is a web application for tracking and comparing exchange rates in real time. The project emphasizes data clarity with interactive charts, a minimalist interface and a smooth user experience. Built with React and Recharts, it offers dynamic visualization of currency fluctuations, along with a comparison tool and a history feature. Fully responsive and optimized for quick reading of financial data."
+    },
+    "countriesapp": {
+        "alts": {
+            "mockup": [
+                "Mockup of the REST Countries application on a laptop",
+                "Mockup of the REST Countries application on a tablet"
+            ],
+            "desktop": [
+                "REST Countries application desktop screenshot 1",
+                "REST Countries application desktop screenshot 2"
+            ],
+            "mobile": [
+                "REST Countries application mobile screenshot 1",
+                "REST Countries application mobile screenshot 2",
+                "REST Countries application mobile screenshot 3"
+            ]
+        },
+        "status": "Completed",
+        "intro": "React application connected to a REST API to explore countries around the world.",
+        "text": "A complete application consuming the REST Countries API, with dynamic search, region filters and navigation between detail pages. State management with React Hooks, a responsive interface and a smooth user experience across all devices."
+    },
+    "weather-app": {
+        "alts": {
+            "mockup": [
+                "Mockup of the weather application on a laptop",
+                "Mockup of the weather application on two smartphones"
+            ],
+            "desktop": [
+                "Weather application desktop screenshot 1",
+                "Weather application desktop screenshot 2"
+            ],
+            "mobile": [
+                "Weather application mobile screenshot 1",
+                "Weather application mobile screenshot 2",
+                "Weather application mobile screenshot 3"
+            ]
+        },
+        "status": "Completed",
+        "intro": "Real-time weather app connected to a geolocation API.",
+        "text": "An application to check the weather of any city through an API. Real-time data display, a responsive interface that stays readable on every screen. Includes state management, error handling and a polished user experience."
     }
 }

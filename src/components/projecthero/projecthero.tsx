@@ -18,9 +18,6 @@ type ProjectInfoProps = {
             mobile: string[];
             background: string[];
         };
-        status: string;
-        intro: string;
-        text: string;
     }
 }
 

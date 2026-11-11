@@ -19,15 +19,7 @@ type NextProjectProps = {
             desktop: string[];
             mobile: string[];
             background: string[];
-        };
-        alts: {
-            mockup: string[];
-            desktop: string[];
-            mobile: string[];
-        };
-        status: string;
-        intro: string;
-        text: string;
+        }
     }
     readonly navigateWithTransition: (path: string) => void
 }
@@ -41,7 +33,11 @@ export default function NextProject({ selectedProject, navigateWithTransition } 
     const [isHovered, setIsHovered] = useState(false)
 
     const backToTop = () => {
-        window.scrollTo(0, 0)
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth",
+        });
     }
 
     const projectIndex = projects.findIndex((s) => s.id === selectedProject.id)
@@ -64,7 +60,7 @@ export default function NextProject({ selectedProject, navigateWithTransition } 
         gsap.to(".back-to-top-container", {
             xPercent: isHovered? 0 : 110
         })
-    })
+    }, [isHovered])
 
     return(
         <section >

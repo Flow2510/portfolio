@@ -2,6 +2,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
+import { useTranslation } from "react-i18next";
 
 type ProjectGalleryProps = {
     readonly selectedProject: {
@@ -17,15 +18,7 @@ type ProjectGalleryProps = {
             desktop: string[];
             mobile: string[];
             background: string[];
-        };
-        alts: {
-            mockup: string[];
-            desktop: string[];
-            mobile: string[];
-        };
-        status: string;
-        intro: string;
-        text: string;
+        }
     }
 }
 
@@ -37,6 +30,7 @@ export default function ProjectGallery({ selectedProject } : ProjectGalleryProps
     const imageContainer2Ref = useRef<HTMLDivElement>(null)
     const image1Ref = useRef<HTMLImageElement>(null)
     const image2Ref = useRef<HTMLImageElement>(null)
+    const { t } = useTranslation();
 
     useGSAP(() => {
         if (!imageContainer1Ref.current || !imageContainer2Ref.current) return
@@ -132,23 +126,23 @@ export default function ProjectGallery({ selectedProject } : ProjectGalleryProps
                     <img src={selectedProject.images.background[0]} className="h-[140%] absolute left-0 top-[-40%] object-cover w-full" ref={image1Ref}  alt="" />
                 </div>
                 <div className="w-2/3 aspect-video relative bg-neutral-50">
-                    <img className="w-full h-full object-cover" src={selectedProject.images.desktop[1]} alt={selectedProject.alts.desktop[0]}/>
+                    <img className="w-full h-full object-cover" src={selectedProject.images.desktop[1]} alt={t(`${selectedProject.id}.alts.desktop.1`)}/>
                 </div>
             </div>
             <div className="w-full overflow-hidden flex gap-5 max-w-200 m-auto p-2.5 md:p-5" ref={containerRef}>
                 <div className="bg-neutral-500 w-full aspect-1/2 mobile-image-left mobile-image-gallery border">
-                    <img src={selectedProject.images.mobile[0]} className="w-full h-full object-cover" alt="" />
+                    <img src={selectedProject.images.mobile[0]} className="w-full h-full object-cover" alt={t(`${selectedProject.id}.alts.mobile.0`)} />
                 </div>
                 <div className="bg-neutral-700 w-full aspect-1/2 mobile-image-center mobile-image-gallery border">
-                    <img src={selectedProject.images.mobile[1]} className="w-full h-full object-cover" alt="" />
+                    <img src={selectedProject.images.mobile[1]} className="w-full h-full object-cover" alt={t(`${selectedProject.id}.alts.mobile.1`)} />
                 </div>
                 <div className="bg-neutral-500 w-full aspect-1/2 mobile-image-right mobile-image-gallery border">
-                    <img src={selectedProject.images.mobile[2]} className="w-full h-full object-cover" alt="" />
+                    <img src={selectedProject.images.mobile[2]} className="w-full h-full object-cover" alt={t(`${selectedProject.id}.alts.mobile.2`)} />
                 </div>
             </div>
             <div className="h-dvh w-full relative overflow-hidden" ref={imageContainer2Ref}>
                 <div className="h-full w-full overflow-hidden relative" >
-                    <img src={selectedProject.images.mockup[1]} className="h-[140%] absolute left-0 top-[-40%] object-cover w-full" ref={image2Ref} alt="" />
+                    <img src={selectedProject.images.mockup[1]} className="h-[140%] absolute left-0 top-[-40%] object-cover w-full" ref={image2Ref} alt={t(`${selectedProject.id}.alts.mockup.1`)} />
                 </div>
             </div>  
             <div className="w-full flex flex-col p-2.5 md:p-5 gap-5 md:gap-10 items-center">

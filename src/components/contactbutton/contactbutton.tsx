@@ -27,7 +27,7 @@ export default function ContactButton({ setContactModalIsOpen, contactModalIsOpe
         });
 
         gsap.to('.button-background', {
-            scale: isHovered? 1 : 0,
+            scale: isHovered? 1.05 : 0,
             duration: 0.7,
             ease: "power4.inOut",
         });
@@ -36,7 +36,7 @@ export default function ContactButton({ setContactModalIsOpen, contactModalIsOpe
     return(
         <button 
             style={{ background: "#fafafa" }}
-            className="uppercase py-5 px-10 rounded-full border lg:border-0 text-sm cursor-pointer relative items-center justify-center flex group lg:absolute lg:-bottom-5 lg:-left-20 lg:w-50 lg:h-50" 
+            className="uppercase py-5 px-10 rounded-full border lg:border-0 text-sm cursor-pointer relative items-center justify-center flex group lg:absolute lg:-bottom-5 lg:-left-20 lg:w-50 lg:h-50 overflow-hidden" 
             type="button" 
             onClick={() => setContactModalIsOpen(!contactModalIsOpen)}
             onMouseEnter={() => setIsHovered(true)}

@@ -1,6 +1,6 @@
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import HoverTranslate from "../hovertranslate/hovertranslate";
 import ContactButton from "../contactbutton/contactbutton";
 import { useTranslation } from "react-i18next";
@@ -14,6 +14,7 @@ type AboutStickyTypes = {
 export default function AboutSticky({ contactModalIsOpen, setContactModalIsOpen, navigateWithTransition } : AboutStickyTypes) {
     const containerRef = useRef<HTMLDivElement>(null)
     const { t } = useTranslation();
+    const [isHovered, setIsHovered] = useState(false)
 
     const [stripeWidth] = useState(() => {
         const n = 20
@@ -97,8 +98,18 @@ export default function AboutSticky({ contactModalIsOpen, setContactModalIsOpen,
     }, {scope: containerRef})
 
     const backToTop = () => {
-        window.scrollTo(0, 0)
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth",
+        });
     }
+
+    useEffect(() => {
+        gsap.to(".back-to-top-container", {
+            xPercent: isHovered? 0 : 110
+        })
+    }, [isHovered])
 
     return(
         <div className="relative h-[500dvh]" ref={containerRef}>
@@ -180,11 +191,25 @@ export default function AboutSticky({ contactModalIsOpen, setContactModalIsOpen,
                                         </p>
                                     </button>
                                 </div>
-                                <button type='button' onClick={backToTop} className='bg-neutral-900 rounded-full w-12 h-12 flex text-xl items-center justify-center text-neutral-50 cursor-pointer hover:scale-[0.9] duration-300'>
-                                    <span>
-                                        ↑
-                                    </span>
-                                </button>
+                                <div className="relative">
+                                    <div className='absolute right-0 -top-11 overflow-hidden'>
+                                        <p className='back-to-top-container overflow-hidden text-nowrap px-2.5 py-1 bg-neutral-950 text-neutral-50 rounded-lg uppercase font-[antonio] font-light'>
+                                            <span className='inline-block back-to-top-text'>
+                                                Back to top
+                                            </span>
+                                        </p>
+                                    </div>
+                                    <button 
+                                        type='button' 
+                                        onMouseEnter={() => setIsHovered(true)}
+                                        onMouseLeave={() => setIsHovered(false)}
+                                        onClick={backToTop} 
+                                        className='bg-neutral-900 rounded-full w-12 h-12 flex text-xl items-center justify-center text-neutral-50 cursor-pointer hover:scale-[0.9] duration-300'>
+                                        <span>
+                                            ↑
+                                        </span>
+                                    </button>
+                                </div>
                             </div>
                         </div>                        
                     </div>

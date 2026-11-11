@@ -4,6 +4,7 @@ import gsap from "gsap"
 import { Draggable } from "gsap/Draggable"
 import InertiaPlugin from "gsap/InertiaPlugin"
 import { useGSAP } from "@gsap/react"
+import { useTranslation } from "react-i18next"
 
 gsap.registerPlugin(Draggable, InertiaPlugin)
 
@@ -16,11 +17,12 @@ export default function RotatingGallery({ isDesktop, navigateWithTransition } : 
     const dragProxyRef = useRef<HTMLDivElement>(null)
     const containerRef = useRef<HTMLDivElement>(null)
     const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
-    const items = [...projects, ...projects, ...projects]
+    const items = [...projects, ...projects, ...projects];
+    const { t } = useTranslation();
 
     useGSAP(() => {
-        const cards = cardsRef.current
-        const total = cards.length
+        const cards = cardsRef.current;
+        const total = cards.length;        
 
         const Rx = isDesktop ? 300 : 140;
         const Ry = isDesktop ? 300 : 140;
@@ -137,7 +139,7 @@ export default function RotatingGallery({ isDesktop, navigateWithTransition } : 
                         className="absolute w-20 h-12 lg:w-34 lg:h-22 shadow-sm flex items-center justify-center overflow-hidden"
                     >
                         <button onClick={() => navigateWithTransition(`/projects/${item.id}`)} className={'active:cursor-grabbing cursor-pointer'}>
-                            <img src={item.images.mockup[0]} alt={item.alts.mockup[0]} className="w-full h-full object-cover image-rotating" />
+                            <img src={item.images.mockup[0]} alt={t(`${item.id}.alts.mockup.0`)} className="w-full h-full object-cover image-rotating" />
                         </button>
                     </div>
                 ))}

@@ -16,15 +16,7 @@ type ProjectCardTypes={
             mockup: string[];
             desktop: string[];
             mobile: string[];
-        };
-        alts: {
-            mockup: string[];
-            desktop: string[];
-            mobile: string[];
-        };
-        status: string;
-        intro: string;
-        text: string;
+        }
     }
     readonly navigateWithTransition: (path: string) => void
 }
@@ -95,7 +87,7 @@ export default function ProjectCard({ project, navigateWithTransition } : Projec
         >
             <div className="h-dvh w-full relative overflow-hidden text-neutral-50 animated-item" ref={containerRef}>
                 <div className="absolute top-[-40%] h-[140%] w-full">
-                    <img src={project.images.mockup[0]} className="w-full h-full object-cover image-projects-card" alt="" />
+                    <img src={project.images.mockup[0]} className="w-full h-full object-cover image-projects-card" alt={t(`${project.id}.alts.mockup.0`)} />
                 </div>
                 <div className="absolute inset-0 bg-neutral-900/40 flex justify-center items-center">
                     <div>
@@ -125,9 +117,9 @@ export default function ProjectCard({ project, navigateWithTransition } : Projec
             </div>
             <div
                 ref={tooltipRef}
-                className="fixed top-0 left-0"
+                className="fixed top-0 left-0 pointer-events-none"
             >
-                <p className="px-2.5 py-1 bg-neutral-50 rounded-lg uppercase font-[antonio] font-light translate-x-1/2 cursor-info">
+                <p className="px-2.5 py-1 bg-neutral-50 rounded-lg uppercase font-[antonio] font-light translate-x-1/3 cursor-info">
                     {t("project-card.tool-tip")}
                 </p>
             </div>

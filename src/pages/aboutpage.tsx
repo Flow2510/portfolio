@@ -17,7 +17,6 @@ export default function AboutPage({ contactModalIsOpen, setContactModalIsOpen, n
             <AboutHero />
             <AboutSection />
             <AboutSticky contactModalIsOpen={contactModalIsOpen} setContactModalIsOpen={setContactModalIsOpen} navigateWithTransition={navigateWithTransition}/>
-            
         </main>
     )
 }

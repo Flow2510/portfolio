@@ -134,5 +134,150 @@
             "text1": "Cette politique peut être mise à jour afin de tenir compte des évolutions du site, de ses fonctionnalités ou de la réglementation applicable."
         },
         "update": "Dernière mise à jour"
+    },
+    "projects": {
+        "title": {
+        "line1": "Projets",
+        "line2": "Sélectionnés"
+        }
+    },
+    "project-card": {
+        "tool-tip": "Découvrir le projet"
+    },
+    "project": {
+        "info": {
+            "year": "Année",
+            "type": "Type",
+            "status": "Statut"
+        },
+            "about": {
+            "title": "À propos",
+            "button": "Voir le projet"
+        },
+            "next-project": {
+            "subtitle": "Projet suivant",
+            "button": "Tous les projets",
+            "top": "Retour en haut"
+        }
+    },
+    "the-motion-library": {
+        "alts": {
+            "mockup": [
+                "Aperçu du site The Motion Library affiché sur un ordinateur portable",
+                "Aperçu du site The Motion Library affiché sur un smartphone"
+            ],
+            "desktop": [
+                "Capture d'écran de la version ordinateur du site The Motion Library, vue 1",
+                "Capture d'écran de la version ordinateur du site The Motion Library, vue 2"
+            ],
+            "mobile": [
+                "Capture d'écran de la version mobile du site The Motion Library, vue 1",
+                "Capture d'écran de la version mobile du site The Motion Library, vue 2",
+                "Capture d'écran de la version mobile du site The Motion Library, vue 3"
+            ]
+        },
+        "status": "Terminé",
+        "intro": "Une bibliothèque d'animations web interactives, conçue pour explorer les effets au défilement et les transitions immersives.",
+        "text": "Une plateforme qui rassemble une collection d'animations web modernes, imaginée pour explorer et mettre en valeur les interactions au défilement, les transitions fluides et les effets visuels avancés. Développée avec GSAP et Motion, elle propose des animations précises et performantes, dans une interface soignée et entièrement adaptée à tous les écrans."
+    },
+    "porvenir": {
+        "alts": {
+            "mockup": [
+                "Aperçu du site de l'Auberge del Porvenir affiché sur une tablette",
+                "Aperçu du site de l'Auberge del Porvenir affiché sur un smartphone"
+            ],
+            "desktop": [
+                "Capture d'écran de la version ordinateur du site de l'Auberge del Porvenir, vue 1",
+                "Capture d'écran de la version ordinateur du site de l'Auberge del Porvenir, vue 2"
+            ],
+            "mobile": [
+                "Capture d'écran de la version mobile du site de l'Auberge del Porvenir, vue 1",
+                "Capture d'écran de la version mobile du site de l'Auberge del Porvenir, vue 2",
+                "Capture d'écran de la version mobile du site de l'Auberge del Porvenir, vue 3"
+            ]
+        },
+        "status": "En cours",
+        "intro": "Un site vitrine responsive conçu pour une maison d'hôtes, dans le cadre d'un premier projet client.",
+        "text": "Un site vitrine développé avec React pour l'Auberge del Porvenir. Une interface claire et soignée, pensée pour mettre en valeur l'établissement et transformer les visites en réservations. Le projet accorde une attention particulière au responsive design, à l'accessibilité et au référencement naturel. Mon premier projet réalisé pour un client, livré et mis en ligne."
+    },
+    "portfolio": {
+        "alts": {
+            "mockup": [
+                "Aperçu de la deuxième version de mon portfolio affiché sur un smartphone",
+                "Aperçu de la deuxième version de mon portfolio affiché sur un ordinateur portable"
+            ],
+            "desktop": [
+                "Capture d'écran de la version ordinateur de mon portfolio, vue 1",
+                "Capture d'écran de la version ordinateur de mon portfolio, vue 2"
+            ],
+            "mobile": [
+                "Capture d'écran de la version mobile de mon portfolio, vue 1",
+                "Capture d'écran de la version mobile de mon portfolio, vue 2",
+                "Capture d'écran de la version mobile de mon portfolio, vue 3"
+            ]
+        },
+        "status": "Terminé",
+        "intro": "Un portfolio React mêlant animations avancées, direction artistique soignée et performances optimisées.",
+        "text": "La deuxième version de mon portfolio, pensée comme un véritable projet créatif de A à Z. Des animations conçues avec Motion, une direction artistique inspirée des meilleurs studios web, une navigation fluide et une expérience immersive dans les moindres détails."
+    },
+    "fx-checker": {
+        "alts": {
+            "mockup": [
+                "Aperçu de l'interface FX Checker avec un graphique des taux de change en temps réel, affiché sur un ordinateur",
+                "Aperçu de l'interface mobile de FX Checker avec la sélection de devises et l'historique des conversions"
+            ],
+            "desktop": [
+                "Capture d'écran de la version ordinateur de FX Checker, vue 1",
+                "Capture d'écran de la version ordinateur de FX Checker, vue 2"
+            ],
+            "mobile": [
+                "Capture d'écran de la version mobile de FX Checker, vue 1",
+                "Capture d'écran de la version mobile de FX Checker, vue 2",
+                "Capture d'écran de la version mobile de FX Checker, vue 3"
+            ]
+        },
+        "status": "Terminé",
+        "intro": "Une application de suivi des taux de change, avec une visualisation claire et interactive des fluctuations monétaires.",
+        "text": "FX Checker est une application web qui permet de suivre et de comparer les taux de change en temps réel. Le projet met l'accent sur la lisibilité des données, grâce à des graphiques interactifs, une interface minimaliste et une expérience fluide. Développée avec React et Recharts, l'application propose une visualisation dynamique des fluctuations monétaires, ainsi que des outils de comparaison et de consultation de l'historique. Entièrement responsive, elle facilite la lecture des données financières sur tous les écrans."
+    },
+    "countriesapp": {
+        "alts": {
+            "mockup": [
+                "Aperçu de l'application REST Countries affiché sur un ordinateur portable",
+                "Aperçu de l'application REST Countries affiché sur une tablette"
+            ],
+            "desktop": [
+                "Capture d'écran de la version ordinateur de REST Countries, vue 1",
+                "Capture d'écran de la version ordinateur de REST Countries, vue 2"
+            ],
+            "mobile": [
+                "Capture d'écran de la version mobile de REST Countries, vue 1",
+                "Capture d'écran de la version mobile de REST Countries, vue 2",
+                "Capture d'écran de la version mobile de REST Countries, vue 3"
+            ]
+        },
+        "status": "Terminé",
+        "intro": "Une application React connectée à une API pour explorer les pays du monde entier.",
+        "text": "Une application complète basée sur l'API REST Countries, qui permet d'explorer les pays du monde grâce à une recherche dynamique, des filtres par région et des pages détaillées. Le projet met en œuvre la gestion d'état avec les Hooks de React, une interface responsive et une navigation fluide sur tous les appareils."
+    },
+    "weather-app": {
+        "alts": {
+            "mockup": [
+                "Aperçu de l'application météo affiché sur un ordinateur portable",
+                "Aperçu de l'application météo affiché sur deux smartphones"
+            ],
+            "desktop": [
+                "Capture d'écran de la version ordinateur de l'application météo, vue 1",
+                "Capture d'écran de la version ordinateur de l'application météo, vue 2"
+            ],
+            "mobile": [
+                "Capture d'écran de la version mobile de l'application météo, vue 1",
+                "Capture d'écran de la version mobile de l'application météo, vue 2",
+                "Capture d'écran de la version mobile de l'application météo, vue 3"
+            ]
+        },
+        "status": "Terminé",
+        "intro": "Une application météo en temps réel connectée à une API de géolocalisation.",
+        "text": "Une application qui permet de consulter la météo de n'importe quelle ville grâce à une API. Elle propose l'affichage des données en temps réel dans une interface responsive, pensée pour rester claire et lisible sur tous les écrans. Le projet intègre également une gestion des états, le traitement des erreurs et une expérience utilisateur soignée."
     }
 }

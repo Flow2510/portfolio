@@ -21,15 +21,7 @@ type ProjectInfoProps = {
             desktop: string[];
             mobile: string[];
             background: string[];
-        };
-        alts: {
-            mockup: string[];
-            desktop: string[];
-            mobile: string[];
-        };
-        status: string;
-        intro: string;
-        text: string;
+        }
     }
 }
 
@@ -71,7 +63,7 @@ export default function ProjectInfo({ selectedProject } : ProjectInfoProps) {
         });
 
         gsap.to('.button-background', {
-            scale: isHovered? 1 : 0,
+            scale: isHovered? 1.05 : 0,
             duration: 0.7,
             ease: "power4.inOut",
         });
@@ -84,7 +76,7 @@ export default function ProjectInfo({ selectedProject } : ProjectInfoProps) {
                     <img src={selectedProject.images.background[1]} className="h-[140%] absolute left-0 top-[-40%] object-cover w-full image-project-info"  alt="" />
                 </div>
                 <div className="w-2/3 aspect-video relative bg-neutral-50">
-                    <img className="w-full h-full object-cover" src={selectedProject.images.desktop[0]} alt={selectedProject.alts.desktop[0]}/>
+                    <img className="w-full h-full object-cover" src={selectedProject.images.desktop[0]} alt={t(`${selectedProject.id}.alts.desktop.0`)}/>
                 </div>
             </div>
             <div className="px-5 flex justify-center animated-item">
@@ -99,31 +91,31 @@ export default function ProjectInfo({ selectedProject } : ProjectInfoProps) {
                     </div>
                     <div className="flex flex-col gap-2">
                         <p className="tracking-wide font-light text-neutral-400">{t("project.info.status")}</p>
-                        <p>{selectedProject.status}</p>
+                        <p>{t(`${selectedProject.id}.status`)}</p>
                     </div>
                 </div>
             </div>
             <div className="flex flex-col gap-20 p-5 pb-30 items-center">
                 <div className="flex flex-col gap-10 md:flex-row md:w-2/3">
-                    <h3 className="font-semibold animated-item">{t("project.about.title")}</h3>
+                    <h3 className="font-semibold animated-item text-nowrap">{t("project.about.title")}</h3>
                     <div className="flex flex-col gap-15">
                         <div className="flex flex-col gap-5 md:flex-row">
                             <p className="font-light leading-relaxed max-w-200 w-full animated-item">
-                                {selectedProject.intro}
+                                {t(`${selectedProject.id}.intro`)}
                             </p>
                             <p className="font-light leading-relaxed max-w-200 w-full animated-item">
-                                {selectedProject.text}
+                                {t(`${selectedProject.id}.text`)}
                             </p>    
                         </div>    
                                   
                     </div>
                 </div>
-                <NavLink 
+                <NavLink
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
                     to={selectedProject.link} 
                     target="_blank" 
-                    className="uppercase py-5 px-10 rounded-full text-sm cursor-pointer border md:border-0 relative group md:w-50 md:h-50 md:flex md:items-center md:justify-center animated-item bg-neutral-50" 
+                    className="uppercase overflow-hidden py-5 px-10 rounded-full text-sm cursor-pointer border md:border-0 relative group md:w-50 md:h-50 md:flex md:items-center md:justify-center animated-item bg-neutral-50" 
                 >
                     <svg viewBox="0 0 200 200" className="absolute hidden md:inline-block" aria-hidden>
                         <circle
