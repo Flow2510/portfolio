@@ -70,7 +70,7 @@ export default function AboutSection() {
         <section className="p-2.5 md:p-5 flex flex-col gap-10 relative">
             <div className="absolute w-full h-full top-1/2 left-1/2 -translate-1/2 flex items-center max-w-150 justify-center">
                 <img
-                    src="/images/background.png"
+                    src="/images/background.webp"
                     className="h-full w-full object-cover grayscale-100 opacity-30 fade-image invert-100"
                     alt=""
                 />

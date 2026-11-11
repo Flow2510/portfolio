@@ -2,6 +2,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
+import { useTranslation } from "react-i18next";
 
 type ProjectInfoProps = {
     readonly selectedProject: {
@@ -26,6 +27,7 @@ gsap.registerPlugin(ScrollTrigger)
 export default function ProjectHero({ selectedProject } : ProjectInfoProps) {
     const words = selectedProject.name.split(" ")
     const containerRef = useRef<HTMLDivElement>(null)
+    const { t } = useTranslation()
     
     useGSAP(() => {
         if (!containerRef.current ) return
@@ -46,7 +48,7 @@ export default function ProjectHero({ selectedProject } : ProjectInfoProps) {
             <div className="h-[60dvh] lg:h-dvh lg:w-full flex flex-col justify-end pb-15 relative">
                 <div className="absolute w-full h-full top-1/2 left-1/2 -translate-1/2 flex items-center max-w-150 justify-center">
                 <img
-                    src="/images/background.png"
+                    src="/images/background.webp"
                     className="h-full w-full object-cover grayscale-100 opacity-30 fade-image invert-100"
                     alt=""
                 />
@@ -70,7 +72,7 @@ export default function ProjectHero({ selectedProject } : ProjectInfoProps) {
             </div>
             <div className="h-dvh w-full overflow-hidden hidden lg:flex" ref={containerRef}>
                 <div className="w-full h-full">
-                    <img src={selectedProject.images.mockup[0]} className="w-full h-full object-cover image-project-hero" alt="" />
+                    <img src={selectedProject.images.mockup[0]} className="w-full h-full object-cover image-project-hero" alt={t(`${selectedProject.id}.alts.mockup.0`)} />
                 </div>
             </div>
         </section>

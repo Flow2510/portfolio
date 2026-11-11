@@ -118,7 +118,7 @@ export default function RotatingGallery({ isDesktop, navigateWithTransition } : 
             gsap.ticker.remove(ticker)
             draggable.kill()
         }
-    }, { scope: containerRef, dependencies: [isDesktop] })
+    }, { scope: containerRef, dependencies: [isDesktop], revertOnUpdate: true,})
 
     return(
         <div className="w-full h-full relative flex flex-col items-center justify-center">
@@ -139,7 +139,15 @@ export default function RotatingGallery({ isDesktop, navigateWithTransition } : 
                         className="absolute w-20 h-12 lg:w-34 lg:h-22 shadow-sm flex items-center justify-center overflow-hidden"
                     >
                         <button onClick={() => navigateWithTransition(`/projects/${item.id}`)} className={'active:cursor-grabbing cursor-pointer'}>
-                            <img src={item.images.mockup[0]} alt={t(`${item.id}.alts.mockup.0`)} className="w-full h-full object-cover image-rotating" />
+                            <img 
+                                src={item.images.mockup[0]} 
+                                alt={t(`${item.id}.alts.mockup.0`)} 
+                                className="w-full h-full object-cover image-rotating" 
+                                loading="eager" 
+                                decoding="async"
+                                width={isDesktop? 136 : 80}
+                                height={isDesktop? 88 : 48}
+                            />
                         </button>
                     </div>
                 ))}

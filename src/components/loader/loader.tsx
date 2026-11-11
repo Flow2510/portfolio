@@ -14,19 +14,28 @@ export default function Loader({ isLoading, setIsLoading, isTransitioning } : Lo
     const { pathname } = useLocation()
 
     useGSAP(() => {
-        if (!loaderRef) return
+    if (!isLoading) return;
 
-        gsap.to('.background-bloc-loader', {
-            yPercent: -100,
-            stagger: {
-                each: 0.15,
-                from: "end"
-            },
-            ease: "power4.inOut",
-            duration: 0.6,
-            onComplete: () => setIsLoading(!isLoading)
-        })
-    }, { scope: loaderRef, dependencies: [pathname] })
+    const blocks = gsap.utils.toArray('.background-bloc-loader');
+
+    gsap.killTweensOf(blocks);
+
+    gsap.to(blocks, {
+        yPercent: -100,
+        stagger: {
+            each: 0.15,
+            from: "end"
+        },
+        ease: "power4.inOut",
+        duration: 0.6,
+        onComplete: () => setIsLoading(false)
+    });
+
+}, {
+    scope: loaderRef,
+    dependencies: [pathname, isLoading],
+    revertOnUpdate: true
+});
 
     useEffect(() => {
         gsap.to('.background-bloc-loader', {
