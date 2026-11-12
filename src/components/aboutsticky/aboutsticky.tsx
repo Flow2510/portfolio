@@ -15,12 +15,32 @@ export default function AboutSticky({ contactModalIsOpen, setContactModalIsOpen,
     const containerRef = useRef<HTMLDivElement>(null)
     const { t } = useTranslation();
     const [isHovered, setIsHovered] = useState(false)
+    const [linkIsHovered, setLinkIsHovered] = useState(false)
 
     const [stripeWidth] = useState(() => {
         const n = 20
         const unit = 100 / (n * (n + 1) / 2)
         return Array.from({ length: n }, (_, i) => unit * (i + 1))
     })
+
+    useEffect(() => {
+        const linkItems = gsap.utils.toArray<HTMLDivElement>(".link-item");
+        const xPosition = [-1, 1, -1, 1];
+        const yPosition = [-1, -1, 1, 1];
+
+        linkItems.forEach((item, index) => {
+            gsap.to(item, {
+                x: linkIsHovered ? xPosition[index] : 0,
+                y: linkIsHovered ? yPosition[index] : 0,
+                scale: linkIsHovered ? 1.2: 1
+            });
+        });
+
+        gsap.to('.link-item-container', {
+            rotateZ: linkIsHovered ? 90 : 0,
+            duration: linkIsHovered ? 0.3 : 0
+        });
+    }, [linkIsHovered])
 
     useGSAP(() => {
         if (!containerRef.current) return
@@ -177,12 +197,18 @@ export default function AboutSticky({ contactModalIsOpen, setContactModalIsOpen,
                         <div className="absolute bottom-0 left-0 w-full p-2.5 md:p-5 flex flex-col gap-2.5">
                             <div className="flex justify-between items-end">
                                 <div>
-                                    <button type="button" onClick={() => navigateWithTransition('/projects')} className='flex items-center gap-2.5 cursor-pointer'>
-                                        <div className='grid grid-cols-2 h-2.5 w-2.5 gap-0.5'>
-                                            <div className='w-full h-full bg-neutral-900'></div>
-                                            <div className='w-full h-full bg-neutral-900'></div>
-                                            <div className='w-full h-full bg-neutral-900'></div>
-                                            <div className='w-full h-full bg-neutral-900'></div>
+                                    <button 
+                                        type="button" 
+                                        onClick={() => navigateWithTransition('/projects')} 
+                                        className='flex items-center gap-2.5 cursor-pointer'
+                                        onMouseEnter={() => setLinkIsHovered(true)}
+                                        onMouseLeave={() => setLinkIsHovered(false)}
+                                    >
+                                        <div className='grid grid-cols-2 h-2.5 w-2.5 gap-0.5 link-item-container'>
+                                            <div className='w-full h-full bg-neutral-900 link-item'></div>
+                                            <div className='w-full h-full bg-neutral-900 link-item'></div>
+                                            <div className='w-full h-full bg-neutral-900 link-item'></div>
+                                            <div className='w-full h-full bg-neutral-900 link-item'></div>
                                         </div>
                                         <p className='text-sm'>
                                             <HoverTranslate

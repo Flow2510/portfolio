@@ -22,7 +22,7 @@ export default function RotatingGallery({ isDesktop, navigateWithTransition } : 
 
     useGSAP(() => {
         const cards = cardsRef.current;
-        const total = cards.length;        
+        const total = cards.length;
 
         const Rx = isDesktop ? 300 : 140;
         const Ry = isDesktop ? 300 : 140;

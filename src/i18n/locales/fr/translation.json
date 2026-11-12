@@ -9,6 +9,14 @@
         "developer": "Développeur Web",
         "opportunities": "Ouvert aux opportunités"
     },
+    "link-aria-label": {
+        "github": "Visiter mon profil GitHub",
+        "linkedin": "Visiter mon profil LinkedIn",
+        "email": "M'envoyer un e-mail",
+        "cv": "Consulter mon CV au format PDF",
+        "en": "Passer en anglais",
+        "fr": "Passer en français"
+    },
     "contact-modal": {
         "title": {
         "line1": "Entrons",

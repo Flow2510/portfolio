@@ -2,8 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 import projects from '../../data/projects.json'
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
-import HoverTranslate from '../hovertranslate/hovertranslate';
 import { useTranslation } from 'react-i18next';
+import HoverTranslate from '../hovertranslate/hovertranslate';
 
 type NextProjectProps = {
     readonly selectedProject: {
@@ -29,8 +29,10 @@ export default function NextProject({ selectedProject, navigateWithTransition } 
 
     const containerRef = useRef<HTMLDivElement>(null)
     const { t } = useTranslation()
+    const sectionRef = useRef<HTMLElement>(null)
     
     const [isHovered, setIsHovered] = useState(false)
+    const [linkIsHovered, setLinkIsHovered] = useState(false)
 
     const backToTop = () => {
         window.scrollTo({
@@ -45,6 +47,8 @@ export default function NextProject({ selectedProject, navigateWithTransition } 
     const words = projects[nextProjectIndex].name.split(" ")
 
     useGSAP(() => {
+        if (!sectionRef.current) return
+
         gsap.to('.next-project-image', {
             scale: 1,
             scrollTrigger: {
@@ -54,16 +58,34 @@ export default function NextProject({ selectedProject, navigateWithTransition } 
                 scrub: true
             }
         })
-    })
+    }, { scope: sectionRef})
 
     useEffect(() => {
         gsap.to(".back-to-top-container", {
             xPercent: isHovered? 0 : 110
-        })
+        })        
     }, [isHovered])
 
+    useEffect(() => {
+        const linkItems = gsap.utils.toArray<HTMLDivElement>(".link-item");
+        const xPosition = [-1, 1, -1, 1];
+        const yPosition = [-1, -1, 1, 1];
+
+        linkItems.forEach((item, index) => {
+            gsap.to(item, {
+                x: linkIsHovered ? xPosition[index] : 0,
+                y: linkIsHovered ? yPosition[index] : 0,
+                scale: linkIsHovered ? 1.2: 1
+            });
+        });
+        gsap.to('.link-item-container', {
+            rotateZ: linkIsHovered ? 90 : 0,
+            duration: linkIsHovered ? 0.3 : 0
+        });
+    }, [linkIsHovered])
+
     return(
-        <section >
+        <section ref={sectionRef}>
             <div className="fixed inset-0 z-0" >
                 <button onClick={() => navigateWithTransition(`/projects/${projects[nextProjectIndex].id}`)} className="h-full w-full relative overflow-hidden cursor-pointer">
                     <img src={projects[nextProjectIndex].images.mockup[0]} alt="" className="absolute w-full h-full object-cover scale-200 next-project-image" />
@@ -93,12 +115,17 @@ export default function NextProject({ selectedProject, navigateWithTransition } 
                     </div>                    
                 </button>
                 <div className='absolute left-0 bottom-0 w-full flex justify-between items-end p-2.5 md:p-5'>
-                        <button onClick={() => navigateWithTransition('/projects')} className='flex items-center text-neutral-50 gap-2.5 cursor-pointer'>
-                            <div className='grid grid-cols-2 h-2.5 w-2.5 gap-0.5'>
-                                <div className='w-full h-full bg-neutral-50'></div>
-                                <div className='w-full h-full bg-neutral-50'></div>
-                                <div className='w-full h-full bg-neutral-50'></div>
-                                <div className='w-full h-full bg-neutral-50'></div>
+                        <button 
+                            onClick={() => navigateWithTransition('/projects')} 
+                            onMouseEnter={() => setLinkIsHovered(true)}
+                            onMouseLeave={() => setLinkIsHovered(false)}
+                            className='flex items-center text-neutral-50 gap-2.5 cursor-pointer'
+                        >
+                            <div className='grid grid-cols-2 h-2.5 w-2.5 gap-0.5 link-item-container'>
+                                <div className='w-full h-full bg-neutral-50 link-item'></div>
+                                <div className='w-full h-full bg-neutral-50 link-item'></div>
+                                <div className='w-full h-full bg-neutral-50 link-item'></div>
+                                <div className='w-full h-full bg-neutral-50 link-item'></div>
                             </div>
                             <p className='text-sm'>
                                 <HoverTranslate 

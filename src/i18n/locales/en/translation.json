@@ -9,6 +9,14 @@
         "developer": "Web Developer",
         "opportunities" : "Open to work"
     },
+    "link-aria-label": {
+        "github": "Visit my GitHub profile",
+        "linkedin": "Visit my LinkedIn profile",
+        "email": "Send me an email",
+        "cv": "View my CV in PDF format",
+        "en": "Switch to English",
+        "fr": "Switch to French"
+    },
     "contact-modal": {
         "title": {
             "line1": "Get in",

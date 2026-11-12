@@ -10,7 +10,7 @@ export default function ProjectsPage({ navigateWithTransition } : ProjectsPagePr
     const { t } = useTranslation()
     
     return(
-        <main className="bg-neutral-50">
+        <main className="bg-neutral-200">
             <section className="relative z-1 bg-neutral-50">
                 <div className="h-[60dvh] relative flex flex-col justify-end pb-15">
                     <div className="absolute w-full h-full top-1/2 left-1/2 -translate-1/2 flex items-center max-w-150 justify-center">

@@ -111,17 +111,32 @@ export default function Menu({ menuIsOpen, setMenuIsOpen, contactModalIsOpen, se
                                 <a href="mailto:sendra.florian@gmail.com" className="text inline-block text-menu" target="_blank">sendra.florian@gmail.com</a>
                             </div>
                             <div className="b-0 flex gap-10 font-light">
-                                <a href="https://www.linkedin.com/in/florian-sendra-3270961a1" className="overflow-hidden" target="_blank">
+                                <a 
+                                    aria-label={t("link-aria-label.github")}
+                                    href="https://github.com/Flow2510"
+                                    className="overflow-hidden" 
+                                    target="_blank"
+                                >
                                     <div className="uppercase rounded-full bg-neutral-900 w-10 h-10 flex font-extralight items-center justify-center text-menu">
                                         <img src="/images/github-icon.png" className="w-10 h-10 object-cover scale-[1.2]" alt="" />
                                     </div>
                                 </a> 
-                                <a href="https://www.linkedin.com/in/florian-sendra-3270961a1" className="overflow-hidden" target="_blank">
+                                <a 
+                                    aria-label={t("link-aria-label.linkedin")}
+                                    href="https://www.linkedin.com/in/florian-sendra-3270961a1" 
+                                    className="overflow-hidden" 
+                                    target="_blank"
+                                >
                                     <div className="uppercase bg-neutral-100 rounded-full w-10 h-10 flex font-extralight items-center justify-center text-menu">
                                         <img src="/images/linkedin-icon.png" className="w-7 h-7 object-cover" alt="" />
                                     </div>
                                 </a>
-                                <a href="/CV_Sendra_Florian.pdf" className="overflow-hidden" target="_blank">
+                                <a 
+                                    aria-label={t("link-aria-label.cv")}
+                                    href="/CV_Sendra_Florian.pdf" 
+                                    className="overflow-hidden" 
+                                    target="_blank"
+                                >
                                     <div className="uppercase bg-neutral-100 rounded-full w-10 h-10 flex font-extralight items-center justify-center text-menu">
                                         <p className="text-neutral-900 font-bold">CV</p>
                                     </div>
@@ -131,6 +146,8 @@ export default function Menu({ menuIsOpen, setMenuIsOpen, contactModalIsOpen, se
                         <div className="overflow-hidden">
                             <div className="flex text-neutral-400 text-menu">
                                 <button
+                                    aria-label={t("link-aria-label.en")}   
+                                    type="button" 
                                     className="px-2.5"
                                     style={{
                                         cursor: "pointer",
@@ -143,6 +160,8 @@ export default function Menu({ menuIsOpen, setMenuIsOpen, contactModalIsOpen, se
                                 </button>
                                 <span>/</span>
                                 <button
+                                    type="button"
+                                    aria-label={t("link-aria-label.fr")}
                                     className="px-2.5"
                                     style={{
                                         cursor: "pointer",

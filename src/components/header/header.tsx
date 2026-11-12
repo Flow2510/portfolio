@@ -67,17 +67,21 @@ export default function Header({ setMenuIsOpen, menuIsOpen, contactModalIsOpen, 
                     <div className="flex gap-2.5 text-neutral-400">                        
                         <div className="flex gap-2.5 text-neutral-400">
                             <button
-                            style={{
-                                cursor: "pointer",
-                                fontWeight: i18n.language === "en" ? 500 : 400,
-                                color: i18n.language === "en" ? '#fafafa' : "#a1a1a1"
-                            }}
-                            onClick={() => void i18n.changeLanguage('en')}
+                                aria-label={t("link-aria-label.en")}   
+                                type="button" 
+                                style={{
+                                    cursor: "pointer",
+                                    fontWeight: i18n.language === "en" ? 500 : 400,
+                                    color: i18n.language === "en" ? '#fafafa' : "#a1a1a1"
+                                }}
+                                onClick={() => void i18n.changeLanguage('en')}
                             >
                                 En
                             </button>
                             <span>/</span>
                             <button
+                                aria-label={t("link-aria-label.fr")}
+                                type="button" 
                                 style={{
                                     cursor: "pointer",
                                     fontWeight: i18n.language === "fr" ? 500 : 400,
