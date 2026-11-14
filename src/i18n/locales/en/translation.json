@@ -45,17 +45,17 @@
         },
         "info": {
             "title": {
-                "line1" : "Turning",
-                "line2" : "Creative Visions",
-                "line3" : "Into",
-                "line4" : "Immersive",
-                "line5" : "Digital Experiences"
+                "line1": "Building",
+                "line2": "Clean, Fast &",
+                "line3": "Interactive",
+                "line4": "Web",
+                "line5": "Interfaces"
             },
             "about": {
                 "title": "About",
-                "text1": "I turn designs into responsive, high-performance interfaces using React and TypeScript. I care deeply about code quality, accessibility, and smooth user interactions that elevate the overall experience",
-                "text2": "To become a more complete developer, I'm expanding into the back-end with Node.js, Express, and Supabase. Building personal projects helps me understand the full picture, from database design to the user interface.",
-                "text3": "I'm currently looking for new opportunities as a Front-End Developer, where I can contribute my skills, keep learning, and work alongside a team to build meaningful digital experiences."
+                "text1": "I build responsive, accessible web interfaces with React and TypeScript. I focus on writing clean, maintainable code and sweating the small details—from smooth micro-interactions to solid performance.",
+                "text2": "Curious about how everything connects under the hood, I'm expanding into back-end development with Node.js, Express, and Supabase. Building full-stack side projects lets me handle everything from database design to the final UI.",
+                "text3": "I'm currently looking for a Front-End Developer role where I can ship great products, keep learning, and collaborate with a driven team."
             },
             "stack": {
                 "title": "Stack"
@@ -63,12 +63,12 @@
         },
         "sticky": {
             "first-title": {
-                "line1" : "Beyound the",
-                "line2": "Ordinary"
+                "line1": "Details",
+                "line2": "Matter"
             },
             "second-title": {
-                "line1": "Think it",
-                "line2": "Build it"
+                "line1": "From Idea",
+                "line2": "To Production"
             },
             "footer": {
                 "title": {

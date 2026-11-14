@@ -73,7 +73,7 @@ export default function AboutSticky({ contactModalIsOpen, setContactModalIsOpen,
 
         tl.fromTo('.first-title', {
             opacity: 0,
-            y: 100
+            y: 200
         }, {
             opacity: 1,
             y: 0,
@@ -83,14 +83,14 @@ export default function AboutSticky({ contactModalIsOpen, setContactModalIsOpen,
 
         tl.to('.first-title', {
             opacity: 0,
-            y: -100,
+            y: -200,
             duration: 1,
             stagger: 0.2
         }, "+=1.5")
 
         tl.fromTo('.second-title', {
             opacity: 0,
-            y: 50
+            y: 200
         }, {
             opacity: 1,
             y: 0,
@@ -100,7 +100,7 @@ export default function AboutSticky({ contactModalIsOpen, setContactModalIsOpen,
 
         tl.to('.second-title', {
             opacity: 0,
-            y: -50,
+            y: -200,
             duration: 1,
             stagger: 0.2
         }, "+=1.5")
