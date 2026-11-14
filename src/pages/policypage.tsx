@@ -63,6 +63,13 @@ export default function PolicyPage({ setContactModalIsOpen, contactModalIsOpen, 
         <main className="flex flex-col" ref={mainRef}>
             <section className="relative z-1">
                 <div className="h-[60dvh] w-full flex flex-col justify-end pb-15 bg-neutral-900 text-neutral-50">
+                    <div className="absolute w-full h-full top-1/2 left-1/2 -translate-1/2 flex items-center max-w-150 justify-center">
+                            <img
+                                src="/images/background.webp"
+                                className="h-full w-full object-cover grayscale-100 opacity-30 fade-image"
+                                alt=""
+                            />
+                        </div>
                     <h2 className="flex flex-col items-center">
                         <span className="flex gap-2 md:gap-2.5 lg:gap-3 xl:gap-3.5 font-[antonio] text-5xl md:text-6xl lg:text-7xl xl:text-8xl w-fit uppercase tracking-tighter font-bold animated-item pr-10 animated-item">
                             {t("policy.title.line1")}
@@ -222,6 +229,13 @@ export default function PolicyPage({ setContactModalIsOpen, contactModalIsOpen, 
 
                 </div>
                 <div className="h-dvh w-full flex items-center justify-center bg-neutral-900 text-neutral-50 contact-container fixed top-0 left-0 z-0">
+                    <div className="absolute w-full h-full top-1/2 left-1/2 -translate-1/2 flex items-center max-w-150 justify-center">
+                        <img
+                            src="/images/background.webp"
+                            className="h-full w-full object-cover grayscale-100 opacity-30 fade-image"
+                            alt=""
+                        />
+                        </div>
                     <div className="flex flex-col items-center gap-10 relative">
                         <h2 className="flex flex-col items-center animated-item">
                             <span className="font-[antonio] text-7xl md:text-8xl lg:text-9xl xl:text-[150px] uppercase tracking-tight font-bold pr-10 md:pr-20 lg:pr-30 xl:pr-50 title-line-top">
